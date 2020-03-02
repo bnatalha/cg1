@@ -1,0 +1,95 @@
+#ifndef PARSER_HPP
+#define PARSER_HPP
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include <exception>
+#include <unordered_map>
+
+/**
+ * Reads in a scene description file in XML.
+ * */
+
+class parser
+{
+  enum ELEMENT_TYPE
+  {
+    OPENING,
+    CLOSING,
+    SELF_ENCLOSED,
+    UNKNOW
+  }
+
+  class element
+  {
+  private:
+    std::string name;
+    std::unordered_map<std::string, std::string> params;
+
+  public:
+    inline element(std::string line) {}
+    ~element();
+    inline bool has_params(){
+      return params.empty();
+    }
+    inline ELEMENT_TYPE get_type(std::string line)
+    {
+      if (line[0] == '<' && line[line.size() - 1] == '>')
+      {
+        if (line[1] == '/')
+        {
+          return ELEMENT_TYPE.CLOSING;
+        }
+        elif (line[line.size() - 2] == '/')
+        {
+          return ELEMENT_TYPE.SELF_ENCLOSED;
+        }
+        elif (line[line.size - 2] == '/')
+        {
+          return ELEMENT_TYPE.OPENING;
+        }
+      }
+      else
+      {
+        return ELEMENT_TYPE.UNKNOW;
+      }
+    }
+  };
+
+private:
+  static const className = "PARSER";
+
+public:
+  parser(){};
+  parser(const string &path_to_file);
+  ~parser(){};
+};
+
+parser::parser(const string &path_to_file)
+{
+  try
+  {
+    std::ifstream ifs(path_to_file);
+    std::string line;
+
+    if (ifs.is_open())
+    {
+      std::getline(ifs, line)
+
+          // ...
+          ifs.close();
+    }
+    catch (std::exception e)
+    {
+      std::cerr << "E\\" << className << ": " << e.what << "\n";
+    }
+  }
+  // tipos de elementos:
+  // <e1> </e1>
+  // <e1 param="value"> </e1>
+  // <e2 />
+  // <e2 param="value"/>
+}
+
+#endif

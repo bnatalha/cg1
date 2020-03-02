@@ -12,7 +12,7 @@ TARGET := $(TARGETDIR)/main
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -std=c++11 -lstdc++fs
+CFLAGS := -g -Wall -std=c++11
 # CFLAGS := -Wall -std=c++17
 INC := -I include
 
@@ -20,7 +20,7 @@ $(TARGET): $(OBJECTS)
 	@echo " Linking..."
 	@mkdir -p $(TARGETDIR)
 	@mkdir -p data/out
-	@echo " $(CC) $^ -o $(TARGET) -std=c++17 -lstdc++fs"; $(CC) $^ -o $(TARGET) -std=c++17 -lstdc++fs
+	@echo " $(CC) $^ -o $(TARGET) -std=c++11"; $(CC) $^ -o $(TARGET) -std=c++11
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)

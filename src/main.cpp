@@ -1,7 +1,10 @@
 #include <iostream>
 #include "vector3.hpp"
+#include "parser.hpp"
 
-int main(int argc, char const *argv[])
+#include <boost/lambda/lambda.hpp>
+
+void RT()
 {
   int nx = 200;
   int ny = 100;
@@ -12,12 +15,16 @@ int main(int argc, char const *argv[])
   {
     for (int x = 0; x < nx; x++)
     {
-      Vector3 col(float(x)/float(nx), float(y)/float(ny), 0.2);
-      int ir = int(255.99*col.r());
-      int ig = int(255.99*col.g());
-      int ib = int(255.99*col.b());
+      Vector3 col(float(x) / float(nx), float(y) / float(ny), 0.2);
+      int ir = int(255.99 * col.r());
+      int ig = int(255.99 * col.g());
+      int ib = int(255.99 * col.b());
       std::cout << ir << " " << ig << " " << ib << "\n";
     }
   }
-  return 0;
+}
+
+int main(int argc, char const *argv[])
+{
+  parser("../data/in/ex1.xml");
 }
