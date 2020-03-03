@@ -1,49 +1,87 @@
 #ifndef PARSER_HPP
 #define PARSER_HPP
 
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/xml_parser.hpp>
-#include <boost/foreach.hpp>
-#include <string>
-#include <unordered_map>
-#include <exception>
+/**
+ * Based on https://shilohjames.wordpress.com/2014/04/27/tinyxml2-tutorial/
+ **/
+
 #include <iostream>
-namespace pt = boost::property_tree;
+#include <string>
+#include <sstream>
+#include "tinyxml2.h"
 
-#define PROGRAM_NAME "RT3"
+#include "camera.hpp"
+#include "film.hpp"
+#include "background.hpp"
 
-struct world_tag
-{
-    std::string m_background;
-};
+using namespace tinyxml2;
 
-class parser
+#ifndef XMLCheckResult
+#define XMLCheckResult(a_eResult)                    \
+    if (a_eResult != XML_SUCCESS)                    \
+    {                                                \
+        std::cout << "Error: " << a_eResult << "\n"; \
+        return a_eResult;                            \
+    }
+#endif
+
+class Parser
 {
 private:
-    world_tag m_world;
-    std::unordered_map<std::string, std::string> m_camera;
-    std::unordered_map<std::string, std::string> m_film;
+    std::string filename;
+    XMLDocument xmlDoc;
+    XMLNode *pRoot;
+    XMLElement *pElement;
+
 public:
-    parser(const std::string& filename);
-    ~parser();
+    Parser() {}
+    Parser(std::string filename) : filename(filename) {}
+    ~Parser() {}
+
+    int extractData(Camera &cam, Film &film, Background &bg);
 };
 
-parser::parser(const std::string& filename)
+int Parser::extractData(Camera &cam, Film &film, Background &bg)
 {
-    pt::ptree tree;
-    std::ifstream ifs("./data/in/ex1.xml");
-    pt::read_xml(ifs, tree);
-    // m_world.m_background = tree.get(PROGRAM_NAME+".background")
-    // m_camera.insert({type,tree.get(PROGRAM_NAME+".camera.xmlattr") });
-    // std::cout << tree.get("RT3.camera").get_child("<xmlattr>")get("type").data();
-    std::cout << tree.get<pt::ptree>("RT3.camera").get_child("<xmlattr>")get("type").data();
-    // std::cout << tree.get<std::string>("RT3.camera").data();
-    // std::cout << tree.get<std::string>("RT3.camera").data();
-}
+    XMLError eResult = xmlDoc.LoadFile(filename.c_str());
+    XMLCheckResult(eResult);
+    
+    const char* str = "default";
+    int val = 0;
+    std::stringstream sstr;
 
-parser::~parser()
-{
-}
+    pRoot = xmlDoc.FirstChild();
+    if (pRoot == nullptr) return XML_ERROR_FILE_READ_ERROR;
 
+    // setting camera
+    pElement = pRoot->FirstChildElement("camera");
+    pElement->QueryStringAttribute("type",&str);
+    cam.setType(str);
+
+    // setting film
+    pElement = pRoot->FirstChildElement("film");
+    pElement->QueryStringAttribute("type",&str);
+    film.type = str;
+    pElement->QueryIntAttribute("x_res",&val);
+    film.x_res = val;
+    pElement->QueryIntAttribute("y_res",&val);
+    film.y_res = val;
+    pElement->QueryStringAttribute("filename",&str);
+    film.filename = str;
+    pElement->QueryStringAttribute("img_type",&str);
+    film.img_type = str;
+
+    // setting background
+    pElement = pRoot->FirstChildElement("background");
+    pElement->QueryStringAttribute("type",&str);
+    bg.type = str;
+    pElement->QueryStringAttribute("color",&str);
+    sstr << str;
+    float a, b, c;
+    sstr >> a >> b >> c;
+    bg.color = Vector3(a, b, c);
+    
+    return XML_SUCCESS;
+}
 
 #endif

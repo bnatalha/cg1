@@ -2,7 +2,9 @@
 #include "vector3.hpp"
 #include "parser.hpp"
 
-#include <boost/lambda/lambda.hpp>
+#include "camera.hpp"
+#include "film.hpp"
+#include "background.hpp"
 
 void RT()
 {
@@ -26,5 +28,15 @@ void RT()
 
 int main(int argc, char const *argv[])
 {
-  parser("../data/in/ex1.xml");
+  Camera camera;
+  Film film;
+  Background bg;
+
+  Parser parser("ex1.xml");
+  parser.extractData(camera, film, bg);
+
+  film.print();
+  bg.print();
+  
+  return 0;
 }
