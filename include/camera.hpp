@@ -2,11 +2,13 @@
 #define CAMERA_HPP
 
 #include <string>
+#include "film.hpp"
 
 class Camera
 {
 private:
     std::string type;
+    Film film;
 public:
     Camera(){}
     Camera(const char* type) : type(type){}

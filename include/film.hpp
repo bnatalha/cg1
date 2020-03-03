@@ -27,6 +27,8 @@ public:
             << filename << " "
             << img_type << "\n";
     }
+
+    
 };
 
 #endif
