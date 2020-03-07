@@ -1,6 +1,9 @@
 #include <iostream>
 #include "vector3.hpp"
+
 #include "parser.hpp"
+
+#include "api.hpp"
 
 #include "camera.hpp"
 #include "film.hpp"
@@ -50,17 +53,22 @@ void RT(Film &film, Camera &cam, Background &bg)
 
 int main(int argc, char const *argv[])
 {
-  Camera camera;
-  Film film;
-  Background bg;
+  API api = API();
+  // Camera camera;
+  // Film film;
+  // Background bg;
 
   Parser parser("data/in/ex1.xml");
-  parser.extractData(camera, film, bg);
+  // parser.extractData(camera, film, bg);
+  parser.extractData(api.camera, api.scene);
 
   // film.print();
   // bg.print();
 
-  RT(film, camera, bg);
+  api.print();
+  // bg.print();
+
+  // RT(film, camera, bg);
   
   return 0;
 }

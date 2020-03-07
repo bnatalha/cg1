@@ -1,6 +1,8 @@
 #ifndef API_HPP
 #define API_HPP
 
+#include <memory>
+
 #include "camera.hpp"
 #include "scene.hpp"
 
@@ -11,11 +13,19 @@ class API
 {
 public:
 
-    Camera camera;
-    Scene scene;
+    std::shared_ptr<Camera> camera;
+    std::shared_ptr<Scene> scene;
 
-    API(){}
+    API(){
+        camera = std::make_shared<Camera>();
+        scene = std::make_shared<Scene>();
+    }
     ~API(){}
+    inline void print(){
+        camera->print();
+        scene->print();
+    }
+    
 };
 
 #endif
