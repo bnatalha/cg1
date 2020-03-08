@@ -2,6 +2,8 @@
 #define FILM_HPP
 
 #include <iostream>
+#include <vector>
+#include <memory>
 
 #include "tinyxml2.h"
 
@@ -19,8 +21,16 @@ public:
     std::string filename;
     std::string img_type;
 
+    std::shared_ptr<std::vector<int>> buffer;
+
     Film() {}
+    Film(std::string t, int y, int x, std::string fn, std::string imgt) : type(t), y_res(y), x_res(x), filename(fn), img_type(imgt)  {}
     ~Film() {}
+
+    void init(){
+        buffer = std::make_shared<std::vector<int>>();
+        buffer->reserve(y_res * x_res);
+    }
 
     inline void print()
     {

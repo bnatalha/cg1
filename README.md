@@ -19,3 +19,4 @@ http://leethomason.github.io/tinyxml2/
 -- 
 
 fazer super classe com metodos parse(), parseEle();
+salvar com PNG usando https://lodev.org/lodepng/

@@ -4,39 +4,47 @@
 #include <string>
 #include "tinyxml2.h"
 #include "film.hpp"
+#include "paramset.hpp"
 
 using namespace tinyxml2;
 
-class Camera
-{
-public:
-    std::string type;
-    Film film;
+namespace rt3 {
 
-    Camera() {}
-    Camera(const char *type) : type(type) {}
-    ~Camera() {}
+    using std::unique_ptr;
+    using std::vector;
+    using std::unordered_map;
+    using std::string;
 
-    inline std::string getType() { return type; }
-    inline void setType(std::string nType) { type = nType; }
-    inline int parse(XMLNode *pRoot)
+    class Camera
     {
-        const char* str = "default"; 
-        XMLElement *pElement;
-        
-        // setting camera
-        pElement = pRoot->FirstChildElement("camera");
-        pElement->QueryStringAttribute("type", &str);
-        type = str;
+    public:
+        std::string type;
+        Film film;
 
-        // setting film
-        return film.parse(pRoot);
-    }
+        Camera() {}
+        Camera(string t) : type(t) {}
+        ~Camera() {}
 
-    inline void print(){
-        std::cout << "Camera type: " << type << "\n";
-        film.print();
-    }
-};
+        // inline int parse(XMLNode *pRoot)
+        // {
+        //     const char* str = "default"; 
+        //     XMLElement *pElement;
+            
+        //     // setting camera
+        //     pElement = pRoot->FirstChildElement("camera");
+        //     pElement->QueryStringAttribute("type", &str);
+        //     type = str;
+
+        //     // setting film
+        //     return film.parse(pRoot);
+        // }
+
+        inline void print(){
+            std::cout << "Camera type: " << type << "\n";
+            film.print();
+        }
+    };
+
+}
 
 #endif
