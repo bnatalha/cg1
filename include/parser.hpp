@@ -20,7 +20,7 @@ using namespace tinyxml2;
 #define XMLCheckResult(a_eResult)                    \
     if (a_eResult != XML_SUCCESS)                    \
     {                                                \
-        std::cout << "Error: " << a_eResult << "\n"; \
+        std::cerr << "XMLError while parsing: " << a_eResult << "\n"; \
         return a_eResult;                            \
     }
 #endif
@@ -35,49 +35,42 @@ private:
 
 public:
     Parser() {}
-    Parser(std::string filename) : filename(filename) {}
+    Parser(std::string filename) : filename(filename) 
+    {
+        
+    }
     ~Parser() {}
-
-    // int extractData(Camera &cam, Film &film, Background &bg);
-    // int extractData();
 
     int extractData(rt3::API &api);
 
-    // fazer unique_ptr de array de strings
     inline void addStrAttr(XMLElement *pE, const char* tag, rt3::ParamSet &ps){
-        const char* str = "default";
-        pElement->QueryStringAttribute(tag,&str);
+        const char* str = "not_found";
+        auto xmlResult = pElement->QueryStringAttribute(tag,&str);
+        if(xmlResult != XML_SUCCESS) {return;} // value not found
         std::unique_ptr<std::string []> u_ptr (new std::string[1]);
         u_ptr[0] = str;
-        ps.add(tag, std::move(u_ptr), 1);
+        ps.add<std::string>(tag, std::move(u_ptr), 1);
     }
 
     inline void addIntAttr(XMLElement *pE, const char* tag, rt3::ParamSet &ps){
-        int val = 0;
-        pElement->QueryIntAttribute(tag,&val);
-        std::unique_ptr<std::string []> u_ptr (new std::string[1]);
-        u_ptr[0] = std::to_string(val);
-        ps.add(tag, std::move(u_ptr), 1);
-        // return std::string(val);
+        int val = -42;  // default not_found value;
+        auto xmlResult = pElement->QueryIntAttribute(tag,&val);
+        if(xmlResult != XML_SUCCESS) {return;} // value not found
+        std::unique_ptr<int []> u_ptr (new int[1]);
+        u_ptr[0] = val;
+        ps.add<int>(tag, std::move(u_ptr), 1);
     }
 };
 
 int Parser::extractData(rt3::API &api)
-// int Parser::extractData(Camera &cam, Film &film, Background &bg)
 {
     rt3::ParamSet ps;
-    // const char* str = "default";
-    // int val = 0;
-    // std::stringstream sstr;
 
     XMLError eResult = xmlDoc.LoadFile(filename.c_str());
     XMLCheckResult(eResult);
 
     pRoot = xmlDoc.FirstChild();
     if (pRoot == nullptr) return XML_ERROR_FILE_READ_ERROR;
-
-    // cam->parse(pRoot);
-    // scene->parse(pRoot);
 
     // setting camera
     pElement = pRoot->FirstChildElement("camera");
@@ -98,15 +91,19 @@ int Parser::extractData(rt3::API &api)
     api.camera_film(ps);
     ps.clear();
 
-    // // setting background
-    // pElement = pRoot->FirstChildElement("background");
-    // pElement->QueryStringAttribute("type",&str);
-    // bg.type = str;
-    // pElement->QueryStringAttribute("color",&str);
-    // sstr << str;
-    // float a, b, c;
-    // sstr >> a >> b >> c;
-    // bg.color = Vector3(a, b, c);
+    // setting background
+    pElement = pRoot->FirstChildElement("background");
+    
+    addStrAttr(pElement, "type", ps);
+    addStrAttr(pElement, "mapping", ps);
+    addStrAttr(pElement, "color", ps);  // poderia ser aqui o uso do find_array...
+    addStrAttr(pElement, "bl", ps);  // poderia ser aqui o uso do find_array...
+    addStrAttr(pElement, "tl", ps);  // poderia ser aqui o uso do find_array...
+    addStrAttr(pElement, "tr", ps);  // poderia ser aqui o uso do find_array...
+    addStrAttr(pElement, "br", ps);  // poderia ser aqui o uso do find_array...
+
+    api.scene(ps);
+    ps.clear();
     
     return XML_SUCCESS;
 }

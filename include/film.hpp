@@ -21,16 +21,17 @@ public:
     std::string filename;
     std::string img_type;
 
-    std::shared_ptr<std::vector<int>> buffer;
+    // std::shared_ptr<std::vector<int>> buffer;
+    std::vector<int> buffer;
 
     Film() {}
     Film(std::string t, int y, int x, std::string fn, std::string imgt) : type(t), y_res(y), x_res(x), filename(fn), img_type(imgt)  {}
     ~Film() {}
 
-    void init(){
-        buffer = std::make_shared<std::vector<int>>();
-        buffer->reserve(y_res * x_res);
-    }
+    // void init(){
+        // buffer = std::make_shared<std::vector<int>>();
+        // buffer->reserve(y_res * x_res);
+    // }
 
     inline void print()
     {
@@ -42,26 +43,26 @@ public:
             << img_type << "\n";
     }
 
-    inline int parse(XMLNode *pRoot)
-    {
-        const char* str = "default";
-        int val;
-        XMLElement *pElement;
+    // inline int parse(XMLNode *pRoot)
+    // {
+    //     const char* str = "default";
+    //     int val;
+    //     XMLElement *pElement;
 
-        pElement = pRoot->FirstChildElement("film");
-        pElement->QueryStringAttribute("type", &str);
-        type = str;
-        pElement->QueryIntAttribute("x_res", &val);
-        x_res = val;
-        pElement->QueryIntAttribute("y_res", &val);
-        y_res = val;
-        pElement->QueryStringAttribute("filename", &str);
-        filename = str;
-        pElement->QueryStringAttribute("img_type", &str);
-        img_type = str;
+    //     pElement = pRoot->FirstChildElement("film");
+    //     pElement->QueryStringAttribute("type", &str);
+    //     type = str;
+    //     pElement->QueryIntAttribute("x_res", &val);
+    //     x_res = val;
+    //     pElement->QueryIntAttribute("y_res", &val);
+    //     y_res = val;
+    //     pElement->QueryStringAttribute("filename", &str);
+    //     filename = str;
+    //     pElement->QueryStringAttribute("img_type", &str);
+    //     img_type = str;
 
-        return XML_SUCCESS;
-    }
+    //     return XML_SUCCESS;
+    // }
 };
 
 #endif

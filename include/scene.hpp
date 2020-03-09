@@ -13,12 +13,13 @@ public:
     Background background;
 
     Scene() {}
+    Scene(Background &bg) : background(bg) {}
     ~Scene() {}
 
-    inline int parse(XMLNode *pRoot)
-    {
-        return background.parse(pRoot);
-    }
+    // inline int parse(XMLNode *pRoot)
+    // {
+    //     return background.parse(pRoot);
+    // }
 
     inline void print() {
         background.print();

@@ -30,4 +30,7 @@ clean:
 	@echo " Cleaning..."; 
 	@echo " $(RM) -r $(BUILDDIR) $(TARGET)"; $(RM) -r $(BUILDDIR) $(TARGET)
 
-.PHONY: clean
+val:
+	valgrind ./$(TARGET)
+
+.PHONY: clean, val

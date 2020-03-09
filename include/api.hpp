@@ -5,17 +5,15 @@
 #include <sstream>
 #include <string>
 
+#include "header.hpp"
 #include "camera.hpp"
-// #include "Film.hpp"
 #include "scene.hpp"
-
 #include "paramset.hpp"
 
 namespace rt3 {
 
-    /**
-     * Is responsible for returning a color each time the primary ray misses any object in the scene (i.e. hits nothing).
-     * */
+    using std::string;
+
     class API
     {
 
@@ -27,55 +25,74 @@ namespace rt3 {
 
         // Constructors & Destructors
 
-        API(){
-            // camera = std::make_shared<Camera>();
-            // scene = std::make_shared<Scene>();
-        }
+        API(){}
         ~API(){}
 
-        // Camera
-
+        //  ============================= Camera ============================
 
         void camera(const ParamSet & ps) {
-            string t = ps.find_one("type", "default");
+            string t = ps.find_one<std::string>("type", "default");
             m_camera = create_camera(t);
         }
 
         std::shared_ptr<Camera> create_camera(string type) {
             return std::make_shared<Camera>(type);
         }
-        
+
         void camera_film(const ParamSet & ps) {
             std::stringstream sstr;
 
-            string type = ps.find_one("type", "default");
-            string filename = ps.find_one("filename", "test_img.png");
-            string img_type = ps.find_one("img_type", "PNG");
+            string type = ps.find_one<std::string>("type", "default");
+            string filename = ps.find_one<std::string>("filename", "test_img.png");
+            string img_type = ps.find_one<std::string>("img_type", "PNG");
+            int y_res = ps.find_one<int>("y_res", 100);
+            int x_res = ps.find_one<int>("x_res", 200);
 
-            sstr << ps.find_one("x_res", "100") << ps.find_one("y_res", "100");
-            int x_res, y_res;
-            sstr >> x_res >> y_res; // checar se não está trocando a ordem
-            
             m_camera->film = Film(type, y_res, x_res, filename, img_type);
         }
 
+        // ========================== Scene =================================
 
-        // Scene
-        void scene(const ParamSet & ps) {
-            // string t = ps.find_one("type", "default");
-            // camera = create_camera(t);
+        string sample_corner_color(const char* corner_name, bool & flag, const ParamSet &ps) {
+            string foundCorner = ps.find_one<string>(corner_name, "not_provided");
+            string corner = DEFAULT_COLOR;
+            if(foundCorner.compare("not_provided") != 0) {
+                corner = foundCorner; 
+                flag = true;
+            }
+            return corner;
         }
 
-        // std::shared_ptr<Camera> create_scene(/* args */) {
-        //     return std::make_shared<Scene>(t);
-        // }
-        
+        void scene(const ParamSet & ps) {
+            string t = ps.find_one<string>("type", "default");
+            string mp = ps.find_one<string>("mapping", DEFAULT_MAPPING);
+            string color = ps.find_one<string>("color", DEFAULT_COLOR);
 
-        // Aux
-        
+            bool providedCorners = false;
+
+            // string bl = ps.find_one<string>("bl", "not_provided");
+            // string tl = ps.find_one<string>("tl", "not_provided");
+            // string tr = ps.find_one<string>("tr", "not_provided");
+            // string br = ps.find_one<string>("br", "not_provided");
+
+            string bl = sample_corner_color("bl", providedCorners, ps);
+            string tl = sample_corner_color("tl", providedCorners, ps);
+            string tr = sample_corner_color("tr", providedCorners, ps);
+            string br = sample_corner_color("br", providedCorners, ps);
+
+            Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
+
+            m_scene = create_scene(bg);
+        }
+
+        std::shared_ptr<Scene> create_scene(Background &bg) {
+            return std::make_shared<Scene>(bg);
+        }
+
+        // ================================== Aux ==================================
         inline void print(){
             m_camera->print();
-            // m_scene->print();
+            m_scene->print();
         }
         
     };
