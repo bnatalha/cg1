@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
   // Film film;
   // Background bg;
 
-  Parser parser("data/in/ex1.xml");
+  Parser parser("data/in/ex2.xml");
   // parser.extractData(camera, film, bg);
   // parser.extractData(api.camera, api.scene);
   parser.extractData(api);
@@ -67,6 +67,8 @@ int main(int argc, char const *argv[])
   // bg.print();
 
   api.print();
+  api.RT();
+  api.save();
   // api.camera->film.init();
   // bg.print();
 

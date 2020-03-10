@@ -1,11 +1,13 @@
 #ifndef FILM_HPP
 #define FILM_HPP
 
+#include "header.hpp"
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <memory>
-
 #include "tinyxml2.h"
+
 
 using namespace tinyxml2;
 
@@ -16,17 +18,48 @@ class Film
 {
 public:
     std::string type;
-    int y_res;
-    int x_res;
+    int height;
+    int width;
     std::string filename;
     std::string img_type;
 
     // std::shared_ptr<std::vector<int>> buffer;
-    std::vector<int> buffer;
+    std::vector<rgb> buffer;
 
     Film() {}
-    Film(std::string t, int y, int x, std::string fn, std::string imgt) : type(t), y_res(y), x_res(x), filename(fn), img_type(imgt)  {}
+    Film(std::string t, int y, int x, std::string fn, std::string imgt) : type(t), height(y), width(x), filename(fn), img_type(imgt)  
+    {
+        // buffer.reserve(width * height);
+        buffer = std::vector<Pixel>(width * height, rgb(0,0,0));
+    }
     ~Film() {}
+
+    // checar ordem de crescimento
+    int index_of(Point2 &p) 
+    {
+        return p.first + (width * p.second);
+    }
+
+    inline void add (Point2 p, rgb color) 
+    {
+        buffer[index_of(p)] = color;
+    }
+
+    inline void write_image()
+    {
+        std::ofstream ofs(filename, std::ios::binary);
+
+        if( img_type.compare("PPM") == 0) {
+            ofs << "P3\n"
+                << width << " " << height << "\n"
+                << "255\n";
+            for (auto c : buffer) {
+                ofs << int(c.r()) << " "
+                    << int(c.g()) << " "
+                    << int(c.b()) <<  "\n";
+            }
+        }
+    }
 
     // void init(){
         // buffer = std::make_shared<std::vector<int>>();
@@ -37,8 +70,8 @@ public:
     {
         std::cout
             << type << " "
-            << x_res << " "
-            << y_res << " "
+            << width << " "
+            << height << " "
             << filename << " "
             << img_type << "\n";
     }

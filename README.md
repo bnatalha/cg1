@@ -24,6 +24,7 @@ salvar com PNG usando https://lodev.org/lodepng/
 ---
 TODO:
     - input através da leitura de um arquivo pelo terminal;
+    - add biblio de png;
     - RT:
         - Matrix, Pixel, Point2;
 
@@ -32,3 +33,4 @@ TODO:
 ## Duvidas
 onde fica o create_camera?
 parsear o film de modo que seja usado apenas um ps para inicializar a camera?
+motivos que podem ta causando a imagem ser gerada de cabeça pra baixo?

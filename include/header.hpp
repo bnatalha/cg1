@@ -9,5 +9,7 @@
 #include "vector3.hpp"
 
 typedef Vector3 rgb;
+typedef Vector3 Pixel;
+typedef std::pair<int,int> Point2;
 
 #endif

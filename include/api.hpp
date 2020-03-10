@@ -94,9 +94,23 @@ namespace rt3 {
             m_camera->print();
             m_scene->print();
         }
-        
+
+        void RT() {
+            auto w = m_camera->film.width;
+            auto h = m_camera->film.height;
+            // for ( int j = h-1 ; j >= 0 ; j-- ) {
+            for ( int j = 0 ; j < h; j++ ) {
+                for( int i = 0 ; i < w ; i++ ) {
+                    auto color = m_scene->background.sample( float(i)/float(w), float(j)/float(h) ); // get background color.
+                    m_camera->film.add( Point2(i,j), color ); // set image buffer at position (i,j), accordingly.
+                }
+            }
+        }
+
+        void save(){
+            m_camera->film.write_image();
+        }
     };
 }
-
 
 #endif

@@ -42,15 +42,16 @@ public:
         }
 
         // formula:
-        rgb bl; // (0,0)
-        rgb tl; // (0,1)
-        rgb tr; // (1,1)
-        rgb br; // (1,0)
+        // auto r = bl*(1-x)*(1-y)
+        //     + br*x*(1-y)
+        //     + tl*(1-x)*y
+        //     + tr*x*y;
 
-        auto r = bl*(1-x)*(1-y)
-            + br*x*(1-y)
-            + tl*(1-x)*y
-            + tr*x*y;
+        // modified y axis formula:
+        auto r = tl*(1-x)*(1-y)
+            + tr*x*(1-y)
+            + bl*(1-x)*y
+            + br*x*y;
 
         return r;
     }
