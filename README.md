@@ -23,8 +23,8 @@ salvar com PNG usando https://lodev.org/lodepng/
 
 ---
 TODO:
-    - input através da leitura de um arquivo pelo terminal;
-    - add biblio de png;
+    - input através da leitura de argumento pelo terminal;
+    - add biblio de lodePNG (pixel com alpha? como faz de um vec3) ( corrigir output);
     - RT:
         - Matrix, Pixel, Point2;
 
