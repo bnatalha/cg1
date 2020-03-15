@@ -18,8 +18,6 @@ namespace rt3 {
     {
 
     public:
-        // static std::shared_ptr<Camera> camera;
-        // static std::shared_ptr<Scene> scene;
         std::shared_ptr<Camera> m_camera = nullptr;
         std::shared_ptr<Scene> m_scene = nullptr;
 
@@ -70,11 +68,6 @@ namespace rt3 {
 
             bool providedCorners = false;
 
-            // string bl = ps.find_one<string>("bl", "not_provided");
-            // string tl = ps.find_one<string>("tl", "not_provided");
-            // string tr = ps.find_one<string>("tr", "not_provided");
-            // string br = ps.find_one<string>("br", "not_provided");
-
             string bl = sample_corner_color("bl", providedCorners, ps);
             string tl = sample_corner_color("tl", providedCorners, ps);
             string tr = sample_corner_color("tr", providedCorners, ps);
@@ -94,6 +87,8 @@ namespace rt3 {
             m_camera->print();
             m_scene->print();
         }
+
+        // ============================ Main functions ================================
 
         void RT() {
             auto w = m_camera->film.width;

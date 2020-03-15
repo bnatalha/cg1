@@ -14,6 +14,7 @@
 #include "api.hpp"
 #include "paramset.hpp"
 
+
 using namespace tinyxml2;
 
 #ifndef XMLCheckResult
@@ -96,11 +97,11 @@ int Parser::extractData(rt3::API &api)
     
     addStrAttr(pElement, "type", ps);
     addStrAttr(pElement, "mapping", ps);
-    addStrAttr(pElement, "color", ps);  // poderia ser aqui o uso do find_array...
-    addStrAttr(pElement, "bl", ps);  // poderia ser aqui o uso do find_array...
-    addStrAttr(pElement, "tl", ps);  // poderia ser aqui o uso do find_array...
-    addStrAttr(pElement, "tr", ps);  // poderia ser aqui o uso do find_array...
-    addStrAttr(pElement, "br", ps);  // poderia ser aqui o uso do find_array...
+    addStrAttr(pElement, "color", ps);
+    addStrAttr(pElement, "bl", ps);
+    addStrAttr(pElement, "tl", ps);
+    addStrAttr(pElement, "tr", ps);
+    addStrAttr(pElement, "br", ps);
 
     api.scene(ps);
     ps.clear();

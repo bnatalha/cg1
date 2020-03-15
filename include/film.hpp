@@ -9,6 +9,8 @@
 #include "tinyxml2.h"
 #include "lodepng.h"
 
+namespace rt3 {
+
 using namespace tinyxml2;
 
 /**
@@ -23,7 +25,6 @@ public:
     std::string filename;
     std::string img_type;
 
-    // std::shared_ptr<std::vector<int>> buffer;
     std::vector<rgb> buffer;
 
     Film() {}
@@ -49,7 +50,7 @@ public:
     {
         std::ofstream ofs(filename, std::ios::binary);
 
-        if (img_type.compare("PPM") == 0)
+        if (img_type.compare("PPM") == 0 || img_type.compare("ppm") == 0)   // PPM
         {
             ofs << "P3\n"
                 << width << " " << height << "\n"
@@ -63,33 +64,28 @@ public:
         }
         else // PNG
         {
-            std::vector<unsigned char> image(width * height, 0);
-            for (int i = 0; i < width * height; i++)
+            std::vector<unsigned char> image;
+            for (long unsigned i = 0; i < buffer.size(); i++)
             {
                 int n;
                 unsigned char uc;
-                for (int idx = 0; idx < 3; idx++)
+                for (int idx = 0; idx < 3; idx++)   // R, G & B pixel value
                 {
                     n = (int)buffer[i][idx];
                     uc = (unsigned char) n;
                     image.push_back(uc);
                 }
-                uc = 255;
+                uc = 255;   // alpha
                 image.push_back(uc);
 
             }
 
             unsigned error = lodepng::encode(filename, image, width, height);
 
-            //if there's an error, display it
+            // if there's an error, display it
             if(error) std::cout << "encoder error " << error << ": "<< lodepng_error_text(error) << std::endl;
         }
     }
-
-    // void init(){
-    // buffer = std::make_shared<std::vector<int>>();
-    // buffer->reserve(y_res * x_res);
-    // }
 
     inline void print()
     {
@@ -100,27 +96,8 @@ public:
             << filename << " "
             << img_type << "\n";
     }
-
-    // inline int parse(XMLNode *pRoot)
-    // {
-    //     const char* str = "default";
-    //     int val;
-    //     XMLElement *pElement;
-
-    //     pElement = pRoot->FirstChildElement("film");
-    //     pElement->QueryStringAttribute("type", &str);
-    //     type = str;
-    //     pElement->QueryIntAttribute("x_res", &val);
-    //     x_res = val;
-    //     pElement->QueryIntAttribute("y_res", &val);
-    //     y_res = val;
-    //     pElement->QueryStringAttribute("filename", &str);
-    //     filename = str;
-    //     pElement->QueryStringAttribute("img_type", &str);
-    //     img_type = str;
-
-    //     return XML_SUCCESS;
-    // }
 };
+
+}
 
 #endif

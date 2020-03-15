@@ -2,9 +2,9 @@
 #define SCENE_HPP
 
 #include "tinyxml2.h"
-
 #include "background.hpp"
 
+namespace rt3 {
 using namespace tinyxml2;
 
 class Scene
@@ -16,14 +16,11 @@ public:
     Scene(Background &bg) : background(bg) {}
     ~Scene() {}
 
-    // inline int parse(XMLNode *pRoot)
-    // {
-    //     return background.parse(pRoot);
-    // }
-
     inline void print() {
         background.print();
     }
 };
+
+}
 
 #endif

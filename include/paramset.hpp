@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <string>
 
-//  TODO: Implementar com template
+// TODO: implement find_array
 
 namespace rt3 {
 

@@ -25,20 +25,6 @@ namespace rt3 {
         Camera(string t) : type(t) {}
         ~Camera() {}
 
-        // inline int parse(XMLNode *pRoot)
-        // {
-        //     const char* str = "default"; 
-        //     XMLElement *pElement;
-            
-        //     // setting camera
-        //     pElement = pRoot->FirstChildElement("camera");
-        //     pElement->QueryStringAttribute("type", &str);
-        //     type = str;
-
-        //     // setting film
-        //     return film.parse(pRoot);
-        // }
-
         inline void print(){
             std::cout << "Camera type: " << type << "\n";
             film.print();

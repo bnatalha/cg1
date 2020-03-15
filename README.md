@@ -7,30 +7,10 @@
 5. A parser class or set of functions that reads in a scene description file in XML with the format explained below.
 
 ---
+
 https://projetos.imd.ufrn.br/CG_20201/ray-tracer-teaching-tool/tree/master/prj01
-https://www.boost.org/doc/libs/1_72_0/doc/html/property_tree/tutorial.html
-https://stackoverflow.com/questions/14010473/parsing-xml-attributes-with-boost
 
-http://leethomason.github.io/tinyxml2/
-
-- tinyxml2.cpp
-- tinyxml2.h
-
--- 
-
-fazer super classe com metodos parse(), parseEle();
-salvar com PNG usando https://lodev.org/lodepng/
-
----
-TODO:
-    - input através da leitura de argumento pelo terminal;
-    - add biblio de lodePNG (pixel com alpha? como faz de um vec3) ( corrigir output);
-    - RT:
-        - Matrix, Pixel, Point2;
-
----
-
-## Duvidas
-onde fica o create_camera?
-parsear o film de modo que seja usado apenas um ps para inicializar a camera?
-motivos que podem ta causando a imagem ser gerada de cabeça pra baixo?
+https://github.com/jarro2783/cxxopts - tratamento de args passados para o programa
+https://github.com/lvandeve/lodepng - salvar imagens no formato PNG
+https://github.com/RayTracing/raytracing.github.io/tree/master/src/InOneWeekend - vector3.hpp
+https://github.com/leethomason/tinyxml2 - parser de arquivos que obdeçam o formato xml
