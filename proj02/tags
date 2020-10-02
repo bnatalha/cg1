@@ -1,0 +1,1491 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+$(BUILDDIR)/%.o	makefile	/^$(BUILDDIR)\/%.o: $(SRCDIR)\/%.$(SRCEXT)$/;"	t
+$(TARGET)	makefile	/^$(TARGET): $(OBJECTS)$/;"	t
+0	.vscode/c_cpp_properties.json	/^                "${workspaceFolder}\/**"$/;"	s	array:configurations.0.includePath
+0	.vscode/c_cpp_properties.json	/^        {$/;"	o	array:configurations
+0	.vscode/launch.json	/^      {$/;"	o	array:configurations
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.0.problemMatcher
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.1.problemMatcher
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.2.problemMatcher
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.3.problemMatcher
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.4.problemMatcher
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.5.problemMatcher
+0	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.1.args
+0	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.3.args
+0	.vscode/tasks.json	/^                "-std=c++11",$/;"	s	array:tasks.0.args
+0	.vscode/tasks.json	/^                "-std=c++11",$/;"	s	array:tasks.2.args
+0	.vscode/tasks.json	/^            "args": ["clean"],$/;"	s	array:tasks.5.args
+0	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+1	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.1.args
+1	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.3.args
+1	.vscode/tasks.json	/^                \/\/ "-stdlib=libc++",$/;"	z	array:tasks.0.args
+1	.vscode/tasks.json	/^                \/\/ "-stdlib=libc++",$/;"	z	array:tasks.2.args
+1	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+2	.vscode/tasks.json	/^                "-I",$/;"	s	array:tasks.1.args
+2	.vscode/tasks.json	/^                "-I",$/;"	s	array:tasks.3.args
+2	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.0.args
+2	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.2.args
+2	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+3	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.0.args
+3	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.2.args
+3	.vscode/tasks.json	/^                "include",$/;"	s	array:tasks.1.args
+3	.vscode/tasks.json	/^                "include",$/;"	s	array:tasks.3.args
+3	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+4	.vscode/tasks.json	/^                "-I",$/;"	s	array:tasks.0.args
+4	.vscode/tasks.json	/^                "-I",$/;"	s	array:tasks.2.args
+4	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.1.args
+4	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.3.args
+4	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+5	.vscode/tasks.json	/^                "${fileDirname}\/..\/bin\/${fileBasenameNoExtension}"$/;"	s	array:tasks.1.args
+5	.vscode/tasks.json	/^                "${fileDirname}\/..\/bin\/${fileBasenameNoExtension}"$/;"	s	array:tasks.3.args
+5	.vscode/tasks.json	/^                "include",$/;"	s	array:tasks.0.args
+5	.vscode/tasks.json	/^                "include",$/;"	s	array:tasks.2.args
+5	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+6	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.0.args
+6	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.2.args
+7	.vscode/tasks.json	/^                "${fileDirname}\/..\/bin\/${fileBasenameNoExtension}"$/;"	s	array:tasks.0.args
+7	.vscode/tasks.json	/^                "${fileDirname}\/..\/bin\/${fileBasenameNoExtension}"$/;"	s	array:tasks.2.args
+ADAM7_DX	src/external/lodepng.cpp	/^static const unsigned ADAM7_DX[7] = { 8, 8, 4, 4, 2, 2, 1 }; \/*x delta values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_DY	src/external/lodepng.cpp	/^static const unsigned ADAM7_DY[7] = { 8, 8, 8, 4, 4, 2, 2 }; \/*y delta values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_IX	src/external/lodepng.cpp	/^static const unsigned ADAM7_IX[7] = { 0, 4, 0, 2, 0, 1, 0 }; \/*x start values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+ADAM7_IY	src/external/lodepng.cpp	/^static const unsigned ADAM7_IY[7] = { 0, 0, 4, 0, 2, 0, 1 }; \/*y start values*\/$/;"	v	typeref:typename:const unsigned[7]	file:
+API	src/core/api.hpp	/^        API(){}$/;"	f	class:rt3::API
+API	src/core/api.hpp	/^    class API$/;"	c	namespace:rt3
+API_HPP	src/core/api.hpp	/^#define API_HPP$/;"	d
+ATTRIBUTE_NAME	src/external/tinyxml2.hpp	/^        ATTRIBUTE_NAME		            = 0,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+ATTRIBUTE_VALUE	src/external/tinyxml2.hpp	/^        ATTRIBUTE_VALUE		            = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+ATTRIBUTE_VALUE_LEAVE_ENTITIES	src/external/tinyxml2.hpp	/^        ATTRIBUTE_VALUE_LEAVE_ENTITIES  = NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+Accept	src/external/tinyxml2.cpp	/^bool XMLComment::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLComment	typeref:typename:bool
+Accept	src/external/tinyxml2.cpp	/^bool XMLDeclaration::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:bool
+Accept	src/external/tinyxml2.cpp	/^bool XMLDocument::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:bool
+Accept	src/external/tinyxml2.cpp	/^bool XMLElement::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:bool
+Accept	src/external/tinyxml2.cpp	/^bool XMLText::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLText	typeref:typename:bool
+Accept	src/external/tinyxml2.cpp	/^bool XMLUnknown::Accept( XMLVisitor* visitor ) const$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:bool
+Adam7_deinterlace	src/external/lodepng.cpp	/^static void Adam7_deinterlace(unsigned char* out, const unsigned char* in, unsigned w, unsigned /;"	f	typeref:typename:void	file:
+Adam7_getpassvalues	src/external/lodepng.cpp	/^static void Adam7_getpassvalues(unsigned passw[7], unsigned passh[7], size_t filter_passstart[8]/;"	f	typeref:typename:void	file:
+Adam7_interlace	src/external/lodepng.cpp	/^static void Adam7_interlace(unsigned char* out, const unsigned char* in, unsigned w, unsigned h,/;"	f	typeref:typename:void	file:
+Alloc	src/external/tinyxml2.hpp	/^    virtual void* Alloc() {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:void *
+Attribute	src/external/tinyxml2.cpp	/^const char* XMLElement::Attribute( const char* name, const char* value ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const char *
+BACKGROUND_HPP	src/core/background.hpp	/^#define BACKGROUND_HPP$/;"	d
+BPMLists	src/external/lodepng.cpp	/^typedef struct BPMLists {$/;"	s	file:
+BPMLists	src/external/lodepng.cpp	/^} BPMLists;$/;"	t	typeref:struct:BPMLists	file:
+BPMNode	src/external/lodepng.cpp	/^typedef struct BPMNode {$/;"	s	file:
+BPMNode	src/external/lodepng.cpp	/^} BPMNode;$/;"	t	typeref:struct:BPMNode	file:
+BUF_SIZE	src/external/tinyxml2.hpp	/^        BUF_SIZE = 200$/;"	e	enum:tinyxml2::XMLPrinter::__anonb4e979eb0603
+BUF_SIZE	src/external/tinyxml2.hpp	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLAttribute::__anonb4e979eb0403
+BUF_SIZE	src/external/tinyxml2.hpp	/^    enum { BUF_SIZE = 200 };$/;"	e	enum:tinyxml2::XMLElement::__anonb4e979eb0503
+BUILDDIR	makefile	/^BUILDDIR := build$/;"	m
+Background	src/core/background.hpp	/^    Background(){}$/;"	f	class:rt3::Background
+Background	src/core/background.hpp	/^    Background(bool corner, string t, string mp, string c, string mBL, string mTL, string mTR, s/;"	f	class:rt3::Background
+Background	src/core/background.hpp	/^class Background$/;"	c	namespace:rt3
+Bibliotecas externas utilizadas	README.md	/^## Bibliotecas externas utilizadas$/;"	s
+Block	src/external/tinyxml2.hpp	/^    struct Block {$/;"	s	class:tinyxml2::MemPoolT
+BoolAttribute	src/external/tinyxml2.cpp	/^bool XMLElement::BoolAttribute(const char* name, bool defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:bool
+BoolText	src/external/tinyxml2.cpp	/^bool XMLElement::BoolText(bool defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:bool
+BoolValue	src/external/tinyxml2.hpp	/^    bool	 BoolValue() const				{$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:bool
+CAMERA_HPP	src/core/camera.hpp	/^#define CAMERA_HPP$/;"	d
+CARRIAGE_RETURN	src/external/tinyxml2.cpp	/^static const char CARRIAGE_RETURN		= static_cast<char>(0x0d);			\/\/ CR gets filtered out$/;"	v	typeref:typename:const char	file:
+CC	makefile	/^CC := clang++$/;"	m
+CData	src/external/tinyxml2.hpp	/^    bool CData() const						{$/;"	f	class:tinyxml2::XMLText	typeref:typename:bool
+CERROR_BREAK	src/external/lodepng.cpp	/^#define CERROR_BREAK(/;"	d	file:
+CERROR_RETURN	src/external/lodepng.cpp	/^#define CERROR_RETURN(/;"	d	file:
+CERROR_RETURN_ERROR	src/external/lodepng.cpp	/^#define CERROR_RETURN_ERROR(/;"	d	file:
+CERROR_TRY_RETURN	src/external/lodepng.cpp	/^#define CERROR_TRY_RETURN(/;"	d	file:
+CFLAGS	makefile	/^CFLAGS := -g -Wall -std=c++11$/;"	m
+CLCL_ORDER	src/external/lodepng.cpp	/^static const unsigned CLCL_ORDER[NUM_CODE_LENGTH_CODES]$/;"	v	typeref:typename:const unsigned[]	file:
+CLOSED	src/external/tinyxml2.hpp	/^        CLOSED,		\/\/ <foo\/>$/;"	e	enum:tinyxml2::XMLElement::ElementClosingType
+CLOSING	src/external/tinyxml2.hpp	/^        CLOSING		\/\/ <\/foo>$/;"	e	enum:tinyxml2::XMLElement::ElementClosingType
+COLLAPSE_WHITESPACE	src/external/tinyxml2.hpp	/^    COLLAPSE_WHITESPACE$/;"	e	enum:tinyxml2::Whitespace
+COMMENT	src/external/tinyxml2.hpp	/^        COMMENT							= NEEDS_NEWLINE_NORMALIZATION$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+CR	src/external/tinyxml2.cpp	/^static const char CR = CARRIAGE_RETURN;$/;"	v	typeref:typename:const char	file:
+CStr	src/external/tinyxml2.hpp	/^    const char* CStr() const {$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:const char *
+CStrSize	src/external/tinyxml2.hpp	/^    int CStrSize() const {$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:int
+CXXOPTS_HAS_OPTIONAL	src/external/cxxopts.hpp	/^#define CXXOPTS_HAS_OPTIONAL$/;"	d
+CXXOPTS_HPP_INCLUDED	src/external/cxxopts.hpp	/^#define CXXOPTS_HPP_INCLUDED$/;"	d
+CXXOPTS_VECTOR_DELIMITER	src/external/cxxopts.hpp	/^#define CXXOPTS_VECTOR_DELIMITER /;"	d
+CXXOPTS__VERSION_MAJOR	src/external/cxxopts.hpp	/^#define CXXOPTS__VERSION_MAJOR /;"	d
+CXXOPTS__VERSION_MINOR	src/external/cxxopts.hpp	/^#define CXXOPTS__VERSION_MINOR /;"	d
+CXXOPTS__VERSION_PATCH	src/external/cxxopts.hpp	/^#define CXXOPTS__VERSION_PATCH /;"	d
+Camera	src/core/camera.hpp	/^        Camera() {}$/;"	f	class:rt3::Camera
+Camera	src/core/camera.hpp	/^        Camera(string t) : type(t) {}$/;"	f	class:rt3::Camera
+Camera	src/core/camera.hpp	/^    class Camera$/;"	c	namespace:rt3
+Capacity	src/external/tinyxml2.hpp	/^    int Capacity() const				{$/;"	f	class:tinyxml2::DynArray	typeref:typename:int
+Clear	src/external/tinyxml2.cpp	/^void XMLDocument::Clear()$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+Clear	src/external/tinyxml2.hpp	/^    void Clear() {$/;"	f	class:tinyxml2::DynArray	typeref:typename:void
+Clear	src/external/tinyxml2.hpp	/^    void Clear() {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:void
+ClearBuffer	src/external/tinyxml2.hpp	/^    void ClearBuffer( bool resetToFirstElement = true ) {$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+ClearError	src/external/tinyxml2.hpp	/^    void ClearError() {$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+CloseElement	src/external/tinyxml2.cpp	/^void XMLPrinter::CloseElement( bool compactMode )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+ClosingType	src/external/tinyxml2.hpp	/^    ElementClosingType ClosingType() const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:ElementClosingType
+CollapseWhitespace	src/external/tinyxml2.cpp	/^void StrPair::CollapseWhitespace()$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+ColorTree	src/external/lodepng.cpp	/^struct ColorTree {$/;"	s	file:
+ColorTree	src/external/lodepng.cpp	/^typedef struct ColorTree ColorTree;$/;"	t	typeref:struct:ColorTree	file:
+CompactMode	src/external/tinyxml2.hpp	/^	virtual bool CompactMode( const XMLElement& )	{ return _compactMode; }$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+ConvertUTF32ToUTF8	src/external/tinyxml2.cpp	/^void XMLUtil::ConvertUTF32ToUTF8( unsigned long input, char* output, int* length )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+CreateAttribute	src/external/tinyxml2.cpp	/^XMLAttribute* XMLElement::CreateAttribute()$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLAttribute *
+CreateUnlinkedNode	src/external/tinyxml2.hpp	/^inline NodeType* XMLDocument::CreateUnlinkedNode( MemPoolT<PoolElementSize>& pool )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:NodeType *
+CurrentAllocs	src/external/tinyxml2.hpp	/^    int CurrentAllocs() const		{$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:int
+DEFAULT_COLOR	src/header.hpp	/^#define DEFAULT_COLOR /;"	d
+DEFAULT_MAPPING	src/header.hpp	/^#define DEFAULT_MAPPING /;"	d
+DEFAULT_WINDOWSIZE	src/external/lodepng.cpp	/^#define DEFAULT_WINDOWSIZE /;"	d	file:
+DISTANCEBASE	src/external/lodepng.cpp	/^static const unsigned DISTANCEBASE[30]$/;"	v	typeref:typename:const unsigned[30]	file:
+DISTANCEEXTRA	src/external/lodepng.cpp	/^static const unsigned DISTANCEEXTRA[30]$/;"	v	typeref:typename:const unsigned[30]	file:
+DOUBLE_QUOTE	src/external/tinyxml2.cpp	/^static const char DOUBLE_QUOTE			= '\\"';$/;"	v	typeref:typename:const char	file:
+DeepClone	src/external/tinyxml2.cpp	/^XMLNode* XMLNode::DeepClone(XMLDocument* target) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+DeepCopy	src/external/tinyxml2.cpp	/^void XMLDocument::DeepCopy(XMLDocument* target) const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+DeleteAttribute	src/external/tinyxml2.cpp	/^void XMLElement::DeleteAttribute( XMLAttribute* attribute )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+DeleteAttribute	src/external/tinyxml2.cpp	/^void XMLElement::DeleteAttribute( const char* name )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+DeleteChild	src/external/tinyxml2.cpp	/^void XMLNode::DeleteChild( XMLNode* node )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+DeleteChildren	src/external/tinyxml2.cpp	/^void XMLNode::DeleteChildren()$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+DeleteNode	src/external/tinyxml2.cpp	/^\/*static*\/ void XMLNode::DeleteNode( XMLNode* node )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+DeleteNode	src/external/tinyxml2.cpp	/^void XMLDocument::DeleteNode( XMLNode* node )	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+DepthTracker	src/external/tinyxml2.hpp	/^		explicit DepthTracker(XMLDocument * document) {$/;"	f	class:tinyxml2::XMLDocument::DepthTracker
+DepthTracker	src/external/tinyxml2.hpp	/^	class DepthTracker {$/;"	c	class:tinyxml2::XMLDocument
+DoubleAttribute	src/external/tinyxml2.cpp	/^double XMLElement::DoubleAttribute(const char* name, double defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:double
+DoubleText	src/external/tinyxml2.cpp	/^double XMLElement::DoubleText(double defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:double
+DoubleValue	src/external/tinyxml2.hpp	/^    double 	 DoubleValue() const			{$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:double
+DynArray	src/external/tinyxml2.hpp	/^    DynArray() :$/;"	f	class:tinyxml2::DynArray
+DynArray	src/external/tinyxml2.hpp	/^class DynArray$/;"	c	namespace:tinyxml2
+ENTITY_RANGE	src/external/tinyxml2.hpp	/^        ENTITY_RANGE = 64,$/;"	e	enum:tinyxml2::XMLPrinter::__anonb4e979eb0603
+ERROR_BREAK	src/external/lodepng.cpp	/^#define ERROR_BREAK(/;"	d	file:
+ElementClosingType	src/external/tinyxml2.hpp	/^    enum ElementClosingType {$/;"	g	class:tinyxml2::XMLElement
+Empty	src/external/tinyxml2.hpp	/^    bool Empty() const					{$/;"	f	class:tinyxml2::DynArray	typeref:typename:bool
+Empty	src/external/tinyxml2.hpp	/^    bool Empty() const {$/;"	f	class:tinyxml2::StrPair	typeref:typename:bool
+EnsureCapacity	src/external/tinyxml2.hpp	/^    void EnsureCapacity( int cap ) {$/;"	f	class:tinyxml2::DynArray	typeref:typename:void
+Entity	src/external/tinyxml2.cpp	/^struct Entity {$/;"	s	namespace:tinyxml2	file:
+Error	src/external/tinyxml2.hpp	/^    bool Error() const {$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:bool
+ErrorID	src/external/tinyxml2.hpp	/^    XMLError  ErrorID() const {$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+ErrorIDToName	src/external/tinyxml2.cpp	/^\/*static*\/ const char* XMLDocument::ErrorIDToName(XMLError errorID)$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:const char *
+ErrorLineNum	src/external/tinyxml2.hpp	/^    int ErrorLineNum() const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:int
+ErrorName	src/external/tinyxml2.cpp	/^const char* XMLDocument::ErrorName() const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:const char *
+ErrorStr	src/external/tinyxml2.cpp	/^const char* XMLDocument::ErrorStr() const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:const char *
+FILM_HPP	src/core/film.hpp	/^#define FILM_HPP$/;"	d
+FIRSTBITS	src/external/lodepng.cpp	/^#define FIRSTBITS /;"	d	file:
+FIRST_LENGTH_CODE_INDEX	src/external/lodepng.cpp	/^#define FIRST_LENGTH_CODE_INDEX /;"	d	file:
+Film	src/core/film.hpp	/^    Film() {}$/;"	f	class:rt3::Film
+Film	src/core/film.hpp	/^    Film(std::string t, int y, int x, std::string fn, std::string imgt) : type(t), height(y), wi/;"	f	class:rt3::Film
+Film	src/core/film.hpp	/^class Film$/;"	c	namespace:rt3
+FindAttribute	src/external/tinyxml2.cpp	/^const XMLAttribute* XMLElement::FindAttribute( const char* name ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const XMLAttribute *
+FindOrCreateAttribute	src/external/tinyxml2.cpp	/^XMLAttribute* XMLElement::FindOrCreateAttribute( const char* name )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLAttribute *
+FirstAttribute	src/external/tinyxml2.hpp	/^    const XMLAttribute* FirstAttribute() const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const XMLAttribute *
+FirstChild	src/external/tinyxml2.hpp	/^    XMLHandle FirstChild() 													{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+FirstChild	src/external/tinyxml2.hpp	/^    XMLNode*		FirstChild()			{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+FirstChild	src/external/tinyxml2.hpp	/^    const XMLConstHandle FirstChild() const											{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+FirstChild	src/external/tinyxml2.hpp	/^    const XMLNode*  FirstChild() const		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLNode *
+FirstChildElement	src/external/tinyxml2.cpp	/^const XMLElement* XMLNode::FirstChildElement( const char* name ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+FirstChildElement	src/external/tinyxml2.hpp	/^    XMLElement* FirstChildElement( const char* name = 0 )	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLElement *
+FirstChildElement	src/external/tinyxml2.hpp	/^    XMLHandle FirstChildElement( const char* name = 0 )						{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+FirstChildElement	src/external/tinyxml2.hpp	/^    const XMLConstHandle FirstChildElement( const char* name = 0 ) const				{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+Fits	src/external/tinyxml2.cpp	/^    static bool Fits( unsigned long )$/;"	f	struct:tinyxml2::LongFitsIntoSizeTMinusOne	typeref:typename:bool	file:
+Fits	src/external/tinyxml2.cpp	/^    static bool Fits( unsigned long value )$/;"	f	struct:tinyxml2::LongFitsIntoSizeTMinusOne	typeref:typename:bool	file:
+FloatAttribute	src/external/tinyxml2.cpp	/^float XMLElement::FloatAttribute(const char* name, float defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:float
+FloatText	src/external/tinyxml2.cpp	/^float XMLElement::FloatText(float defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:float
+FloatValue	src/external/tinyxml2.hpp	/^    float	 FloatValue() const				{$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:float
+Free	src/external/tinyxml2.hpp	/^    virtual void Free( void* mem ) {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:void
+GetCharacterRef	src/external/tinyxml2.cpp	/^const char* XMLUtil::GetCharacterRef( const char* p, char* value, int* length )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:const char *
+GetDocument	src/external/tinyxml2.hpp	/^    XMLDocument* GetDocument()				{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLDocument *
+GetDocument	src/external/tinyxml2.hpp	/^    const XMLDocument* GetDocument() const	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLDocument *
+GetLineNum	src/external/tinyxml2.hpp	/^    int GetLineNum() const { return _parseLineNum; }$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:int
+GetLineNum	src/external/tinyxml2.hpp	/^    int GetLineNum() const { return _parseLineNum; }$/;"	f	class:tinyxml2::XMLNode	typeref:typename:int
+GetStr	src/external/tinyxml2.cpp	/^const char* StrPair::GetStr()$/;"	f	class:tinyxml2::StrPair	typeref:typename:const char *
+GetText	src/external/tinyxml2.cpp	/^const char* XMLElement::GetText() const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const char *
+GetUserData	src/external/tinyxml2.hpp	/^	void* GetUserData() const			{ return _userData; }$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void *
+HASH_BIT_MASK	src/external/lodepng.cpp	/^static const unsigned HASH_BIT_MASK = 65535; \/*HASH_NUM_VALUES - 1, but C90 does not like that /;"	v	typeref:typename:const unsigned	file:
+HASH_NUM_VALUES	src/external/lodepng.cpp	/^static const unsigned HASH_NUM_VALUES = 65536;$/;"	v	typeref:typename:const unsigned	file:
+HEADER_HPP	src/header.hpp	/^#define HEADER_HPP$/;"	d
+HasBOM	src/external/tinyxml2.hpp	/^    bool HasBOM() const {$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:bool
+Hash	src/external/lodepng.cpp	/^typedef struct Hash {$/;"	s	file:
+Hash	src/external/lodepng.cpp	/^} Hash;$/;"	t	typeref:struct:Hash	file:
+HuffmanTree	src/external/lodepng.cpp	/^typedef struct HuffmanTree {$/;"	s	file:
+HuffmanTree	src/external/lodepng.cpp	/^} HuffmanTree;$/;"	t	typeref:struct:HuffmanTree	file:
+HuffmanTree_cleanup	src/external/lodepng.cpp	/^static void HuffmanTree_cleanup(HuffmanTree* tree) {$/;"	f	typeref:typename:void	file:
+HuffmanTree_init	src/external/lodepng.cpp	/^static void HuffmanTree_init(HuffmanTree* tree) {$/;"	f	typeref:typename:void	file:
+HuffmanTree_makeFromFrequencies	src/external/lodepng.cpp	/^static unsigned HuffmanTree_makeFromFrequencies(HuffmanTree* tree, const unsigned* frequencies,$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeFromLengths	src/external/lodepng.cpp	/^static unsigned HuffmanTree_makeFromLengths(HuffmanTree* tree, const unsigned* bitlen,$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeFromLengths2	src/external/lodepng.cpp	/^static unsigned HuffmanTree_makeFromLengths2(HuffmanTree* tree) {$/;"	f	typeref:typename:unsigned	file:
+HuffmanTree_makeTable	src/external/lodepng.cpp	/^static unsigned HuffmanTree_makeTable(HuffmanTree* tree) {$/;"	f	typeref:typename:unsigned	file:
+INC	makefile	/^INC := -Isrc -Isrc\/external -Isrc\/core$/;"	m
+INVALIDSYMBOL	src/external/lodepng.cpp	/^#define INVALIDSYMBOL /;"	d	file:
+ITEMS_PER_BLOCK	src/external/tinyxml2.hpp	/^    enum { ITEMS_PER_BLOCK = (4 * 1024) \/ ITEM_SIZE };$/;"	e	enum:tinyxml2::MemPoolT::__anonb4e979eb0303
+Identify	src/external/tinyxml2.cpp	/^char* XMLDocument::Identify( char* p, XMLNode** node )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:char *
+InsertAfterChild	src/external/tinyxml2.cpp	/^XMLNode* XMLNode::InsertAfterChild( XMLNode* afterThis, XMLNode* addThis )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+InsertChildPreamble	src/external/tinyxml2.cpp	/^void XMLNode::InsertChildPreamble( XMLNode* insertThis ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+InsertEndChild	src/external/tinyxml2.cpp	/^XMLNode* XMLNode::InsertEndChild( XMLNode* addThis )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+InsertFirstChild	src/external/tinyxml2.cpp	/^XMLNode* XMLNode::InsertFirstChild( XMLNode* addThis )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+InsertNewChildElement	src/external/tinyxml2.cpp	/^XMLElement* XMLElement::InsertNewChildElement(const char* name)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLElement *
+InsertNewComment	src/external/tinyxml2.cpp	/^XMLComment* XMLElement::InsertNewComment(const char* comment)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLComment *
+InsertNewDeclaration	src/external/tinyxml2.cpp	/^XMLDeclaration* XMLElement::InsertNewDeclaration(const char* text)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLDeclaration *
+InsertNewText	src/external/tinyxml2.cpp	/^XMLText* XMLElement::InsertNewText(const char* text)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLText *
+InsertNewUnknown	src/external/tinyxml2.cpp	/^XMLUnknown* XMLElement::InsertNewUnknown(const char* text)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLUnknown *
+Int64Attribute	src/external/tinyxml2.cpp	/^int64_t XMLElement::Int64Attribute(const char* name, int64_t defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:int64_t
+Int64Text	src/external/tinyxml2.cpp	/^int64_t XMLElement::Int64Text(int64_t defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:int64_t
+Int64Value	src/external/tinyxml2.hpp	/^	int64_t Int64Value() const {$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:int64_t
+IntAttribute	src/external/tinyxml2.cpp	/^int XMLElement::IntAttribute(const char* name, int defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:int
+IntText	src/external/tinyxml2.cpp	/^int XMLElement::IntText(int defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:int
+IntValue	src/external/tinyxml2.hpp	/^	int	IntValue() const {$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:int
+IsNameChar	src/external/tinyxml2.hpp	/^    inline static bool IsNameChar( unsigned char ch ) {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+IsNameStartChar	src/external/tinyxml2.hpp	/^    inline static bool IsNameStartChar( unsigned char ch ) {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+IsUTF8Continuation	src/external/tinyxml2.hpp	/^    inline static bool IsUTF8Continuation( const char p ) {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+IsWhiteSpace	src/external/tinyxml2.hpp	/^    static bool IsWhiteSpace( char p )					{$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+Item	src/external/tinyxml2.hpp	/^    union Item {$/;"	u	class:tinyxml2::MemPoolT
+ItemSize	src/external/tinyxml2.hpp	/^    virtual int ItemSize() const	{$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:int
+LAST_LENGTH_CODE_INDEX	src/external/lodepng.cpp	/^#define LAST_LENGTH_CODE_INDEX /;"	d	file:
+LCT_GREY	src/external/lodepng.hpp	/^  LCT_GREY = 0, \/*grayscale: 1,2,4,8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_GREY_ALPHA	src/external/lodepng.hpp	/^  LCT_GREY_ALPHA = 4, \/*grayscale with alpha: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_MAX_OCTET_VALUE	src/external/lodepng.hpp	/^  LCT_MAX_OCTET_VALUE = 255$/;"	e	enum:LodePNGColorType
+LCT_PALETTE	src/external/lodepng.hpp	/^  LCT_PALETTE = 3, \/*palette: 1,2,4,8 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_RGB	src/external/lodepng.hpp	/^  LCT_RGB = 2, \/*RGB: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LCT_RGBA	src/external/lodepng.hpp	/^  LCT_RGBA = 6, \/*RGB with alpha: 8,16 bit*\/$/;"	e	enum:LodePNGColorType
+LENGTHBASE	src/external/lodepng.cpp	/^static const unsigned LENGTHBASE[29]$/;"	v	typeref:typename:const unsigned[29]	file:
+LENGTHEXTRA	src/external/lodepng.cpp	/^static const unsigned LENGTHEXTRA[29]$/;"	v	typeref:typename:const unsigned[29]	file:
+LF	src/external/tinyxml2.cpp	/^static const char LF = LINE_FEED;$/;"	v	typeref:typename:const char	file:
+LFS_BRUTE_FORCE	src/external/lodepng.hpp	/^  LFS_BRUTE_FORCE,$/;"	e	enum:LodePNGFilterStrategy
+LFS_ENTROPY	src/external/lodepng.hpp	/^  LFS_ENTROPY,$/;"	e	enum:LodePNGFilterStrategy
+LFS_FOUR	src/external/lodepng.hpp	/^  LFS_FOUR = 4,$/;"	e	enum:LodePNGFilterStrategy
+LFS_MINSUM	src/external/lodepng.hpp	/^  LFS_MINSUM,$/;"	e	enum:LodePNGFilterStrategy
+LFS_ONE	src/external/lodepng.hpp	/^  LFS_ONE = 1,$/;"	e	enum:LodePNGFilterStrategy
+LFS_PREDEFINED	src/external/lodepng.hpp	/^  LFS_PREDEFINED$/;"	e	enum:LodePNGFilterStrategy
+LFS_THREE	src/external/lodepng.hpp	/^  LFS_THREE = 3,$/;"	e	enum:LodePNGFilterStrategy
+LFS_TWO	src/external/lodepng.hpp	/^  LFS_TWO = 2,$/;"	e	enum:LodePNGFilterStrategy
+LFS_ZERO	src/external/lodepng.hpp	/^  LFS_ZERO = 0,$/;"	e	enum:LodePNGFilterStrategy
+LINE_FEED	src/external/tinyxml2.cpp	/^static const char LINE_FEED				= static_cast<char>(0x0a);			\/\/ all line endings are normalized/;"	v	typeref:typename:const char	file:
+LODEPNG_ABS	src/external/lodepng.cpp	/^#define LODEPNG_ABS(/;"	d	file:
+LODEPNG_COMPILE_ALLOCATORS	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_ALLOCATORS$/;"	d
+LODEPNG_COMPILE_ANCILLARY_CHUNKS	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_ANCILLARY_CHUNKS$/;"	d
+LODEPNG_COMPILE_CPP	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_CPP$/;"	d
+LODEPNG_COMPILE_DECODER	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_DECODER$/;"	d
+LODEPNG_COMPILE_DISK	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_DISK$/;"	d
+LODEPNG_COMPILE_ENCODER	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_ENCODER$/;"	d
+LODEPNG_COMPILE_ERROR_TEXT	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_ERROR_TEXT$/;"	d
+LODEPNG_COMPILE_PNG	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_PNG$/;"	d
+LODEPNG_COMPILE_ZLIB	src/external/lodepng.hpp	/^#define LODEPNG_COMPILE_ZLIB$/;"	d
+LODEPNG_H	src/external/lodepng.hpp	/^#define LODEPNG_H$/;"	d
+LODEPNG_INLINE	src/external/lodepng.cpp	/^#define LODEPNG_INLINE /;"	d	file:
+LODEPNG_MAX	src/external/lodepng.cpp	/^#define LODEPNG_MAX(/;"	d	file:
+LODEPNG_MIN	src/external/lodepng.cpp	/^#define LODEPNG_MIN(/;"	d	file:
+LODEPNG_RESTRICT	src/external/lodepng.cpp	/^#define LODEPNG_RESTRICT /;"	d	file:
+LODEPNG_VERSION_STRING	src/external/lodepng.cpp	/^const char* LODEPNG_VERSION_STRING = "20200306";$/;"	v	typeref:typename:const char *
+LQUOTE	src/external/cxxopts.hpp	/^    const std::string LQUOTE("\\'");$/;"	v	namespace:cxxopts::__anonbf52ef1d0511	typeref:typename:const std::string
+LastChild	src/external/tinyxml2.hpp	/^    XMLHandle LastChild()													{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+LastChild	src/external/tinyxml2.hpp	/^    XMLNode*		LastChild()								{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+LastChild	src/external/tinyxml2.hpp	/^    const XMLConstHandle LastChild()	const										{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+LastChild	src/external/tinyxml2.hpp	/^    const XMLNode*	LastChild() const						{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLNode *
+LastChildElement	src/external/tinyxml2.cpp	/^const XMLElement* XMLNode::LastChildElement( const char* name ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+LastChildElement	src/external/tinyxml2.hpp	/^    XMLElement* LastChildElement( const char* name = 0 )	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLElement *
+LastChildElement	src/external/tinyxml2.hpp	/^    XMLHandle LastChildElement( const char* name = 0 )						{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+LastChildElement	src/external/tinyxml2.hpp	/^    const XMLConstHandle LastChildElement( const char* name = 0 ) const				{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+LinkEndChild	src/external/tinyxml2.hpp	/^    XMLNode* LinkEndChild( XMLNode* addThis )	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+LoadFile	src/external/tinyxml2.cpp	/^XMLError XMLDocument::LoadFile( FILE* fp )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+LoadFile	src/external/tinyxml2.cpp	/^XMLError XMLDocument::LoadFile( const char* filename )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+LodePNGBitReader	src/external/lodepng.cpp	/^} LodePNGBitReader;$/;"	t	typeref:struct:__anone812e0480208	file:
+LodePNGBitReader_init	src/external/lodepng.cpp	/^static unsigned LodePNGBitReader_init(LodePNGBitReader* reader, const unsigned char* data, size_/;"	f	typeref:typename:unsigned	file:
+LodePNGBitWriter	src/external/lodepng.cpp	/^} LodePNGBitWriter;$/;"	t	typeref:struct:__anone812e0480108	file:
+LodePNGBitWriter_init	src/external/lodepng.cpp	/^static void LodePNGBitWriter_init(LodePNGBitWriter* writer, ucvector* data) {$/;"	f	typeref:typename:void	file:
+LodePNGColorMode	src/external/lodepng.hpp	/^typedef struct LodePNGColorMode {$/;"	s
+LodePNGColorMode	src/external/lodepng.hpp	/^} LodePNGColorMode;$/;"	t	typeref:struct:LodePNGColorMode
+LodePNGColorStats	src/external/lodepng.hpp	/^typedef struct LodePNGColorStats {$/;"	s
+LodePNGColorStats	src/external/lodepng.hpp	/^} LodePNGColorStats;$/;"	t	typeref:struct:LodePNGColorStats
+LodePNGColorType	src/external/lodepng.hpp	/^typedef enum LodePNGColorType {$/;"	g
+LodePNGColorType	src/external/lodepng.hpp	/^} LodePNGColorType;$/;"	t	typeref:enum:LodePNGColorType
+LodePNGCompressSettings	src/external/lodepng.hpp	/^struct LodePNGCompressSettings \/*deflate = compress*\/ {$/;"	s
+LodePNGCompressSettings	src/external/lodepng.hpp	/^typedef struct LodePNGCompressSettings LodePNGCompressSettings;$/;"	t	typeref:struct:LodePNGCompressSettings
+LodePNGDecoderSettings	src/external/lodepng.hpp	/^typedef struct LodePNGDecoderSettings {$/;"	s
+LodePNGDecoderSettings	src/external/lodepng.hpp	/^} LodePNGDecoderSettings;$/;"	t	typeref:struct:LodePNGDecoderSettings
+LodePNGDecompressSettings	src/external/lodepng.hpp	/^struct LodePNGDecompressSettings {$/;"	s
+LodePNGDecompressSettings	src/external/lodepng.hpp	/^typedef struct LodePNGDecompressSettings LodePNGDecompressSettings;$/;"	t	typeref:struct:LodePNGDecompressSettings
+LodePNGEncoderSettings	src/external/lodepng.hpp	/^typedef struct LodePNGEncoderSettings {$/;"	s
+LodePNGEncoderSettings	src/external/lodepng.hpp	/^} LodePNGEncoderSettings;$/;"	t	typeref:struct:LodePNGEncoderSettings
+LodePNGFilterStrategy	src/external/lodepng.hpp	/^typedef enum LodePNGFilterStrategy {$/;"	g
+LodePNGFilterStrategy	src/external/lodepng.hpp	/^} LodePNGFilterStrategy;$/;"	t	typeref:enum:LodePNGFilterStrategy
+LodePNGIText_cleanup	src/external/lodepng.cpp	/^static void LodePNGIText_cleanup(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LodePNGIText_copy	src/external/lodepng.cpp	/^static unsigned LodePNGIText_copy(LodePNGInfo* dest, const LodePNGInfo* source) {$/;"	f	typeref:typename:unsigned	file:
+LodePNGIText_init	src/external/lodepng.cpp	/^static void LodePNGIText_init(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LodePNGInfo	src/external/lodepng.hpp	/^typedef struct LodePNGInfo {$/;"	s
+LodePNGInfo	src/external/lodepng.hpp	/^} LodePNGInfo;$/;"	t	typeref:struct:LodePNGInfo
+LodePNGState	src/external/lodepng.hpp	/^typedef struct LodePNGState {$/;"	s
+LodePNGState	src/external/lodepng.hpp	/^} LodePNGState;$/;"	t	typeref:struct:LodePNGState
+LodePNGText_cleanup	src/external/lodepng.cpp	/^static void LodePNGText_cleanup(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LodePNGText_copy	src/external/lodepng.cpp	/^static unsigned LodePNGText_copy(LodePNGInfo* dest, const LodePNGInfo* source) {$/;"	f	typeref:typename:unsigned	file:
+LodePNGText_init	src/external/lodepng.cpp	/^static void LodePNGText_init(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LodePNGTime	src/external/lodepng.hpp	/^typedef struct LodePNGTime {$/;"	s
+LodePNGTime	src/external/lodepng.hpp	/^} LodePNGTime;$/;"	t	typeref:struct:LodePNGTime
+LodePNGUnknownChunks_cleanup	src/external/lodepng.cpp	/^static void LodePNGUnknownChunks_cleanup(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LodePNGUnknownChunks_copy	src/external/lodepng.cpp	/^static unsigned LodePNGUnknownChunks_copy(LodePNGInfo* dest, const LodePNGInfo* src) {$/;"	f	typeref:typename:unsigned	file:
+LodePNGUnknownChunks_init	src/external/lodepng.cpp	/^static void LodePNGUnknownChunks_init(LodePNGInfo* info) {$/;"	f	typeref:typename:void	file:
+LongFitsIntoSizeTMinusOne	src/external/tinyxml2.cpp	/^struct LongFitsIntoSizeTMinusOne {$/;"	s	namespace:tinyxml2	file:
+LongFitsIntoSizeTMinusOne	src/external/tinyxml2.cpp	/^struct LongFitsIntoSizeTMinusOne<false> {$/;"	s	namespace:tinyxml2	file:
+MAX_SUPPORTED_DEFLATE_LENGTH	src/external/lodepng.cpp	/^static const size_t MAX_SUPPORTED_DEFLATE_LENGTH = 258;$/;"	v	typeref:typename:const size_t	file:
+MIMode	.vscode/launch.json	/^        "MIMode": "gdb",$/;"	s	object:configurations.0
+MarkInUse	src/external/tinyxml2.cpp	/^void XMLDocument::MarkInUse(const XMLNode* const node)$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+Mem	src/external/tinyxml2.hpp	/^    T* Mem() {$/;"	f	class:tinyxml2::DynArray	typeref:typename:T *
+Mem	src/external/tinyxml2.hpp	/^    const T* Mem() const				{$/;"	f	class:tinyxml2::DynArray	typeref:typename:const T *
+MemPool	src/external/tinyxml2.hpp	/^    MemPool() {}$/;"	f	class:tinyxml2::MemPool
+MemPool	src/external/tinyxml2.hpp	/^class MemPool$/;"	c	namespace:tinyxml2
+MemPoolT	src/external/tinyxml2.hpp	/^    MemPoolT() : _blockPtrs(), _root(0), _currentAllocs(0), _nAllocs(0), _maxAllocs(0), _nUntrac/;"	f	class:tinyxml2::MemPoolT
+MemPoolT	src/external/tinyxml2.hpp	/^class MemPoolT : public MemPool$/;"	c	namespace:tinyxml2
+NEEDS_DELETE	src/external/tinyxml2.hpp	/^        NEEDS_DELETE = 0x200$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0203
+NEEDS_ENTITY_PROCESSING	src/external/tinyxml2.hpp	/^        NEEDS_ENTITY_PROCESSING			= 0x01,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+NEEDS_FLUSH	src/external/tinyxml2.hpp	/^        NEEDS_FLUSH = 0x100,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0203
+NEEDS_NEWLINE_NORMALIZATION	src/external/tinyxml2.hpp	/^        NEEDS_NEWLINE_NORMALIZATION		= 0x02,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+NEEDS_WHITESPACE_COLLAPSING	src/external/tinyxml2.hpp	/^        NEEDS_WHITESPACE_COLLAPSING     = 0x04,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+NUM_CODE_LENGTH_CODES	src/external/lodepng.cpp	/^#define NUM_CODE_LENGTH_CODES /;"	d	file:
+NUM_DEFLATE_CODE_SYMBOLS	src/external/lodepng.cpp	/^#define NUM_DEFLATE_CODE_SYMBOLS /;"	d	file:
+NUM_DISTANCE_SYMBOLS	src/external/lodepng.cpp	/^#define NUM_DISTANCE_SYMBOLS /;"	d	file:
+NUM_ENTITIES	src/external/tinyxml2.cpp	/^static const int NUM_ENTITIES = 5;$/;"	v	namespace:tinyxml2	typeref:typename:const int	file:
+Name	src/external/tinyxml2.cpp	/^const char* XMLAttribute::Name() const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:const char *
+Name	src/external/tinyxml2.hpp	/^    const char* Name() const		{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const char *
+NewComment	src/external/tinyxml2.cpp	/^XMLComment* XMLDocument::NewComment( const char* str )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLComment *
+NewDeclaration	src/external/tinyxml2.cpp	/^XMLDeclaration* XMLDocument::NewDeclaration( const char* str )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLDeclaration *
+NewElement	src/external/tinyxml2.cpp	/^XMLElement* XMLDocument::NewElement( const char* name )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLElement *
+NewText	src/external/tinyxml2.cpp	/^XMLText* XMLDocument::NewText( const char* str )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLText *
+NewUnknown	src/external/tinyxml2.cpp	/^XMLUnknown* XMLDocument::NewUnknown( const char* str )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLUnknown *
+Next	src/external/tinyxml2.hpp	/^    const XMLAttribute* Next() const {$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:const XMLAttribute *
+NextSibling	src/external/tinyxml2.hpp	/^    XMLHandle NextSibling()													{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+NextSibling	src/external/tinyxml2.hpp	/^    XMLNode*	NextSibling()								{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+NextSibling	src/external/tinyxml2.hpp	/^    const XMLConstHandle NextSibling() const										{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+NextSibling	src/external/tinyxml2.hpp	/^    const XMLNode*	NextSibling() const						{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLNode *
+NextSiblingElement	src/external/tinyxml2.cpp	/^const XMLElement* XMLNode::NextSiblingElement( const char* name ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+NextSiblingElement	src/external/tinyxml2.hpp	/^    XMLElement*	NextSiblingElement( const char* name = 0 )	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLElement *
+NextSiblingElement	src/external/tinyxml2.hpp	/^    XMLHandle NextSiblingElement( const char* name = 0 )					{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+NextSiblingElement	src/external/tinyxml2.hpp	/^    const XMLConstHandle NextSiblingElement( const char* name = 0 ) const			{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+NoChildren	src/external/tinyxml2.hpp	/^    bool NoChildren() const					{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:bool
+OBJECTS	makefile	/^OBJECTS := $(patsubst $(SRCDIR)\/%,$(BUILDDIR)\/%,$(SOURCES:.$(SRCEXT)=.o))$/;"	m
+OPEN	src/external/tinyxml2.hpp	/^        OPEN,		\/\/ <foo>$/;"	e	enum:tinyxml2::XMLElement::ElementClosingType
+OpenElement	src/external/tinyxml2.cpp	/^void XMLPrinter::OpenElement( const char* name, bool compactMode )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+OptionException	src/external/cxxopts.hpp	/^    OptionException(const std::string& message)$/;"	f	class:cxxopts::OptionException
+OptionException	src/external/cxxopts.hpp	/^  class OptionException : public std::exception$/;"	c	namespace:cxxopts
+OptionParseException	src/external/cxxopts.hpp	/^    OptionParseException(const std::string& message)$/;"	f	class:cxxopts::OptionParseException
+OptionParseException	src/external/cxxopts.hpp	/^  class OptionParseException : public OptionException$/;"	c	namespace:cxxopts
+OptionSpecException	src/external/cxxopts.hpp	/^    OptionSpecException(const std::string& message)$/;"	f	class:cxxopts::OptionSpecException
+OptionSpecException	src/external/cxxopts.hpp	/^  class OptionSpecException : public OptionException$/;"	c	namespace:cxxopts
+PARAMSET_HPP	src/core/paramset.hpp	/^#define PARAMSET_HPP$/;"	d
+PARSER_HPP	src/core/parser.hpp	/^#define PARSER_HPP$/;"	d
+PRESERVE_WHITESPACE	src/external/tinyxml2.hpp	/^    PRESERVE_WHITESPACE,$/;"	e	enum:tinyxml2::Whitespace
+ParamSet	src/core/paramset.hpp	/^        ParamSet() {}$/;"	f	class:rt3::ParamSet
+ParamSet	src/core/paramset.hpp	/^    class ParamSet$/;"	c	namespace:rt3
+ParamSetItem	src/core/paramset.hpp	/^        ParamSetItem(unique_ptr<T[]> v, size_t sz = 1) : values(std::move(v)), size(sz) {}      /;"	f	class:rt3::ParamSetItem
+ParamSetItem	src/core/paramset.hpp	/^    class ParamSetItem$/;"	c	namespace:rt3
+Parent	src/external/tinyxml2.hpp	/^    XMLNode* Parent()						{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+Parent	src/external/tinyxml2.hpp	/^    const XMLNode*	Parent() const			{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLNode *
+Parse	src/external/tinyxml2.cpp	/^XMLError XMLDocument::Parse( const char* p, size_t len )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+Parse	src/external/tinyxml2.cpp	/^void XMLDocument::Parse()$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+ParseAttributes	src/external/tinyxml2.cpp	/^char* XMLElement::ParseAttributes( char* p, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLAttribute::ParseDeep( char* p, bool processEntities, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLComment::ParseDeep( char* p, StrPair*, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLComment	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLDeclaration::ParseDeep( char* p, StrPair*, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLElement::ParseDeep( char* p, StrPair* parentEndTag, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLNode::ParseDeep( char* p, StrPair* parentEndTag, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLText::ParseDeep( char* p, StrPair*, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLText	typeref:typename:char *
+ParseDeep	src/external/tinyxml2.cpp	/^char* XMLUnknown::ParseDeep( char* p, StrPair*, int* curLineNumPtr )$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:char *
+ParseName	src/external/tinyxml2.cpp	/^char* StrPair::ParseName( char* p )$/;"	f	class:tinyxml2::StrPair	typeref:typename:char *
+ParseText	src/external/tinyxml2.cpp	/^char* StrPair::ParseText( char* p, const char* endTag, int strFlags, int* curLineNumPtr )$/;"	f	class:tinyxml2::StrPair	typeref:typename:char *
+Parser	src/core/parser.hpp	/^    Parser() {}$/;"	f	class:Parser
+Parser	src/core/parser.hpp	/^    Parser(std::string filename) : filename(filename) {}$/;"	f	class:Parser
+Parser	src/core/parser.hpp	/^class Parser$/;"	c
+PeekTop	src/external/tinyxml2.hpp	/^    const T& PeekTop() const            {$/;"	f	class:tinyxml2::DynArray	typeref:typename:const T &
+Pixel	src/header.hpp	/^typedef Vector3 Pixel;$/;"	t	typeref:typename:Vector3
+Point2	src/header.hpp	/^typedef std::pair<int,int> Point2;$/;"	t	typeref:typename:std::pair<int,int>
+Pop	src/external/tinyxml2.hpp	/^    T Pop() {$/;"	f	class:tinyxml2::DynArray	typeref:typename:T
+PopArr	src/external/tinyxml2.hpp	/^    void PopArr( int count ) {$/;"	f	class:tinyxml2::DynArray	typeref:typename:void
+PopDepth	src/external/tinyxml2.cpp	/^void XMLDocument::PopDepth()$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+PreviousSibling	src/external/tinyxml2.hpp	/^    XMLHandle PreviousSibling()												{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+PreviousSibling	src/external/tinyxml2.hpp	/^    XMLNode*	PreviousSibling()							{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+PreviousSibling	src/external/tinyxml2.hpp	/^    const XMLConstHandle PreviousSibling() const									{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+PreviousSibling	src/external/tinyxml2.hpp	/^    const XMLNode*	PreviousSibling() const					{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLNode *
+PreviousSiblingElement	src/external/tinyxml2.cpp	/^const XMLElement* XMLNode::PreviousSiblingElement( const char* name ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+PreviousSiblingElement	src/external/tinyxml2.hpp	/^    XMLElement*	PreviousSiblingElement( const char* name = 0 ) {$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLElement *
+PreviousSiblingElement	src/external/tinyxml2.hpp	/^    XMLHandle PreviousSiblingElement( const char* name = 0 )				{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle
+PreviousSiblingElement	src/external/tinyxml2.hpp	/^    const XMLConstHandle PreviousSiblingElement( const char* name = 0 ) const		{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLConstHandle
+Print	src/external/tinyxml2.cpp	/^void XMLDocument::Print( XMLPrinter* streamer ) const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+Print	src/external/tinyxml2.cpp	/^void XMLPrinter::Print( const char* format, ... )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PrintError	src/external/tinyxml2.cpp	/^void XMLDocument::PrintError() const$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+PrintSpace	src/external/tinyxml2.cpp	/^void XMLPrinter::PrintSpace( int depth )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PrintString	src/external/tinyxml2.cpp	/^void XMLPrinter::PrintString( const char* p, bool restricted )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+ProcessEntities	src/external/tinyxml2.hpp	/^    bool ProcessEntities() const		{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:bool
+Projeto 02	README.md	/^# Projeto 02$/;"	c
+Push	src/external/tinyxml2.hpp	/^    void Push( T t ) {$/;"	f	class:tinyxml2::DynArray	typeref:typename:void
+PushArr	src/external/tinyxml2.hpp	/^    T* PushArr( int count ) {$/;"	f	class:tinyxml2::DynArray	typeref:typename:T *
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute( const char* name, bool v )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute( const char* name, const char* value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute( const char* name, double v )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute( const char* name, int v )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute( const char* name, unsigned v )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute(const char* name, int64_t v)$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushAttribute	src/external/tinyxml2.cpp	/^void XMLPrinter::PushAttribute(const char* name, uint64_t v)$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushComment	src/external/tinyxml2.cpp	/^void XMLPrinter::PushComment( const char* comment )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushDeclaration	src/external/tinyxml2.cpp	/^void XMLPrinter::PushDeclaration( const char* value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushDepth	src/external/tinyxml2.cpp	/^void XMLDocument::PushDepth()$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+PushHeader	src/external/tinyxml2.cpp	/^void XMLPrinter::PushHeader( bool writeBOM, bool writeDec )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( bool value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( const char* text, bool cdata )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( double value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( float value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( int value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( int64_t value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( uint64_t value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushText	src/external/tinyxml2.cpp	/^void XMLPrinter::PushText( unsigned value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+PushUnknown	src/external/tinyxml2.cpp	/^void XMLPrinter::PushUnknown( const char* value )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+Putc	src/external/tinyxml2.cpp	/^void XMLPrinter::Putc( char ch )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+QueryAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryAttribute( const char* name, double* value ) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryAttribute( const char* name, float* value ) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryAttribute( const char* name, int* value ) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryAttribute( const char* name, unsigned int* value ) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryAttribute(const char* name, int64_t* value) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryAttribute( const char* name, bool* value ) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryAttribute(const char* name, uint64_t* value) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryBoolAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryBoolAttribute( const char* name, bool* value ) const				{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryBoolText	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryBoolText( bool* bval ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryBoolValue	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryBoolValue( bool* value ) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryDoubleAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryDoubleAttribute( const char* name, double* value ) const			{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryDoubleText	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryDoubleText( double* dval ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryDoubleValue	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryDoubleValue( double* value ) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryFloatAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryFloatAttribute( const char* name, float* value ) const			{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryFloatText	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryFloatText( float* fval ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryFloatValue	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryFloatValue( float* value ) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryInt64Attribute	src/external/tinyxml2.hpp	/^	XMLError QueryInt64Attribute(const char* name, int64_t* value) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryInt64Text	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryInt64Text(int64_t* ival) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryInt64Value	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryInt64Value(int64_t* value) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryIntAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryIntAttribute( const char* name, int* value ) const				{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryIntText	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryIntText( int* ival ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryIntValue	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryIntValue( int* value ) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryStringAttribute	src/external/tinyxml2.hpp	/^	XMLError QueryStringAttribute(const char* name, const char** value) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryUnsigned64Attribute	src/external/tinyxml2.hpp	/^    XMLError QueryUnsigned64Attribute(const char* name, uint64_t* value) const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryUnsigned64Text	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryUnsigned64Text(uint64_t* ival) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryUnsigned64Value	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryUnsigned64Value(uint64_t* value) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+QueryUnsignedAttribute	src/external/tinyxml2.hpp	/^    XMLError QueryUnsignedAttribute( const char* name, unsigned int* value ) const	{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryUnsignedText	src/external/tinyxml2.cpp	/^XMLError XMLElement::QueryUnsignedText( unsigned* uval ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLError
+QueryUnsignedValue	src/external/tinyxml2.cpp	/^XMLError XMLAttribute::QueryUnsignedValue( unsigned int* value ) const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:XMLError
+RQUOTE	src/external/cxxopts.hpp	/^    const std::string RQUOTE("\\'");$/;"	v	namespace:cxxopts::__anonbf52ef1d0511	typeref:typename:const std::string
+RT	src/core/api.hpp	/^        void RT() {$/;"	f	class:rt3::API	typeref:typename:void
+ReadBOM	src/external/tinyxml2.cpp	/^const char* XMLUtil::ReadBOM( const char* p, bool* bom )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:const char *
+Reset	src/external/tinyxml2.cpp	/^void StrPair::Reset()$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+RootElement	src/external/tinyxml2.hpp	/^    XMLElement* RootElement()				{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLElement *
+RootElement	src/external/tinyxml2.hpp	/^    const XMLElement* RootElement() const	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:const XMLElement *
+SCENE_HPP	src/core/scene.hpp	/^#define SCENE_HPP$/;"	d
+SINGLE_QUOTE	src/external/tinyxml2.cpp	/^static const char SINGLE_QUOTE			= '\\'';$/;"	v	typeref:typename:const char	file:
+SOURCES	makefile	/^SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))$/;"	m
+SRCEXT	makefile	/^SRCEXT := cpp$/;"	m
+SaveFile	src/external/tinyxml2.cpp	/^XMLError XMLDocument::SaveFile( FILE* fp, bool compact )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+SaveFile	src/external/tinyxml2.cpp	/^XMLError XMLDocument::SaveFile( const char* filename, bool compact )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+Scene	src/core/scene.hpp	/^    Scene() {}$/;"	f	class:rt3::Scene
+Scene	src/core/scene.hpp	/^    Scene(Background &bg) : background(bg) {}$/;"	f	class:rt3::Scene
+Scene	src/core/scene.hpp	/^class Scene$/;"	c	namespace:rt3
+SealElementIfJustOpened	src/external/tinyxml2.cpp	/^void XMLPrinter::SealElementIfJustOpened()$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+Set	src/external/tinyxml2.hpp	/^    void Set( char* start, char* end, int flags ) {$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( bool v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( const char* v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( double v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( float v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( int v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute( unsigned v )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute(int64_t v)$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.cpp	/^void XMLAttribute::SetAttribute(uint64_t v)$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^	void SetAttribute(const char* name, int64_t value) {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, bool value )			{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, const char* value )	{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, double value )		{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, float value )		{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, int value )			{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute( const char* name, unsigned value )		{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetAttribute	src/external/tinyxml2.hpp	/^    void SetAttribute(const char* name, uint64_t value) {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetBOM	src/external/tinyxml2.hpp	/^    void SetBOM( bool useBOM ) {$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+SetBoolSerialization	src/external/tinyxml2.cpp	/^void XMLUtil::SetBoolSerialization(const char* writeTrue, const char* writeFalse)$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+SetCData	src/external/tinyxml2.hpp	/^    void SetCData( bool isCData )			{$/;"	f	class:tinyxml2::XMLText	typeref:typename:void
+SetError	src/external/tinyxml2.cpp	/^void XMLDocument::SetError( XMLError error, int lineNum, const char* format, ... )$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:void
+SetInternedStr	src/external/tinyxml2.hpp	/^    void SetInternedStr( const char* str ) {$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+SetName	src/external/tinyxml2.cpp	/^void XMLAttribute::SetName( const char* n )$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:void
+SetName	src/external/tinyxml2.hpp	/^    void SetName( const char* str, bool staticMem=false )	{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetStr	src/external/tinyxml2.cpp	/^void StrPair::SetStr( const char* str, int flags )$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void	XMLElement::SetText( const char* inText )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText( bool v )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText( double v )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText( float v )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText( int v )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText( unsigned v )$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText(int64_t v)$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetText	src/external/tinyxml2.cpp	/^void XMLElement::SetText(uint64_t v) {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:void
+SetTracked	src/external/tinyxml2.hpp	/^    void SetTracked() {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:void
+SetUserData	src/external/tinyxml2.hpp	/^	void SetUserData(void* userData)	{ _userData = userData; }$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+SetValue	src/external/tinyxml2.cpp	/^void XMLNode::SetValue( const char* str, bool staticMem )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+ShallowClone	src/external/tinyxml2.cpp	/^XMLNode* XMLComment::ShallowClone( XMLDocument* doc ) const$/;"	f	class:tinyxml2::XMLComment	typeref:typename:XMLNode *
+ShallowClone	src/external/tinyxml2.cpp	/^XMLNode* XMLDeclaration::ShallowClone( XMLDocument* doc ) const$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:XMLNode *
+ShallowClone	src/external/tinyxml2.cpp	/^XMLNode* XMLElement::ShallowClone( XMLDocument* doc ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLNode *
+ShallowClone	src/external/tinyxml2.cpp	/^XMLNode* XMLText::ShallowClone( XMLDocument* doc ) const$/;"	f	class:tinyxml2::XMLText	typeref:typename:XMLNode *
+ShallowClone	src/external/tinyxml2.cpp	/^XMLNode* XMLUnknown::ShallowClone( XMLDocument* doc ) const$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:XMLNode *
+ShallowClone	src/external/tinyxml2.hpp	/^    virtual XMLNode* ShallowClone( XMLDocument* \/*document*\/ ) const	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLNode *
+ShallowEqual	src/external/tinyxml2.cpp	/^bool XMLComment::ShallowEqual( const XMLNode* compare ) const$/;"	f	class:tinyxml2::XMLComment	typeref:typename:bool
+ShallowEqual	src/external/tinyxml2.cpp	/^bool XMLDeclaration::ShallowEqual( const XMLNode* compare ) const$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:bool
+ShallowEqual	src/external/tinyxml2.cpp	/^bool XMLElement::ShallowEqual( const XMLNode* compare ) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:bool
+ShallowEqual	src/external/tinyxml2.cpp	/^bool XMLText::ShallowEqual( const XMLNode* compare ) const$/;"	f	class:tinyxml2::XMLText	typeref:typename:bool
+ShallowEqual	src/external/tinyxml2.cpp	/^bool XMLUnknown::ShallowEqual( const XMLNode* compare ) const$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:bool
+ShallowEqual	src/external/tinyxml2.hpp	/^    virtual bool ShallowEqual( const XMLNode* \/*compare*\/ ) const	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:bool
+SignedCheck	src/external/cxxopts.hpp	/^      struct SignedCheck<T, false>$/;"	s	namespace:cxxopts::values::detail
+SignedCheck	src/external/cxxopts.hpp	/^      struct SignedCheck<T, true>$/;"	s	namespace:cxxopts::values::detail
+Size	src/external/tinyxml2.hpp	/^    int Size() const					{$/;"	f	class:tinyxml2::DynArray	typeref:typename:int
+SkipWhiteSpace	src/external/tinyxml2.hpp	/^    static char* SkipWhiteSpace( char* const p, int* curLineNumPtr ) {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:char *
+SkipWhiteSpace	src/external/tinyxml2.hpp	/^    static const char* SkipWhiteSpace( const char* p, int* curLineNumPtr )	{$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:const char *
+State	src/external/lodepng.cpp	/^State::State() {$/;"	f	class:lodepng::State
+State	src/external/lodepng.cpp	/^State::State(const State& other) {$/;"	f	class:lodepng::State
+State	src/external/lodepng.hpp	/^class State : public LodePNGState {$/;"	c	namespace:lodepng
+StrPair	src/external/tinyxml2.hpp	/^    StrPair() : _flags( 0 ), _start( 0 ), _end( 0 ) {}$/;"	f	class:tinyxml2::StrPair
+StrPair	src/external/tinyxml2.hpp	/^class TINYXML2_LIB StrPair$/;"	c	namespace:tinyxml2
+String	src/external/cxxopts.hpp	/^  typedef icu::UnicodeString String;$/;"	t	namespace:cxxopts	typeref:typename:icu::UnicodeString
+String	src/external/cxxopts.hpp	/^  typedef std::string String;$/;"	t	namespace:cxxopts	typeref:typename:std::string
+StringEqual	src/external/tinyxml2.hpp	/^    inline static bool StringEqual( const char* p, const char* q, int nChar=INT_MAX )  {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+SwapRemove	src/external/tinyxml2.hpp	/^	void SwapRemove(int i) {$/;"	f	class:tinyxml2::DynArray	typeref:typename:void
+TARGET	makefile	/^TARGET := $(TARGETDIR)\/main$/;"	m
+TARGETDIR	makefile	/^TARGETDIR := bin$/;"	m
+TEXT_ELEMENT	src/external/tinyxml2.hpp	/^        TEXT_ELEMENT		            = NEEDS_ENTITY_PROCESSING | NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+TEXT_ELEMENT_LEAVE_ENTITIES	src/external/tinyxml2.hpp	/^        TEXT_ELEMENT_LEAVE_ENTITIES		= NEEDS_NEWLINE_NORMALIZATION,$/;"	e	enum:tinyxml2::StrPair::__anonb4e979eb0103
+TINYXML2_DEBUG	src/external/tinyxml2.hpp	/^#       define TINYXML2_DEBUG$/;"	d
+TINYXML2_INCLUDED	src/external/tinyxml2.hpp	/^#define TINYXML2_INCLUDED$/;"	d
+TINYXML2_LIB	src/external/tinyxml2.hpp	/^#       define TINYXML2_LIB /;"	d
+TINYXML2_LIB	src/external/tinyxml2.hpp	/^#       define TINYXML2_LIB$/;"	d
+TINYXML2_LIB	src/external/tinyxml2.hpp	/^#   define TINYXML2_LIB /;"	d
+TINYXML2_LIB	src/external/tinyxml2.hpp	/^#   define TINYXML2_LIB$/;"	d
+TINYXML2_MAJOR_VERSION	src/external/tinyxml2.hpp	/^#define TINYXML2_MAJOR_VERSION /;"	d
+TINYXML2_MAX_ELEMENT_DEPTH	src/external/tinyxml2.hpp	/^static const int TINYXML2_MAX_ELEMENT_DEPTH = 100;$/;"	v	typeref:typename:const int
+TINYXML2_MINOR_VERSION	src/external/tinyxml2.hpp	/^#define TINYXML2_MINOR_VERSION /;"	d
+TINYXML2_PATCH_VERSION	src/external/tinyxml2.hpp	/^#define TINYXML2_PATCH_VERSION /;"	d
+TIXML2_MAJOR_VERSION	src/external/tinyxml2.hpp	/^static const int TIXML2_MAJOR_VERSION = 8;$/;"	v	typeref:typename:const int
+TIXML2_MINOR_VERSION	src/external/tinyxml2.hpp	/^static const int TIXML2_MINOR_VERSION = 0;$/;"	v	typeref:typename:const int
+TIXML2_PATCH_VERSION	src/external/tinyxml2.hpp	/^static const int TIXML2_PATCH_VERSION = 0;$/;"	v	typeref:typename:const int
+TIXMLASSERT	src/external/tinyxml2.hpp	/^#       define TIXMLASSERT /;"	d
+TIXMLASSERT	src/external/tinyxml2.hpp	/^#       define TIXMLASSERT(/;"	d
+TIXMLASSERT	src/external/tinyxml2.hpp	/^#   define TIXMLASSERT(/;"	d
+TIXML_SNPRINTF	src/external/tinyxml2.cpp	/^	#define TIXML_SNPRINTF	/;"	d	file:
+TIXML_SNPRINTF	src/external/tinyxml2.cpp	/^	static inline int TIXML_SNPRINTF( char* buffer, size_t size, const char* format, ... )$/;"	f	typeref:typename:int	file:
+TIXML_SSCANF	src/external/tinyxml2.cpp	/^	#define TIXML_SSCANF	/;"	d	file:
+TIXML_SSCANF	src/external/tinyxml2.cpp	/^	#define TIXML_SSCANF /;"	d	file:
+TIXML_UTF_LEAD_0	src/external/tinyxml2.cpp	/^static const unsigned char TIXML_UTF_LEAD_0 = 0xefU;$/;"	v	typeref:typename:const unsigned char	file:
+TIXML_UTF_LEAD_1	src/external/tinyxml2.cpp	/^static const unsigned char TIXML_UTF_LEAD_1 = 0xbbU;$/;"	v	typeref:typename:const unsigned char	file:
+TIXML_UTF_LEAD_2	src/external/tinyxml2.cpp	/^static const unsigned char TIXML_UTF_LEAD_2 = 0xbfU;$/;"	v	typeref:typename:const unsigned char	file:
+TIXML_VSCPRINTF	src/external/tinyxml2.cpp	/^		#define TIXML_VSCPRINTF /;"	d	file:
+TIXML_VSCPRINTF	src/external/tinyxml2.cpp	/^		static inline int TIXML_VSCPRINTF( const char* format, va_list va )$/;"	f	typeref:typename:int	file:
+TIXML_VSCPRINTF	src/external/tinyxml2.cpp	/^	#define TIXML_VSCPRINTF	/;"	d	file:
+TIXML_VSCPRINTF	src/external/tinyxml2.cpp	/^	static inline int TIXML_VSCPRINTF( const char* format, va_list va )$/;"	f	typeref:typename:int	file:
+TIXML_VSNPRINTF	src/external/tinyxml2.cpp	/^	#define TIXML_VSNPRINTF	/;"	d	file:
+TIXML_VSNPRINTF	src/external/tinyxml2.cpp	/^	#define TIXML_VSNPRINTF /;"	d	file:
+TIXML_VSNPRINTF	src/external/tinyxml2.cpp	/^	static inline int TIXML_VSNPRINTF( char* buffer, size_t size, const char* format, va_list va )$/;"	f	typeref:typename:int	file:
+ToBool	src/external/tinyxml2.cpp	/^bool XMLUtil::ToBool( const char* str, bool* value )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToComment	src/external/tinyxml2.hpp	/^    virtual XMLComment*		ToComment()		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLComment *
+ToComment	src/external/tinyxml2.hpp	/^    virtual XMLComment*	ToComment()					{$/;"	f	class:tinyxml2::XMLComment	typeref:typename:XMLComment *
+ToComment	src/external/tinyxml2.hpp	/^    virtual const XMLComment*		ToComment() const		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLComment *
+ToComment	src/external/tinyxml2.hpp	/^    virtual const XMLComment* ToComment() const		{$/;"	f	class:tinyxml2::XMLComment	typeref:typename:const XMLComment *
+ToDeclaration	src/external/tinyxml2.hpp	/^    XMLDeclaration* ToDeclaration() 			{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLDeclaration *
+ToDeclaration	src/external/tinyxml2.hpp	/^    const XMLDeclaration* ToDeclaration() const	{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLDeclaration *
+ToDeclaration	src/external/tinyxml2.hpp	/^    virtual XMLDeclaration*	ToDeclaration()					{$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:XMLDeclaration *
+ToDeclaration	src/external/tinyxml2.hpp	/^    virtual XMLDeclaration*	ToDeclaration()	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLDeclaration *
+ToDeclaration	src/external/tinyxml2.hpp	/^    virtual const XMLDeclaration*	ToDeclaration() const	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLDeclaration *
+ToDeclaration	src/external/tinyxml2.hpp	/^    virtual const XMLDeclaration* ToDeclaration() const		{$/;"	f	class:tinyxml2::XMLDeclaration	typeref:typename:const XMLDeclaration *
+ToDocument	src/external/tinyxml2.hpp	/^    virtual XMLDocument*	ToDocument()	{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLDocument *
+ToDocument	src/external/tinyxml2.hpp	/^    virtual XMLDocument* ToDocument()				{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:XMLDocument *
+ToDocument	src/external/tinyxml2.hpp	/^    virtual const XMLDocument*		ToDocument() const		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLDocument *
+ToDocument	src/external/tinyxml2.hpp	/^    virtual const XMLDocument* ToDocument() const	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:const XMLDocument *
+ToDouble	src/external/tinyxml2.cpp	/^bool XMLUtil::ToDouble( const char* str, double* value )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToElement	src/external/tinyxml2.hpp	/^    XMLElement* ToElement() 					{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLElement *
+ToElement	src/external/tinyxml2.hpp	/^    const XMLElement* ToElement() const			{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLElement *
+ToElement	src/external/tinyxml2.hpp	/^    virtual XMLElement*		ToElement()		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLElement *
+ToElement	src/external/tinyxml2.hpp	/^    virtual XMLElement* ToElement()				{$/;"	f	class:tinyxml2::XMLElement	typeref:typename:XMLElement *
+ToElement	src/external/tinyxml2.hpp	/^    virtual const XMLElement*		ToElement() const		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+ToElement	src/external/tinyxml2.hpp	/^    virtual const XMLElement* ToElement() const {$/;"	f	class:tinyxml2::XMLElement	typeref:typename:const XMLElement *
+ToElementWithName	src/external/tinyxml2.cpp	/^const XMLElement* XMLNode::ToElementWithName( const char* name ) const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLElement *
+ToFloat	src/external/tinyxml2.cpp	/^bool XMLUtil::ToFloat( const char* str, float* value )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToInt	src/external/tinyxml2.cpp	/^bool XMLUtil::ToInt( const char* str, int* value )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToInt64	src/external/tinyxml2.cpp	/^bool XMLUtil::ToInt64(const char* str, int64_t* value)$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToNode	src/external/tinyxml2.hpp	/^    XMLNode* ToNode()							{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLNode *
+ToNode	src/external/tinyxml2.hpp	/^    const XMLNode* ToNode() const				{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLNode *
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( bool v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( double v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( float v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( int v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( int64_t v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( uint64_t v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToStr	src/external/tinyxml2.cpp	/^void XMLUtil::ToStr( unsigned v, char* buffer, int bufferSize )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:void
+ToText	src/external/tinyxml2.hpp	/^    XMLText* ToText() 							{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLText *
+ToText	src/external/tinyxml2.hpp	/^    const XMLText* ToText() const				{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLText *
+ToText	src/external/tinyxml2.hpp	/^    virtual XMLText*		ToText()		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLText *
+ToText	src/external/tinyxml2.hpp	/^    virtual XMLText* ToText()			{$/;"	f	class:tinyxml2::XMLText	typeref:typename:XMLText *
+ToText	src/external/tinyxml2.hpp	/^    virtual const XMLText*			ToText() const			{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLText *
+ToText	src/external/tinyxml2.hpp	/^    virtual const XMLText* ToText() const	{$/;"	f	class:tinyxml2::XMLText	typeref:typename:const XMLText *
+ToUnknown	src/external/tinyxml2.hpp	/^    XMLUnknown* ToUnknown() 					{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLUnknown *
+ToUnknown	src/external/tinyxml2.hpp	/^    const XMLUnknown* ToUnknown() const			{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLUnknown *
+ToUnknown	src/external/tinyxml2.hpp	/^    virtual XMLUnknown*		ToUnknown()		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:XMLUnknown *
+ToUnknown	src/external/tinyxml2.hpp	/^    virtual XMLUnknown*	ToUnknown()					{$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:XMLUnknown *
+ToUnknown	src/external/tinyxml2.hpp	/^    virtual const XMLUnknown*		ToUnknown() const		{$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const XMLUnknown *
+ToUnknown	src/external/tinyxml2.hpp	/^    virtual const XMLUnknown* ToUnknown() const		{$/;"	f	class:tinyxml2::XMLUnknown	typeref:typename:const XMLUnknown *
+ToUnsigned	src/external/tinyxml2.cpp	/^bool XMLUtil::ToUnsigned( const char* str, unsigned *value )$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+ToUnsigned64	src/external/tinyxml2.cpp	/^bool XMLUtil::ToUnsigned64(const char* str, uint64_t* value) {$/;"	f	class:tinyxml2::XMLUtil	typeref:typename:bool
+Trace	src/external/tinyxml2.hpp	/^    void Trace( const char* name ) {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:void
+TransferTo	src/external/tinyxml2.cpp	/^void StrPair::TransferTo( StrPair* other )$/;"	f	class:tinyxml2::StrPair	typeref:typename:void
+US	src/external/cxxopts.hpp	/^      using US = typename std::make_unsigned<T>::type;$/;"	t	function:cxxopts::values::integer_parser	typeref:typename:std::make_unsigned<T>::type
+UnicodeStringIterator	src/external/cxxopts.hpp	/^    UnicodeStringIterator(const icu::UnicodeString* string, int32_t pos)$/;"	f	class:cxxopts::UnicodeStringIterator
+UnicodeStringIterator	src/external/cxxopts.hpp	/^  class UnicodeStringIterator : public$/;"	c	namespace:cxxopts
+Unlink	src/external/tinyxml2.cpp	/^void XMLNode::Unlink( XMLNode* child )$/;"	f	class:tinyxml2::XMLNode	typeref:typename:void
+Unsigned64Attribute	src/external/tinyxml2.cpp	/^uint64_t XMLElement::Unsigned64Attribute(const char* name, uint64_t defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:uint64_t
+Unsigned64Text	src/external/tinyxml2.cpp	/^uint64_t XMLElement::Unsigned64Text(uint64_t defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:uint64_t
+Unsigned64Value	src/external/tinyxml2.hpp	/^    uint64_t Unsigned64Value() const {$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:uint64_t
+UnsignedAttribute	src/external/tinyxml2.cpp	/^unsigned XMLElement::UnsignedAttribute(const char* name, unsigned defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:unsigned
+UnsignedText	src/external/tinyxml2.cpp	/^unsigned XMLElement::UnsignedText(unsigned defaultValue) const$/;"	f	class:tinyxml2::XMLElement	typeref:typename:unsigned
+UnsignedValue	src/external/tinyxml2.hpp	/^    unsigned UnsignedValue() const			{$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:unsigned
+Untracked	src/external/tinyxml2.hpp	/^    int Untracked() const {$/;"	f	class:tinyxml2::MemPoolT	typeref:typename:int
+VECTOR2_HPP	src/core/vector2.hpp	/^#define VECTOR2_HPP$/;"	d
+VECTOR3_HPP	src/core/vector3.hpp	/^#define VECTOR3_HPP$/;"	d
+Value	src/external/cxxopts.hpp	/^  class Value : public std::enable_shared_from_this<Value>$/;"	c	namespace:cxxopts
+Value	src/external/tinyxml2.cpp	/^const char* XMLAttribute::Value() const$/;"	f	class:tinyxml2::XMLAttribute	typeref:typename:const char *
+Value	src/external/tinyxml2.cpp	/^const char* XMLNode::Value() const$/;"	f	class:tinyxml2::XMLNode	typeref:typename:const char *
+Vector2	src/core/vector2.hpp	/^class Vector2$/;"	c
+Vector3	src/core/vector2.hpp	/^    Vector3() {}$/;"	f	class:Vector2
+Vector3	src/core/vector2.hpp	/^    Vector3(const char* str)$/;"	f	class:Vector2
+Vector3	src/core/vector2.hpp	/^    Vector3(float e0, float e1)$/;"	f	class:Vector2
+Vector3	src/core/vector3.hpp	/^    Vector3() {}$/;"	f	class:Vector3
+Vector3	src/core/vector3.hpp	/^    Vector3(const char* str)$/;"	f	class:Vector3
+Vector3	src/core/vector3.hpp	/^    Vector3(float e0, float e1, float e2)$/;"	f	class:Vector3
+Vector3	src/core/vector3.hpp	/^class Vector3$/;"	c
+Visit	src/external/tinyxml2.cpp	/^bool XMLPrinter::Visit( const XMLComment& comment )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+Visit	src/external/tinyxml2.cpp	/^bool XMLPrinter::Visit( const XMLDeclaration& declaration )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+Visit	src/external/tinyxml2.cpp	/^bool XMLPrinter::Visit( const XMLText& text )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+Visit	src/external/tinyxml2.cpp	/^bool XMLPrinter::Visit( const XMLUnknown& unknown )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+Visit	src/external/tinyxml2.hpp	/^    virtual bool Visit( const XMLComment& \/*comment*\/ )				{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+Visit	src/external/tinyxml2.hpp	/^    virtual bool Visit( const XMLDeclaration& \/*declaration*\/ )		{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+Visit	src/external/tinyxml2.hpp	/^    virtual bool Visit( const XMLText& \/*text*\/ )					{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+Visit	src/external/tinyxml2.hpp	/^    virtual bool Visit( const XMLUnknown& \/*unknown*\/ )				{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+VisitEnter	src/external/tinyxml2.cpp	/^bool XMLPrinter::VisitEnter( const XMLDocument& doc )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+VisitEnter	src/external/tinyxml2.cpp	/^bool XMLPrinter::VisitEnter( const XMLElement& element, const XMLAttribute* attribute )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+VisitEnter	src/external/tinyxml2.hpp	/^    virtual bool VisitEnter( const XMLDocument& \/*doc*\/ )			{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+VisitEnter	src/external/tinyxml2.hpp	/^    virtual bool VisitEnter( const XMLElement& \/*element*\/, const XMLAttribute* \/*firstAttrib/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+VisitExit	src/external/tinyxml2.cpp	/^bool XMLPrinter::VisitExit( const XMLElement& element )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+VisitExit	src/external/tinyxml2.hpp	/^    virtual bool VisitExit( const XMLDocument& \/*doc*\/ )			{$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:bool
+VisitExit	src/external/tinyxml2.hpp	/^    virtual bool VisitExit( const XMLDocument& \/*doc*\/ )			{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+VisitExit	src/external/tinyxml2.hpp	/^    virtual bool VisitExit( const XMLElement& \/*element*\/ )			{$/;"	f	class:tinyxml2::XMLVisitor	typeref:typename:bool
+WRITEBIT	src/external/lodepng.cpp	/^#define WRITEBIT(/;"	d	file:
+Whitespace	src/external/tinyxml2.hpp	/^enum Whitespace {$/;"	g	namespace:tinyxml2
+WhitespaceMode	src/external/tinyxml2.hpp	/^    Whitespace WhitespaceMode() const	{$/;"	f	class:tinyxml2::XMLDocument	typeref:typename:Whitespace
+Write	src/external/tinyxml2.cpp	/^void XMLPrinter::Write( const char* data, size_t size )$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+Write	src/external/tinyxml2.hpp	/^    inline void Write( const char* data )           { Write( data, strlen( data ) ); }$/;"	f	class:tinyxml2::XMLPrinter	typeref:typename:void
+XMLAttribute	src/external/tinyxml2.hpp	/^    XMLAttribute() : _name(), _value(),_parseLineNum( 0 ), _next( 0 ), _memPool( 0 ) {}$/;"	f	class:tinyxml2::XMLAttribute
+XMLAttribute	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLAttribute$/;"	c	namespace:tinyxml2
+XMLCheckResult	src/core/parser.hpp	/^#define XMLCheckResult(/;"	d
+XMLComment	src/external/tinyxml2.cpp	/^XMLComment::XMLComment( XMLDocument* doc ) : XMLNode( doc )$/;"	f	class:tinyxml2::XMLComment
+XMLComment	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLComment : public XMLNode$/;"	c	namespace:tinyxml2
+XMLConstHandle	src/external/tinyxml2.hpp	/^    XMLConstHandle( const XMLConstHandle& ref ) : _node( ref._node ) {$/;"	f	class:tinyxml2::XMLConstHandle
+XMLConstHandle	src/external/tinyxml2.hpp	/^    explicit XMLConstHandle( const XMLNode& node ) : _node( &node ) {$/;"	f	class:tinyxml2::XMLConstHandle
+XMLConstHandle	src/external/tinyxml2.hpp	/^    explicit XMLConstHandle( const XMLNode* node ) : _node( node ) {$/;"	f	class:tinyxml2::XMLConstHandle
+XMLConstHandle	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLConstHandle$/;"	c	namespace:tinyxml2
+XMLDeclaration	src/external/tinyxml2.cpp	/^XMLDeclaration::XMLDeclaration( XMLDocument* doc ) : XMLNode( doc )$/;"	f	class:tinyxml2::XMLDeclaration
+XMLDeclaration	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLDeclaration : public XMLNode$/;"	c	namespace:tinyxml2
+XMLDocument	src/external/tinyxml2.cpp	/^XMLDocument::XMLDocument( bool processEntities, Whitespace whitespaceMode ) :$/;"	f	class:tinyxml2::XMLDocument
+XMLDocument	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLDocument : public XMLNode$/;"	c	namespace:tinyxml2
+XMLElement	src/external/tinyxml2.cpp	/^XMLElement::XMLElement( XMLDocument* doc ) : XMLNode( doc ),$/;"	f	class:tinyxml2::XMLElement
+XMLElement	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLElement : public XMLNode$/;"	c	namespace:tinyxml2
+XMLError	src/external/tinyxml2.hpp	/^enum XMLError {$/;"	g	namespace:tinyxml2
+XMLHandle	src/external/tinyxml2.hpp	/^    XMLHandle( const XMLHandle& ref ) : _node( ref._node ) {$/;"	f	class:tinyxml2::XMLHandle
+XMLHandle	src/external/tinyxml2.hpp	/^    explicit XMLHandle( XMLNode& node ) : _node( &node ) {$/;"	f	class:tinyxml2::XMLHandle
+XMLHandle	src/external/tinyxml2.hpp	/^    explicit XMLHandle( XMLNode* node ) : _node( node ) {$/;"	f	class:tinyxml2::XMLHandle
+XMLHandle	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLHandle$/;"	c	namespace:tinyxml2
+XMLNode	src/external/tinyxml2.cpp	/^XMLNode::XMLNode( XMLDocument* doc ) :$/;"	f	class:tinyxml2::XMLNode
+XMLNode	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLNode$/;"	c	namespace:tinyxml2
+XMLPrinter	src/external/tinyxml2.cpp	/^XMLPrinter::XMLPrinter( FILE* file, bool compact, int depth ) :$/;"	f	class:tinyxml2::XMLPrinter
+XMLPrinter	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLPrinter : public XMLVisitor$/;"	c	namespace:tinyxml2
+XMLText	src/external/tinyxml2.hpp	/^    explicit XMLText( XMLDocument* doc )	: XMLNode( doc ), _isCData( false )	{}$/;"	f	class:tinyxml2::XMLText
+XMLText	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLText : public XMLNode$/;"	c	namespace:tinyxml2
+XMLUnknown	src/external/tinyxml2.cpp	/^XMLUnknown::XMLUnknown( XMLDocument* doc ) : XMLNode( doc )$/;"	f	class:tinyxml2::XMLUnknown
+XMLUnknown	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLUnknown : public XMLNode$/;"	c	namespace:tinyxml2
+XMLUtil	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLUtil$/;"	c	namespace:tinyxml2
+XMLVisitor	src/external/tinyxml2.hpp	/^class TINYXML2_LIB XMLVisitor$/;"	c	namespace:tinyxml2
+XML_CAN_NOT_CONVERT_TEXT	src/external/tinyxml2.hpp	/^    XML_CAN_NOT_CONVERT_TEXT,$/;"	e	enum:tinyxml2::XMLError
+XML_ELEMENT_DEPTH_EXCEEDED	src/external/tinyxml2.hpp	/^	XML_ELEMENT_DEPTH_EXCEEDED,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_COUNT	src/external/tinyxml2.hpp	/^	XML_ERROR_COUNT$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_EMPTY_DOCUMENT	src/external/tinyxml2.hpp	/^    XML_ERROR_EMPTY_DOCUMENT,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_FILE_COULD_NOT_BE_OPENED	src/external/tinyxml2.hpp	/^    XML_ERROR_FILE_COULD_NOT_BE_OPENED,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_FILE_NOT_FOUND	src/external/tinyxml2.hpp	/^    XML_ERROR_FILE_NOT_FOUND,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_FILE_READ_ERROR	src/external/tinyxml2.hpp	/^    XML_ERROR_FILE_READ_ERROR,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_MISMATCHED_ELEMENT	src/external/tinyxml2.hpp	/^    XML_ERROR_MISMATCHED_ELEMENT,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_ATTRIBUTE	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_ATTRIBUTE,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_CDATA	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_CDATA,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_COMMENT	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_COMMENT,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_DECLARATION	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_DECLARATION,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_ELEMENT	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_ELEMENT,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_TEXT	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_TEXT,$/;"	e	enum:tinyxml2::XMLError
+XML_ERROR_PARSING_UNKNOWN	src/external/tinyxml2.hpp	/^    XML_ERROR_PARSING_UNKNOWN,$/;"	e	enum:tinyxml2::XMLError
+XML_NO_ATTRIBUTE	src/external/tinyxml2.hpp	/^    XML_NO_ATTRIBUTE,$/;"	e	enum:tinyxml2::XMLError
+XML_NO_TEXT_NODE	src/external/tinyxml2.hpp	/^    XML_NO_TEXT_NODE,$/;"	e	enum:tinyxml2::XMLError
+XML_SUCCESS	src/external/tinyxml2.hpp	/^    XML_SUCCESS = 0,$/;"	e	enum:tinyxml2::XMLError
+XML_WRONG_ATTRIBUTE_TYPE	src/external/tinyxml2.hpp	/^    XML_WRONG_ATTRIBUTE_TYPE,$/;"	e	enum:tinyxml2::XMLError
+__Testado apenas em Linux!__	README.md	/^## __Testado apenas em Linux!__$/;"	s
+__anonb4e979eb0103	src/external/tinyxml2.hpp	/^    enum {$/;"	g	class:tinyxml2::StrPair
+__anonb4e979eb0203	src/external/tinyxml2.hpp	/^    enum {$/;"	g	class:tinyxml2::StrPair
+__anonb4e979eb0303	src/external/tinyxml2.hpp	/^    enum { ITEMS_PER_BLOCK = (4 * 1024) \/ ITEM_SIZE };$/;"	g	class:tinyxml2::MemPoolT
+__anonb4e979eb0403	src/external/tinyxml2.hpp	/^    enum { BUF_SIZE = 200 };$/;"	g	class:tinyxml2::XMLAttribute
+__anonb4e979eb0503	src/external/tinyxml2.hpp	/^    enum { BUF_SIZE = 200 };$/;"	g	class:tinyxml2::XMLElement
+__anonb4e979eb0603	src/external/tinyxml2.hpp	/^    enum {$/;"	g	class:tinyxml2::XMLPrinter
+__anonbf52ef1d0408	src/external/cxxopts.hpp	/^  static constexpr struct {$/;"	s	namespace:cxxopts
+__anonbf52ef1d0511	src/external/cxxopts.hpp	/^  {$/;"	n	namespace:cxxopts
+__anonbf52ef1d0611	src/external/cxxopts.hpp	/^    {$/;"	n	namespace:cxxopts::values
+__anone812e0480108	src/external/lodepng.cpp	/^typedef struct {$/;"	s	file:
+__anone812e0480208	src/external/lodepng.cpp	/^typedef struct {$/;"	s	file:
+_allocated	src/external/tinyxml2.hpp	/^    int _allocated;		\/\/ objects allocated$/;"	m	class:tinyxml2::DynArray	typeref:typename:int
+_attributePool	src/external/tinyxml2.hpp	/^    MemPoolT< sizeof(XMLAttribute) > _attributePool;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:MemPoolT<sizeof (XMLAttribute)>
+_blockPtrs	src/external/tinyxml2.hpp	/^    DynArray< Block*, 10 > _blockPtrs;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:DynArray<Block *,10>
+_buffer	src/external/tinyxml2.hpp	/^    DynArray< char, 20 > _buffer;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:DynArray<char,20>
+_charBuffer	src/external/tinyxml2.hpp	/^    char*			_charBuffer;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:char *
+_closingType	src/external/tinyxml2.hpp	/^    ElementClosingType _closingType;$/;"	m	class:tinyxml2::XMLElement	typeref:typename:ElementClosingType
+_commentPool	src/external/tinyxml2.hpp	/^    MemPoolT< sizeof(XMLComment) >	 _commentPool;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:MemPoolT<sizeof (XMLComment)>
+_compactMode	src/external/tinyxml2.hpp	/^	bool _compactMode;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool
+_currentAllocs	src/external/tinyxml2.hpp	/^    int _currentAllocs;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:int
+_depth	src/external/tinyxml2.hpp	/^    int _depth;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:int
+_document	src/external/tinyxml2.hpp	/^		XMLDocument * _document;$/;"	m	class:tinyxml2::XMLDocument::DepthTracker	typeref:typename:XMLDocument *
+_document	src/external/tinyxml2.hpp	/^    XMLDocument*	_document;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLDocument *
+_elementJustOpened	src/external/tinyxml2.hpp	/^    bool _elementJustOpened;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool
+_elementPool	src/external/tinyxml2.hpp	/^    MemPoolT< sizeof(XMLElement) >	 _elementPool;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:MemPoolT<sizeof (XMLElement)>
+_end	src/external/tinyxml2.hpp	/^    char*   _end;$/;"	m	class:tinyxml2::StrPair	typeref:typename:char *
+_entityFlag	src/external/tinyxml2.hpp	/^    bool _entityFlag[ENTITY_RANGE];$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool[]
+_errorID	src/external/tinyxml2.hpp	/^    XMLError		_errorID;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:XMLError
+_errorLineNum	src/external/tinyxml2.hpp	/^    int             _errorLineNum;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:int
+_errorNames	src/external/tinyxml2.cpp	/^const char* XMLDocument::_errorNames[XML_ERROR_COUNT] = {$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:const char * []
+_errorNames	src/external/tinyxml2.hpp	/^	static const char* _errorNames[XML_ERROR_COUNT];$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:const char * []
+_errorStr	src/external/tinyxml2.hpp	/^    mutable StrPair	_errorStr;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:StrPair
+_firstChild	src/external/tinyxml2.hpp	/^    XMLNode*		_firstChild;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+_firstElement	src/external/tinyxml2.hpp	/^    bool _firstElement;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool
+_flags	src/external/tinyxml2.hpp	/^    int     _flags;$/;"	m	class:tinyxml2::StrPair	typeref:typename:int
+_fp	src/external/tinyxml2.hpp	/^    FILE* _fp;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:FILE *
+_isCData	src/external/tinyxml2.hpp	/^    bool _isCData;$/;"	m	class:tinyxml2::XMLText	typeref:typename:bool
+_lastChild	src/external/tinyxml2.hpp	/^    XMLNode*		_lastChild;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+_maxAllocs	src/external/tinyxml2.hpp	/^    int _maxAllocs;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:int
+_mem	src/external/tinyxml2.hpp	/^    T*  _mem;$/;"	m	class:tinyxml2::DynArray	typeref:typename:T *
+_memPool	src/external/tinyxml2.hpp	/^    MemPool*		_memPool;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:MemPool *
+_memPool	src/external/tinyxml2.hpp	/^    MemPool*        _memPool;$/;"	m	class:tinyxml2::XMLAttribute	typeref:typename:MemPool *
+_nAllocs	src/external/tinyxml2.hpp	/^    int _nAllocs;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:int
+_nUntracked	src/external/tinyxml2.hpp	/^    int _nUntracked;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:int
+_name	src/external/tinyxml2.hpp	/^    mutable StrPair _name;$/;"	m	class:tinyxml2::XMLAttribute	typeref:typename:StrPair
+_next	src/external/tinyxml2.hpp	/^    XMLAttribute*   _next;$/;"	m	class:tinyxml2::XMLAttribute	typeref:typename:XMLAttribute *
+_next	src/external/tinyxml2.hpp	/^    XMLNode*		_next;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+_node	src/external/tinyxml2.hpp	/^    XMLNode* _node;$/;"	m	class:tinyxml2::XMLHandle	typeref:typename:XMLNode *
+_node	src/external/tinyxml2.hpp	/^    const XMLNode* _node;$/;"	m	class:tinyxml2::XMLConstHandle	typeref:typename:const XMLNode *
+_parent	src/external/tinyxml2.hpp	/^    XMLNode*		_parent;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+_parseCurLineNum	src/external/tinyxml2.hpp	/^    int				_parseCurLineNum;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:int
+_parseLineNum	src/external/tinyxml2.hpp	/^    int             _parseLineNum;$/;"	m	class:tinyxml2::XMLAttribute	typeref:typename:int
+_parseLineNum	src/external/tinyxml2.hpp	/^    int             _parseLineNum;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:int
+_parsingDepth	src/external/tinyxml2.hpp	/^	int				_parsingDepth;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:int
+_pool	src/external/tinyxml2.hpp	/^    T   _pool[INITIAL_SIZE];$/;"	m	class:tinyxml2::DynArray	typeref:typename:T[]
+_prev	src/external/tinyxml2.hpp	/^    XMLNode*		_prev;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:XMLNode *
+_processEntities	src/external/tinyxml2.hpp	/^    bool			_processEntities;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:bool
+_processEntities	src/external/tinyxml2.hpp	/^    bool _processEntities;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool
+_restrictedEntityFlag	src/external/tinyxml2.hpp	/^    bool _restrictedEntityFlag[ENTITY_RANGE];$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:bool[]
+_root	src/external/tinyxml2.hpp	/^    Item* _root;$/;"	m	class:tinyxml2::MemPoolT	typeref:typename:Item *
+_rootAttribute	src/external/tinyxml2.hpp	/^    XMLAttribute* _rootAttribute;$/;"	m	class:tinyxml2::XMLElement	typeref:typename:XMLAttribute *
+_size	src/external/tinyxml2.hpp	/^    int _size;			\/\/ number objects in use$/;"	m	class:tinyxml2::DynArray	typeref:typename:int
+_stack	src/external/tinyxml2.hpp	/^    DynArray< const char*, 10 > _stack;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:DynArray<const char *,10>
+_start	src/external/tinyxml2.hpp	/^    char*   _start;$/;"	m	class:tinyxml2::StrPair	typeref:typename:char *
+_textDepth	src/external/tinyxml2.hpp	/^    int _textDepth;$/;"	m	class:tinyxml2::XMLPrinter	typeref:typename:int
+_textPool	src/external/tinyxml2.hpp	/^    MemPoolT< sizeof(XMLText) >		 _textPool;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:MemPoolT<sizeof (XMLText)>
+_unlinked	src/external/tinyxml2.hpp	/^	DynArray<XMLNode*, 10> _unlinked;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:DynArray<XMLNode *,10>
+_userData	src/external/tinyxml2.hpp	/^	void*			_userData;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:void *
+_value	src/external/tinyxml2.hpp	/^    mutable StrPair	_value;$/;"	m	class:tinyxml2::XMLNode	typeref:typename:StrPair
+_value	src/external/tinyxml2.hpp	/^    mutable StrPair _value;$/;"	m	class:tinyxml2::XMLAttribute	typeref:typename:StrPair
+_whitespaceMode	src/external/tinyxml2.hpp	/^    Whitespace		_whitespaceMode;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:Whitespace
+_writeBOM	src/external/tinyxml2.hpp	/^    bool			_writeBOM;$/;"	m	class:tinyxml2::XMLDocument	typeref:typename:bool
+add	src/core/film.hpp	/^    inline void add(Point2 p, rgb color)$/;"	f	class:rt3::Film	typeref:typename:void
+add	src/core/paramset.hpp	/^        inline void add(const string &new_key, unique_ptr<T []> values, size_t size) {$/;"	f	class:rt3::ParamSet	typeref:typename:void
+addChunk_IDAT	src/external/lodepng.cpp	/^static unsigned addChunk_IDAT(ucvector* out, const unsigned char* data, size_t datasize,$/;"	f	typeref:typename:unsigned	file:
+addChunk_IEND	src/external/lodepng.cpp	/^static unsigned addChunk_IEND(ucvector* out) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_IHDR	src/external/lodepng.cpp	/^static unsigned addChunk_IHDR(ucvector* out, unsigned w, unsigned h,$/;"	f	typeref:typename:unsigned	file:
+addChunk_PLTE	src/external/lodepng.cpp	/^static unsigned addChunk_PLTE(ucvector* out, const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_bKGD	src/external/lodepng.cpp	/^static unsigned addChunk_bKGD(ucvector* out, const LodePNGInfo* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_cHRM	src/external/lodepng.cpp	/^static unsigned addChunk_cHRM(ucvector* out, const LodePNGInfo* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_gAMA	src/external/lodepng.cpp	/^static unsigned addChunk_gAMA(ucvector* out, const LodePNGInfo* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_iCCP	src/external/lodepng.cpp	/^static unsigned addChunk_iCCP(ucvector* out, const LodePNGInfo* info, LodePNGCompressSettings* z/;"	f	typeref:typename:unsigned	file:
+addChunk_iTXt	src/external/lodepng.cpp	/^static unsigned addChunk_iTXt(ucvector* out, unsigned compress, const char* keyword, const char*/;"	f	typeref:typename:unsigned	file:
+addChunk_pHYs	src/external/lodepng.cpp	/^static unsigned addChunk_pHYs(ucvector* out, const LodePNGInfo* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_sRGB	src/external/lodepng.cpp	/^static unsigned addChunk_sRGB(ucvector* out, const LodePNGInfo* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_tEXt	src/external/lodepng.cpp	/^static unsigned addChunk_tEXt(ucvector* out, const char* keyword, const char* textstring) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_tIME	src/external/lodepng.cpp	/^static unsigned addChunk_tIME(ucvector* out, const LodePNGTime* time) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_tRNS	src/external/lodepng.cpp	/^static unsigned addChunk_tRNS(ucvector* out, const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned	file:
+addChunk_zTXt	src/external/lodepng.cpp	/^static unsigned addChunk_zTXt(ucvector* out, const char* keyword, const char* textstring,$/;"	f	typeref:typename:unsigned	file:
+addColorBits	src/external/lodepng.cpp	/^static void addColorBits(unsigned char* out, size_t index, unsigned bits, unsigned in) {$/;"	f	typeref:typename:void	file:
+addIntAttr	src/core/parser.hpp	/^    inline void addIntAttr(XMLElement *pE, const char* tag, rt3::ParamSet &ps){$/;"	f	class:Parser	typeref:typename:void
+addLengthDistance	src/external/lodepng.cpp	/^static void addLengthDistance(uivector* values, size_t length, size_t distance) {$/;"	f	typeref:typename:void	file:
+addPaddingBits	src/external/lodepng.cpp	/^static void addPaddingBits(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:void	file:
+addStrAttr	src/core/parser.hpp	/^    inline void addStrAttr(XMLElement *pE, const char* tag, rt3::ParamSet &ps){$/;"	f	class:Parser	typeref:typename:void
+addUnknownChunks	src/external/lodepng.cpp	/^static unsigned addUnknownChunks(ucvector* out, unsigned char* data, size_t datasize) {$/;"	f	typeref:typename:unsigned	file:
+add_id	src/external/lodepng.hpp	/^  unsigned add_id;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+adler32	src/external/lodepng.cpp	/^static unsigned adler32(const unsigned char* data, unsigned len) {$/;"	f	typeref:typename:unsigned	file:
+advanceBits	src/external/lodepng.cpp	/^static void advanceBits(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:void	file:
+alloc_string	src/external/lodepng.cpp	/^static char* alloc_string(const char* in) {$/;"	f	typeref:typename:char *	file:
+alloc_string_sized	src/external/lodepng.cpp	/^static char* alloc_string_sized(const char* in, size_t insize) {$/;"	f	typeref:typename:char *	file:
+allocsize	src/external/lodepng.cpp	/^  size_t allocsize; \/*allocated size in bytes*\/$/;"	m	struct:uivector	typeref:typename:size_t	file:
+allocsize	src/external/lodepng.cpp	/^  size_t allocsize; \/*allocated size*\/$/;"	m	struct:ucvector	typeref:typename:size_t	file:
+allow_greyscale	src/external/lodepng.hpp	/^  unsigned allow_greyscale; \/*default 1. if 0, choose RGB or RGBA even if the image only has gr/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+allow_palette	src/external/lodepng.hpp	/^  unsigned allow_palette; \/*default 1. if 0, disallow choosing palette colortype in auto_choose/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+alpha	src/external/lodepng.hpp	/^  unsigned alpha; \/*image is not opaque and alpha channel or alpha palette required*\/$/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+args	.vscode/launch.json	/^        "args": [],$/;"	a	object:configurations.0
+args	.vscode/tasks.json	/^            "args": ["clean"],$/;"	a	object:tasks.5
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.0
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.1
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.2
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.3
+args	.vscode/tasks.json	/^            "args": [],$/;"	a	object:tasks.4
+argument_incorrect_type	src/external/cxxopts.hpp	/^    argument_incorrect_type$/;"	f	class:cxxopts::argument_incorrect_type
+argument_incorrect_type	src/external/cxxopts.hpp	/^  class argument_incorrect_type : public OptionParseException$/;"	c	namespace:cxxopts
+auto_choose_color	src/external/lodepng.cpp	/^static unsigned auto_choose_color(LodePNGColorMode* mode_out,$/;"	f	typeref:typename:unsigned	file:
+auto_convert	src/external/lodepng.hpp	/^  unsigned auto_convert; \/*automatically choose output PNG color type. Default: true*\/$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+b	src/core/vector3.hpp	/^    inline float b() const { return e[2]; }$/;"	f	class:Vector3	typeref:typename:float
+background	src/core/scene.hpp	/^    Background background;$/;"	m	class:rt3::Scene	typeref:typename:Background
+background_b	src/external/lodepng.hpp	/^  unsigned background_b;       \/*blue component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_defined	src/external/lodepng.hpp	/^  unsigned background_defined; \/*is a suggested background color given?*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_g	src/external/lodepng.hpp	/^  unsigned background_g;       \/*green component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+background_r	src/external/lodepng.hpp	/^  unsigned background_r;       \/*red\/gray\/palette component of suggested background color*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+begin	src/external/cxxopts.hpp	/^  begin(const icu::UnicodeString& s)$/;"	f	namespace:std	typeref:typename:cxxopts::UnicodeStringIterator
+bitdepth	src/external/lodepng.hpp	/^  unsigned bitdepth;  \/*bits per sample, see PNG standard or documentation further in this head/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+bits	src/external/lodepng.hpp	/^  unsigned bits; \/*bits per channel (not for palette). 1,2 or 4 for grayscale only. 16 if 16-bi/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+bitsize	src/external/lodepng.cpp	/^  size_t bitsize; \/*size of data in bits, end of valid bp values, should be 8*size*\/$/;"	m	struct:__anone812e0480208	typeref:typename:size_t	file:
+bl	src/core/background.hpp	/^    rgb bl; \/\/ (0,0)$/;"	m	class:rt3::Background	typeref:typename:rgb
+boundaryPM	src/external/lodepng.cpp	/^static void boundaryPM(BPMLists* lists, BPMNode* leaves, size_t numpresent, int c, int num) {$/;"	f	typeref:typename:void	file:
+bp	src/external/lodepng.cpp	/^  size_t bp;$/;"	m	struct:__anone812e0480208	typeref:typename:size_t	file:
+bp	src/external/lodepng.cpp	/^  unsigned char bp; \/*ok to overflow, indicates bit pos inside byte*\/$/;"	m	struct:__anone812e0480108	typeref:typename:unsigned char	file:
+bpmnode_create	src/external/lodepng.cpp	/^static BPMNode* bpmnode_create(BPMLists* lists, int weight, unsigned index, BPMNode* tail) {$/;"	f	typeref:typename:BPMNode *	file:
+bpmnode_sort	src/external/lodepng.cpp	/^static void bpmnode_sort(BPMNode* leaves, size_t num) {$/;"	f	typeref:typename:void	file:
+br	src/core/background.hpp	/^    rgb br; \/\/ (1,0)$/;"	m	class:rt3::Background	typeref:typename:rgb
+btype	src/external/lodepng.hpp	/^  unsigned btype; \/*the block type for LZ (0, 1, 2 or 3, see zlib standard). Should be 2 for pr/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+buffer	src/core/film.hpp	/^    std::vector<rgb> buffer;$/;"	m	class:rt3::Film	typeref:typename:std::vector<rgb>
+buffer	src/external/lodepng.cpp	/^  unsigned buffer; \/*buffer for reading bits. NOTE: 'unsigned' must support at least 32 bits*\/$/;"	m	struct:__anone812e0480208	typeref:typename:unsigned	file:
+cStandard	.vscode/c_cpp_properties.json	/^            "cStandard": "c11",$/;"	s	object:configurations.0
+callfopen	src/external/tinyxml2.cpp	/^static FILE* callfopen( const char* filepath, const char* mode )$/;"	f	namespace:tinyxml2	typeref:typename:FILE *	file:
+camera	src/core/api.hpp	/^        void camera(const ParamSet & ps) {$/;"	f	class:rt3::API	typeref:typename:void
+camera_film	src/core/api.hpp	/^        void camera_film(const ParamSet & ps) {$/;"	f	class:rt3::API	typeref:typename:void
+chain	src/external/lodepng.cpp	/^  unsigned short* chain;$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+chains0	src/external/lodepng.cpp	/^  BPMNode** chains0;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+chains1	src/external/lodepng.cpp	/^  BPMNode** chains1;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+chainz	src/external/lodepng.cpp	/^  unsigned short* chainz; \/*those with same amount of zeros*\/$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+checkColorValidity	src/external/lodepng.cpp	/^static unsigned checkColorValidity(LodePNGColorType colortype, unsigned bd) {$/;"	f	typeref:typename:unsigned	file:
+check_signed_range	src/external/cxxopts.hpp	/^      check_signed_range(bool negative, U value, const std::string& text)$/;"	f	namespace:cxxopts::values::detail	typeref:typename:void
+checked_negate	src/external/cxxopts.hpp	/^    checked_negate(T&& t, const std::string& text, std::false_type)$/;"	f	namespace:cxxopts::values	typeref:typename:T
+checked_negate	src/external/cxxopts.hpp	/^    checked_negate(T&& t, const std::string&, std::true_type)$/;"	f	namespace:cxxopts::values	typeref:typename:R
+children	src/external/lodepng.cpp	/^  ColorTree* children[16]; \/*up to 16 pointers to ColorTree of next level*\/$/;"	m	struct:ColorTree	typeref:typename:ColorTree * [16]	file:
+chrm_blue_x	src/external/lodepng.hpp	/^  unsigned chrm_blue_x;  \/* Blue x times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_blue_y	src/external/lodepng.hpp	/^  unsigned chrm_blue_y;  \/* Blue y times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_defined	src/external/lodepng.hpp	/^  unsigned chrm_defined; \/* Whether a cHRM chunk is present (0 = not present, 1 = present). *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_green_x	src/external/lodepng.hpp	/^  unsigned chrm_green_x; \/* Green x times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_green_y	src/external/lodepng.hpp	/^  unsigned chrm_green_y; \/* Green y times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_red_x	src/external/lodepng.hpp	/^  unsigned chrm_red_x;   \/* Red x times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_red_y	src/external/lodepng.hpp	/^  unsigned chrm_red_y;   \/* Red y times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_white_x	src/external/lodepng.hpp	/^  unsigned chrm_white_x; \/* White Point x times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+chrm_white_y	src/external/lodepng.hpp	/^  unsigned chrm_white_y; \/* White Point y times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+clean	makefile	/^clean:$/;"	t
+clear	src/core/paramset.hpp	/^        inline void clear() {params.clear();}$/;"	f	class:rt3::ParamSet	typeref:typename:void
+codes	src/external/lodepng.cpp	/^  unsigned* codes; \/*the huffman codes (bit patterns representing the symbols)*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned *	file:
+color	src/core/background.hpp	/^    rgb color;$/;"	m	class:rt3::Background	typeref:typename:rgb
+color	src/external/lodepng.hpp	/^  LodePNGColorMode color;     \/*color type and bits, palette and transparency of the PNG file*\/$/;"	m	struct:LodePNGInfo	typeref:typename:LodePNGColorMode
+color_convert	src/external/lodepng.hpp	/^  unsigned color_convert; \/*whether to convert the PNG to the color type you want. Default: yes/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+color_tree_add	src/external/lodepng.cpp	/^static unsigned color_tree_add(ColorTree* tree,$/;"	f	typeref:typename:unsigned	file:
+color_tree_cleanup	src/external/lodepng.cpp	/^static void color_tree_cleanup(ColorTree* tree) {$/;"	f	typeref:typename:void	file:
+color_tree_get	src/external/lodepng.cpp	/^static int color_tree_get(ColorTree* tree, unsigned char r, unsigned char g, unsigned char b, un/;"	f	typeref:typename:int	file:
+color_tree_has	src/external/lodepng.cpp	/^static int color_tree_has(ColorTree* tree, unsigned char r, unsigned char g, unsigned char b, un/;"	f	typeref:typename:int	file:
+color_tree_init	src/external/lodepng.cpp	/^static void color_tree_init(ColorTree* tree) {$/;"	f	typeref:typename:void	file:
+colored	src/external/lodepng.hpp	/^  unsigned colored; \/*not grayscale*\/$/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+colortype	src/external/lodepng.hpp	/^  LodePNGColorType colortype; \/*color type, see PNG standard or documentation further in this h/;"	m	struct:LodePNGColorMode	typeref:typename:LodePNGColorType
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/clang++",$/;"	s	object:tasks.0
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/clang++",$/;"	s	object:tasks.1
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/g++",$/;"	s	object:tasks.2
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/g++",$/;"	s	object:tasks.3
+command	.vscode/tasks.json	/^            "command": "make",$/;"	s	object:tasks.4
+command	.vscode/tasks.json	/^            "command": "make",$/;"	s	object:tasks.5
+compilerPath	.vscode/c_cpp_properties.json	/^            "compilerPath": "\/usr\/bin\/clang++",$/;"	s	object:configurations.0
+compress	src/external/lodepng.cpp	/^unsigned compress(std::vector<unsigned char>& out, const std::vector<unsigned char>& in,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+compress	src/external/lodepng.cpp	/^unsigned compress(std::vector<unsigned char>& out, const unsigned char* in, size_t insize,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+compression_method	src/external/lodepng.hpp	/^  unsigned compression_method;\/*compression method of the original file. Always 0.*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+configurations	.vscode/c_cpp_properties.json	/^    "configurations": [$/;"	a
+configurations	.vscode/launch.json	/^    "configurations": [$/;"	a
+countZeros	src/external/lodepng.cpp	/^static unsigned countZeros(const unsigned char* data, size_t size, size_t pos) {$/;"	f	typeref:typename:unsigned	file:
+cppStandard	.vscode/c_cpp_properties.json	/^            "cppStandard": "c++14",$/;"	s	object:configurations.0
+create_camera	src/core/api.hpp	/^        std::shared_ptr<Camera> create_camera(string type) {$/;"	f	class:rt3::API	typeref:typename:std::shared_ptr<Camera>
+create_scene	src/core/api.hpp	/^        std::shared_ptr<Scene> create_scene(Background &bg) {$/;"	f	class:rt3::API	typeref:typename:std::shared_ptr<Scene>
+cross	src/core/vector3.hpp	/^inline Vector3 cross(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+custom_context	src/external/lodepng.hpp	/^  const void* custom_context; \/*optional custom settings for custom functions*\/$/;"	m	struct:LodePNGCompressSettings	typeref:typename:const void *
+custom_context	src/external/lodepng.hpp	/^  const void* custom_context; \/*optional custom settings for custom functions*\/$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:const void *
+custom_deflate	src/external/lodepng.hpp	/^  unsigned (*custom_deflate)(unsigned char**, size_t*,$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGCompressSettings *)
+custom_inflate	src/external/lodepng.hpp	/^  unsigned (*custom_inflate)(unsigned char**, size_t*,$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGDecompressSettings *)
+custom_zlib	src/external/lodepng.hpp	/^  unsigned (*custom_zlib)(unsigned char**, size_t*,$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGCompressSettings *)
+custom_zlib	src/external/lodepng.hpp	/^  unsigned (*custom_zlib)(unsigned char**, size_t*,$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned (*)(unsigned char **,size_t *,const unsigned char *,size_t,const LodePNGDecompressSettings *)
+cwd	.vscode/launch.json	/^        "cwd": "${workspaceFolder}",$/;"	s	object:configurations.0
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.0.options
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.1.options
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.2.options
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.3.options
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.4.options
+cwd	.vscode/tasks.json	/^                "cwd": "${workspaceFolder}"$/;"	s	object:tasks.5.options
+cxxopts	src/external/cxxopts.hpp	/^namespace cxxopts$/;"	n
+data	src/external/lodepng.cpp	/^  const unsigned char* data;$/;"	m	struct:__anone812e0480208	typeref:typename:const unsigned char *	file:
+data	src/external/lodepng.cpp	/^  ucvector* data;$/;"	m	struct:__anone812e0480108	typeref:typename:ucvector *	file:
+data	src/external/lodepng.cpp	/^  unsigned char* data;$/;"	m	struct:ucvector	typeref:typename:unsigned char *	file:
+data	src/external/lodepng.cpp	/^  unsigned* data;$/;"	m	struct:uivector	typeref:typename:unsigned *	file:
+day	src/external/lodepng.hpp	/^  unsigned day;     \/*1-31*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+decode	src/external/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h, const std::string& fi/;"	f	namespace:lodepng	typeref:typename:unsigned
+decode	src/external/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h, const unsigned char* /;"	f	namespace:lodepng	typeref:typename:unsigned
+decode	src/external/lodepng.cpp	/^unsigned decode(std::vector<unsigned char>& out, unsigned& w, unsigned& h,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+decodeGeneric	src/external/lodepng.cpp	/^static void decodeGeneric(unsigned char** out, unsigned* w, unsigned* h,$/;"	f	typeref:typename:void	file:
+decoder	src/external/lodepng.hpp	/^  LodePNGDecoderSettings decoder; \/*the decoding settings*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGDecoderSettings
+decompress	src/external/lodepng.cpp	/^unsigned decompress(std::vector<unsigned char>& out, const std::vector<unsigned char>& in,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+decompress	src/external/lodepng.cpp	/^unsigned decompress(std::vector<unsigned char>& out, const unsigned char* in, size_t insize,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+defines	.vscode/c_cpp_properties.json	/^            "defines": [],$/;"	a	object:configurations.0
+deflate	src/external/lodepng.cpp	/^static unsigned deflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned	file:
+deflateDynamic	src/external/lodepng.cpp	/^static unsigned deflateDynamic(LodePNGBitWriter* writer, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+deflateFixed	src/external/lodepng.cpp	/^static unsigned deflateFixed(LodePNGBitWriter* writer, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+deflateNoCompression	src/external/lodepng.cpp	/^static unsigned deflateNoCompression(ucvector* out, const unsigned char* data, size_t datasize) /;"	f	typeref:typename:unsigned	file:
+detail	src/external/cxxopts.hpp	/^    namespace detail$/;"	n	namespace:cxxopts::values
+dot	src/core/vector2.hpp	/^inline float dot(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:float
+dot	src/core/vector3.hpp	/^inline float dot(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:float
+e	src/core/vector2.hpp	/^    float e[2];$/;"	m	class:Vector2	typeref:typename:float[2]
+e	src/core/vector3.hpp	/^    float e[3];$/;"	m	class:Vector3	typeref:typename:float[3]
+empty	src/external/cxxopts.hpp	/^  empty(const String& s)$/;"	f	namespace:cxxopts	typeref:typename:bool
+empty	src/external/cxxopts.hpp	/^  empty(const std::string& s)$/;"	f	namespace:cxxopts	typeref:typename:bool
+encode	src/external/lodepng.cpp	/^unsigned encode(const std::string& filename,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+encode	src/external/lodepng.cpp	/^unsigned encode(std::vector<unsigned char>& out, const unsigned char* in, unsigned w, unsigned h/;"	f	namespace:lodepng	typeref:typename:unsigned
+encode	src/external/lodepng.cpp	/^unsigned encode(std::vector<unsigned char>& out,$/;"	f	namespace:lodepng	typeref:typename:unsigned
+encodeLZ77	src/external/lodepng.cpp	/^static unsigned encodeLZ77(uivector* out, Hash* hash,$/;"	f	typeref:typename:unsigned	file:
+encoder	src/external/lodepng.hpp	/^  LodePNGEncoderSettings encoder; \/*the encoding settings*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGEncoderSettings
+end	src/external/cxxopts.hpp	/^  end(const icu::UnicodeString& s)$/;"	f	namespace:std	typeref:typename:cxxopts::UnicodeStringIterator
+ensureBits17	src/external/lodepng.cpp	/^static unsigned ensureBits17(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:unsigned	file:
+ensureBits25	src/external/lodepng.cpp	/^static LODEPNG_INLINE unsigned ensureBits25(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:LODEPNG_INLINE unsigned	file:
+ensureBits32	src/external/lodepng.cpp	/^static LODEPNG_INLINE unsigned ensureBits32(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:LODEPNG_INLINE unsigned	file:
+ensureBits9	src/external/lodepng.cpp	/^static unsigned ensureBits9(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:unsigned	file:
+entities	src/external/tinyxml2.cpp	/^static const Entity entities[NUM_ENTITIES] = {$/;"	v	namespace:tinyxml2	typeref:typename:const Entity[]	file:
+environment	.vscode/launch.json	/^        "environment": [],$/;"	a	object:configurations.0
+erase	src/core/paramset.hpp	/^        inline bool erase(const string $target_key) { $/;"	f	class:rt3::ParamSet	typeref:typename:bool
+error	src/external/lodepng.hpp	/^  unsigned error;$/;"	m	struct:LodePNGState	typeref:typename:unsigned
+externalConsole	.vscode/launch.json	/^        "externalConsole": false,$/;"	b	object:configurations.0
+extractData	src/core/parser.hpp	/^int Parser::extractData(rt3::API &api)$/;"	f	class:Parser	typeref:typename:int
+falsy_pattern	src/external/cxxopts.hpp	/^      std::basic_regex<char> falsy_pattern$/;"	v	namespace:cxxopts::values::__anonbf52ef1d0611	typeref:typename:std::basic_regex<char>
+filename	src/core/film.hpp	/^    std::string filename;$/;"	m	class:rt3::Film	typeref:typename:std::string
+filename	src/core/parser.hpp	/^    const std::string filename;$/;"	m	class:Parser	typeref:typename:const std::string
+film	src/core/camera.hpp	/^        Film film;$/;"	m	class:rt3::Camera	typeref:typename:Film
+filter	src/external/lodepng.cpp	/^static unsigned filter(unsigned char* out, const unsigned char* in, unsigned w, unsigned h,$/;"	f	typeref:typename:unsigned	file:
+filterScanline	src/external/lodepng.cpp	/^static void filterScanline(unsigned char* out, const unsigned char* scanline, const unsigned cha/;"	f	typeref:typename:void	file:
+filter_method	src/external/lodepng.hpp	/^  unsigned filter_method;     \/*filter method of the original file*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+filter_palette_zero	src/external/lodepng.hpp	/^  unsigned filter_palette_zero;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+filter_strategy	src/external/lodepng.hpp	/^  LodePNGFilterStrategy filter_strategy;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:LodePNGFilterStrategy
+find_array	src/core/paramset.hpp	/^        inline const T * find_array(const string &target_key, size_t &size) const {$/;"	f	class:rt3::ParamSet	typeref:typename:const T *
+find_one	src/core/paramset.hpp	/^        inline const T & find_one(const string &target_key, const T &d) const { $/;"	f	class:rt3::ParamSet	typeref:typename:const T &
+force_palette	src/external/lodepng.hpp	/^  unsigned force_palette;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+freelist	src/external/lodepng.cpp	/^  BPMNode** freelist;$/;"	m	struct:BPMLists	typeref:typename:BPMNode **	file:
+g	src/core/vector3.hpp	/^    inline float g() const { return e[1]; }$/;"	f	class:Vector3	typeref:typename:float
+gama_defined	src/external/lodepng.hpp	/^  unsigned gama_defined; \/* Whether a gAMA chunk is present (0 = not present, 1 = present). *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+gama_gamma	src/external/lodepng.hpp	/^  unsigned gama_gamma;   \/* Gamma exponent times 100000 *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+generateFixedDistanceTree	src/external/lodepng.cpp	/^static unsigned generateFixedDistanceTree(HuffmanTree* tree) {$/;"	f	typeref:typename:unsigned	file:
+generateFixedLitLenTree	src/external/lodepng.cpp	/^static unsigned generateFixedLitLenTree(HuffmanTree* tree) {$/;"	f	typeref:typename:unsigned	file:
+getHash	src/external/lodepng.cpp	/^static unsigned getHash(const unsigned char* data, size_t size, size_t pos) {$/;"	f	typeref:typename:unsigned	file:
+getNumColorChannels	src/external/lodepng.cpp	/^static unsigned getNumColorChannels(LodePNGColorType colortype) {$/;"	f	typeref:typename:unsigned	file:
+getPixelColorRGBA16	src/external/lodepng.cpp	/^static void getPixelColorRGBA16(unsigned short* r, unsigned short* g, unsigned short* b, unsigne/;"	f	typeref:typename:void	file:
+getPixelColorRGBA8	src/external/lodepng.cpp	/^static void getPixelColorRGBA8(unsigned char* r, unsigned char* g,$/;"	f	typeref:typename:void	file:
+getPixelColorsRGB8	src/external/lodepng.cpp	/^static void getPixelColorsRGB8(unsigned char* LODEPNG_RESTRICT buffer, size_t numpixels,$/;"	f	typeref:typename:void	file:
+getPixelColorsRGBA8	src/external/lodepng.cpp	/^static void getPixelColorsRGBA8(unsigned char* LODEPNG_RESTRICT buffer, size_t numpixels,$/;"	f	typeref:typename:void	file:
+getTreeInflateDynamic	src/external/lodepng.cpp	/^static unsigned getTreeInflateDynamic(HuffmanTree* tree_ll, HuffmanTree* tree_d,$/;"	f	typeref:typename:unsigned	file:
+getTreeInflateFixed	src/external/lodepng.cpp	/^static unsigned getTreeInflateFixed(HuffmanTree* tree_ll, HuffmanTree* tree_d) {$/;"	f	typeref:typename:unsigned	file:
+getValueRequiredBits	src/external/lodepng.cpp	/^static unsigned getValueRequiredBits(unsigned char value) {$/;"	f	typeref:typename:unsigned	file:
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.0
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.1
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.2
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.3
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.4
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.5
+hasCornerColors	src/core/background.hpp	/^    bool hasCornerColors;$/;"	m	class:rt3::Background	typeref:typename:bool
+hash_cleanup	src/external/lodepng.cpp	/^static void hash_cleanup(Hash* hash) {$/;"	f	typeref:typename:void	file:
+hash_init	src/external/lodepng.cpp	/^static unsigned hash_init(Hash* hash, unsigned windowsize) {$/;"	f	typeref:typename:unsigned	file:
+head	src/external/lodepng.cpp	/^  int* head; \/*hash value to head circular pos - can be outdated if went around window*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+headz	src/external/lodepng.cpp	/^  int* headz; \/*similar to head, but for chainz*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+height	src/core/film.hpp	/^    int height;$/;"	m	class:rt3::Film	typeref:typename:int
+hour	src/external/lodepng.hpp	/^  unsigned hour;    \/*0-23*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+huffmanDecodeSymbol	src/external/lodepng.cpp	/^static unsigned huffmanDecodeSymbol(LodePNGBitReader* reader, const HuffmanTree* codetree) {$/;"	f	typeref:typename:unsigned	file:
+i	src/external/cxxopts.hpp	/^    int32_t i;$/;"	m	class:cxxopts::UnicodeStringIterator	typeref:typename:int32_t
+iccp_defined	src/external/lodepng.hpp	/^  unsigned iccp_defined;      \/* Whether an iCCP chunk is present (0 = not present, 1 = present/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+iccp_name	src/external/lodepng.hpp	/^  char* iccp_name;            \/* Null terminated string with profile name, 1-79 bytes *\/$/;"	m	struct:LodePNGInfo	typeref:typename:char *
+iccp_profile	src/external/lodepng.hpp	/^  unsigned char* iccp_profile;$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned char *
+iccp_profile_size	src/external/lodepng.hpp	/^  unsigned iccp_profile_size; \/* The size of iccp_profile in bytes *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+ignore_adler32	src/external/lodepng.hpp	/^  unsigned ignore_adler32; \/*if 1, continue and don't give an error message if the Adler32 chec/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned
+ignore_crc	src/external/lodepng.hpp	/^  unsigned ignore_crc; \/*ignore CRC checksums*\/$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+ignore_critical	src/external/lodepng.hpp	/^  unsigned ignore_critical; \/*ignore unknown critical chunks*\/$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+ignore_end	src/external/lodepng.hpp	/^  unsigned ignore_end; \/*ignore issues at end of file if possible (missing IEND chunk, too larg/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+ignore_nlen	src/external/lodepng.hpp	/^  unsigned ignore_nlen; \/*ignore complement of len checksum in uncompressed blocks*\/$/;"	m	struct:LodePNGDecompressSettings	typeref:typename:unsigned
+ilog2	src/external/lodepng.cpp	/^static size_t ilog2(size_t i) {$/;"	f	typeref:typename:size_t	file:
+ilog2i	src/external/lodepng.cpp	/^static size_t ilog2i(size_t i) {$/;"	f	typeref:typename:size_t	file:
+img_type	src/core/film.hpp	/^    std::string img_type;$/;"	m	class:rt3::Film	typeref:typename:std::string
+in_use	src/external/lodepng.cpp	/^  int in_use;$/;"	m	struct:BPMNode	typeref:typename:int	file:
+includePath	.vscode/c_cpp_properties.json	/^            "includePath": [$/;"	a	object:configurations.0
+index	src/external/lodepng.cpp	/^  int index; \/*the payload. Only has a meaningful value if this is in the last level*\/$/;"	m	struct:ColorTree	typeref:typename:int	file:
+index	src/external/lodepng.cpp	/^  unsigned index; \/*index of this leaf node (called "count" in the paper)*\/$/;"	m	struct:BPMNode	typeref:typename:unsigned	file:
+index_of	src/core/film.hpp	/^    int index_of(Point2 &p)$/;"	f	class:rt3::Film	typeref:typename:int
+inflateHuffmanBlock	src/external/lodepng.cpp	/^static unsigned inflateHuffmanBlock(ucvector* out, LodePNGBitReader* reader,$/;"	f	typeref:typename:unsigned	file:
+inflateNoCompression	src/external/lodepng.cpp	/^static unsigned inflateNoCompression(ucvector* out, LodePNGBitReader* reader,$/;"	f	typeref:typename:unsigned	file:
+inflatev	src/external/lodepng.cpp	/^static unsigned inflatev(ucvector* out, const unsigned char* in, size_t insize,$/;"	f	typeref:typename:unsigned	file:
+info_png	src/external/lodepng.hpp	/^  LodePNGInfo info_png; \/*info of the PNG image obtained after decoding*\/$/;"	m	struct:LodePNGState	typeref:typename:LodePNGInfo
+info_raw	src/external/lodepng.hpp	/^  LodePNGColorMode info_raw; \/*specifies the format in which you would like to get the raw pixe/;"	m	struct:LodePNGState	typeref:typename:LodePNGColorMode
+integer_parser	src/external/cxxopts.hpp	/^    integer_parser(const std::string& text, T& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+integer_pattern	src/external/cxxopts.hpp	/^      std::basic_regex<char> integer_pattern$/;"	v	namespace:cxxopts::values::__anonbf52ef1d0611	typeref:typename:std::basic_regex<char>
+intelliSenseMode	.vscode/c_cpp_properties.json	/^            "intelliSenseMode": "clang-x64"$/;"	s	object:configurations.0
+interlace_method	src/external/lodepng.hpp	/^  unsigned interlace_method;  \/*interlace method of the original file: 0=none, 1=Adam7*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+invalid_option_format_error	src/external/cxxopts.hpp	/^    invalid_option_format_error(const std::string& format)$/;"	f	class:cxxopts::invalid_option_format_error
+invalid_option_format_error	src/external/cxxopts.hpp	/^  class invalid_option_format_error : public OptionSpecException$/;"	c	namespace:cxxopts
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.0.group
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.1.group
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.2.group
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.3.group
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.4.group
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.5.group
+isGrayICCProfile	src/external/lodepng.cpp	/^static unsigned isGrayICCProfile(const unsigned char* profile, unsigned size) {$/;"	f	typeref:typename:unsigned	file:
+isRGBICCProfile	src/external/lodepng.cpp	/^static unsigned isRGBICCProfile(const unsigned char* profile, unsigned size) {$/;"	f	typeref:typename:unsigned	file:
+itemData	src/external/tinyxml2.hpp	/^        char    itemData[ITEM_SIZE];$/;"	m	union:tinyxml2::MemPoolT::Item	typeref:typename:char[]
+items	src/external/tinyxml2.hpp	/^        Item items[ITEMS_PER_BLOCK];$/;"	m	struct:tinyxml2::MemPoolT::Block	typeref:typename:Item[]
+itext_keys	src/external/lodepng.hpp	/^  char** itext_keys; \/*the English keyword of the text chunk (e.g. "Comment")*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_langtags	src/external/lodepng.hpp	/^  char** itext_langtags; \/*language tag for this text's language, ISO\/IEC 646 string, e.g. ISO/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_num	src/external/lodepng.hpp	/^  size_t itext_num; \/*the amount of international texts in this PNG*\/$/;"	m	struct:LodePNGInfo	typeref:typename:size_t
+itext_strings	src/external/lodepng.hpp	/^  char** itext_strings; \/*the actual international text - UTF-8 string*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+itext_transkeys	src/external/lodepng.hpp	/^  char** itext_transkeys; \/*keyword translated to the international language - UTF-8 string*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+key	src/external/lodepng.hpp	/^  unsigned key; \/*image is not opaque and color key is possible instead of full alpha*\/$/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+key_b	src/external/lodepng.hpp	/^  unsigned key_b;       \/*blue component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_b	src/external/lodepng.hpp	/^  unsigned short key_b;$/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned short
+key_defined	src/external/lodepng.hpp	/^  unsigned key_defined; \/*is a transparent color key given? 0 = false, 1 = true*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_g	src/external/lodepng.hpp	/^  unsigned key_g;       \/*green component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_g	src/external/lodepng.hpp	/^  unsigned short key_g;$/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned short
+key_r	src/external/lodepng.hpp	/^  unsigned key_r;       \/*red\/grayscale component of color key*\/$/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned
+key_r	src/external/lodepng.hpp	/^  unsigned short key_r; \/*key values, always as 16-bit, in 8-bit case the byte is duplicated, e/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned short
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.0.group
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.1.group
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.2.group
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.3.group
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.4.group
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.5.group
+label	.vscode/tasks.json	/^            "label": "C\/C++: clang++ build active file",$/;"	s	object:tasks.1
+label	.vscode/tasks.json	/^            "label": "C\/C++: g++ build active file",$/;"	s	object:tasks.3
+label	.vscode/tasks.json	/^            "label": "clang++ build active file",$/;"	s	object:tasks.0
+label	.vscode/tasks.json	/^            "label": "g++ build active file",$/;"	s	object:tasks.2
+label	.vscode/tasks.json	/^            "label": "makefile build",$/;"	s	object:tasks.4
+label	.vscode/tasks.json	/^            "label": "makefile clean",$/;"	s	object:tasks.5
+lazymatching	src/external/lodepng.hpp	/^  unsigned lazymatching; \/*use lazy matching: better compression but a bit slower. Default: tru/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+length	src/core/vector2.hpp	/^    inline float length() const { return sqrt(e[0] * e[0] + e[1] * e[1]); }$/;"	f	class:Vector2	typeref:typename:float
+length	src/core/vector3.hpp	/^    inline float length() const { return sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]); }$/;"	f	class:Vector3	typeref:typename:float
+length	src/external/tinyxml2.cpp	/^    int length;$/;"	m	struct:tinyxml2::Entity	typeref:typename:int	file:
+lengths	src/external/lodepng.cpp	/^  unsigned* lengths; \/*the lengths of the huffman codes*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned *	file:
+listsize	src/external/lodepng.cpp	/^  unsigned listsize;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+load_file	src/external/lodepng.cpp	/^unsigned load_file(std::vector<unsigned char>& buffer, const std::string& filename) {$/;"	f	namespace:lodepng	typeref:typename:unsigned
+lode_png_test_bitreader	src/external/lodepng.cpp	/^unsigned lode_png_test_bitreader(const unsigned char* data, size_t size,$/;"	f	typeref:typename:unsigned
+lodepng	src/external/lodepng.cpp	/^namespace lodepng {$/;"	n	file:
+lodepng	src/external/lodepng.hpp	/^namespace lodepng {$/;"	n
+lodepng_add_itext	src/external/lodepng.cpp	/^unsigned lodepng_add_itext(LodePNGInfo* info, const char* key, const char* langtag,$/;"	f	typeref:typename:unsigned
+lodepng_add_itext_sized	src/external/lodepng.cpp	/^static unsigned lodepng_add_itext_sized(LodePNGInfo* info, const char* key, const char* langtag,$/;"	f	typeref:typename:unsigned	file:
+lodepng_add_text	src/external/lodepng.cpp	/^unsigned lodepng_add_text(LodePNGInfo* info, const char* key, const char* str) {$/;"	f	typeref:typename:unsigned
+lodepng_add_text_sized	src/external/lodepng.cpp	/^static unsigned lodepng_add_text_sized(LodePNGInfo* info, const char* key, const char* str, size/;"	f	typeref:typename:unsigned	file:
+lodepng_addofl	src/external/lodepng.cpp	/^static int lodepng_addofl(size_t a, size_t b, size_t* result) {$/;"	f	typeref:typename:int	file:
+lodepng_assign_icc	src/external/lodepng.cpp	/^static unsigned lodepng_assign_icc(LodePNGInfo* info, const char* name, const unsigned char* pro/;"	f	typeref:typename:unsigned	file:
+lodepng_buffer_file	src/external/lodepng.cpp	/^static unsigned lodepng_buffer_file(unsigned char* out, size_t size, const char* filename) {$/;"	f	typeref:typename:unsigned	file:
+lodepng_can_have_alpha	src/external/lodepng.cpp	/^unsigned lodepng_can_have_alpha(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_chunk_ancillary	src/external/lodepng.cpp	/^unsigned char lodepng_chunk_ancillary(const unsigned char* chunk) {$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_append	src/external/lodepng.cpp	/^unsigned lodepng_chunk_append(unsigned char** out, size_t* outsize, const unsigned char* chunk) /;"	f	typeref:typename:unsigned
+lodepng_chunk_check_crc	src/external/lodepng.cpp	/^unsigned lodepng_chunk_check_crc(const unsigned char* chunk) {$/;"	f	typeref:typename:unsigned
+lodepng_chunk_create	src/external/lodepng.cpp	/^unsigned lodepng_chunk_create(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_chunk_createv	src/external/lodepng.cpp	/^static unsigned lodepng_chunk_createv(ucvector* out,$/;"	f	typeref:typename:unsigned	file:
+lodepng_chunk_data	src/external/lodepng.cpp	/^unsigned char* lodepng_chunk_data(unsigned char* chunk) {$/;"	f	typeref:typename:unsigned char *
+lodepng_chunk_data_const	src/external/lodepng.cpp	/^const unsigned char* lodepng_chunk_data_const(const unsigned char* chunk) {$/;"	f	typeref:typename:const unsigned char *
+lodepng_chunk_find	src/external/lodepng.cpp	/^unsigned char* lodepng_chunk_find(unsigned char* chunk, unsigned char* end, const char type[5]) /;"	f	typeref:typename:unsigned char *
+lodepng_chunk_find_const	src/external/lodepng.cpp	/^const unsigned char* lodepng_chunk_find_const(const unsigned char* chunk, const unsigned char* e/;"	f	typeref:typename:const unsigned char *
+lodepng_chunk_generate_crc	src/external/lodepng.cpp	/^void lodepng_chunk_generate_crc(unsigned char* chunk) {$/;"	f	typeref:typename:void
+lodepng_chunk_init	src/external/lodepng.cpp	/^static unsigned lodepng_chunk_init(unsigned char** chunk,$/;"	f	typeref:typename:unsigned	file:
+lodepng_chunk_length	src/external/lodepng.cpp	/^unsigned lodepng_chunk_length(const unsigned char* chunk) {$/;"	f	typeref:typename:unsigned
+lodepng_chunk_next	src/external/lodepng.cpp	/^unsigned char* lodepng_chunk_next(unsigned char* chunk, unsigned char* end) {$/;"	f	typeref:typename:unsigned char *
+lodepng_chunk_next_const	src/external/lodepng.cpp	/^const unsigned char* lodepng_chunk_next_const(const unsigned char* chunk, const unsigned char* e/;"	f	typeref:typename:const unsigned char *
+lodepng_chunk_private	src/external/lodepng.cpp	/^unsigned char lodepng_chunk_private(const unsigned char* chunk) {$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_safetocopy	src/external/lodepng.cpp	/^unsigned char lodepng_chunk_safetocopy(const unsigned char* chunk) {$/;"	f	typeref:typename:unsigned char
+lodepng_chunk_type	src/external/lodepng.cpp	/^void lodepng_chunk_type(char type[5], const unsigned char* chunk) {$/;"	f	typeref:typename:void
+lodepng_chunk_type_equals	src/external/lodepng.cpp	/^unsigned char lodepng_chunk_type_equals(const unsigned char* chunk, const char* type) {$/;"	f	typeref:typename:unsigned char
+lodepng_clear_icc	src/external/lodepng.cpp	/^void lodepng_clear_icc(LodePNGInfo* info) {$/;"	f	typeref:typename:void
+lodepng_clear_itext	src/external/lodepng.cpp	/^void lodepng_clear_itext(LodePNGInfo* info) {$/;"	f	typeref:typename:void
+lodepng_clear_text	src/external/lodepng.cpp	/^void lodepng_clear_text(LodePNGInfo* info) {$/;"	f	typeref:typename:void
+lodepng_color_mode_alloc_palette	src/external/lodepng.cpp	/^static void lodepng_color_mode_alloc_palette(LodePNGColorMode* info) {$/;"	f	typeref:typename:void	file:
+lodepng_color_mode_cleanup	src/external/lodepng.cpp	/^void lodepng_color_mode_cleanup(LodePNGColorMode* info) {$/;"	f	typeref:typename:void
+lodepng_color_mode_copy	src/external/lodepng.cpp	/^unsigned lodepng_color_mode_copy(LodePNGColorMode* dest, const LodePNGColorMode* source) {$/;"	f	typeref:typename:unsigned
+lodepng_color_mode_equal	src/external/lodepng.cpp	/^static int lodepng_color_mode_equal(const LodePNGColorMode* a, const LodePNGColorMode* b) {$/;"	f	typeref:typename:int	file:
+lodepng_color_mode_init	src/external/lodepng.cpp	/^void lodepng_color_mode_init(LodePNGColorMode* info) {$/;"	f	typeref:typename:void
+lodepng_color_mode_make	src/external/lodepng.cpp	/^LodePNGColorMode lodepng_color_mode_make(LodePNGColorType colortype, unsigned bitdepth) {$/;"	f	typeref:typename:LodePNGColorMode
+lodepng_color_stats_add	src/external/lodepng.cpp	/^static unsigned lodepng_color_stats_add(LodePNGColorStats* stats,$/;"	f	typeref:typename:unsigned	file:
+lodepng_color_stats_init	src/external/lodepng.cpp	/^void lodepng_color_stats_init(LodePNGColorStats* stats) {$/;"	f	typeref:typename:void
+lodepng_compress_settings_init	src/external/lodepng.cpp	/^void lodepng_compress_settings_init(LodePNGCompressSettings* settings) {$/;"	f	typeref:typename:void
+lodepng_compute_color_stats	src/external/lodepng.cpp	/^unsigned lodepng_compute_color_stats(LodePNGColorStats* stats,$/;"	f	typeref:typename:unsigned
+lodepng_convert	src/external/lodepng.cpp	/^unsigned lodepng_convert(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+lodepng_convert_rgb	src/external/lodepng.cpp	/^unsigned lodepng_convert_rgb($/;"	f	typeref:typename:unsigned
+lodepng_crc32	src/external/lodepng.cpp	/^unsigned lodepng_crc32(const unsigned char* data, size_t length) {$/;"	f	typeref:typename:unsigned
+lodepng_crc32_table	src/external/lodepng.cpp	/^static unsigned lodepng_crc32_table[256] = {$/;"	v	typeref:typename:unsigned[256]	file:
+lodepng_decode	src/external/lodepng.cpp	/^unsigned lodepng_decode(unsigned char** out, unsigned* w, unsigned* h,$/;"	f	typeref:typename:unsigned
+lodepng_decode24	src/external/lodepng.cpp	/^unsigned lodepng_decode24(unsigned char** out, unsigned* w, unsigned* h, const unsigned char* in/;"	f	typeref:typename:unsigned
+lodepng_decode24_file	src/external/lodepng.cpp	/^unsigned lodepng_decode24_file(unsigned char** out, unsigned* w, unsigned* h, const char* filena/;"	f	typeref:typename:unsigned
+lodepng_decode32	src/external/lodepng.cpp	/^unsigned lodepng_decode32(unsigned char** out, unsigned* w, unsigned* h, const unsigned char* in/;"	f	typeref:typename:unsigned
+lodepng_decode32_file	src/external/lodepng.cpp	/^unsigned lodepng_decode32_file(unsigned char** out, unsigned* w, unsigned* h, const char* filena/;"	f	typeref:typename:unsigned
+lodepng_decode_file	src/external/lodepng.cpp	/^unsigned lodepng_decode_file(unsigned char** out, unsigned* w, unsigned* h, const char* filename/;"	f	typeref:typename:unsigned
+lodepng_decode_memory	src/external/lodepng.cpp	/^unsigned lodepng_decode_memory(unsigned char** out, unsigned* w, unsigned* h, const unsigned cha/;"	f	typeref:typename:unsigned
+lodepng_decoder_settings_init	src/external/lodepng.cpp	/^void lodepng_decoder_settings_init(LodePNGDecoderSettings* settings) {$/;"	f	typeref:typename:void
+lodepng_decompress_settings_init	src/external/lodepng.cpp	/^void lodepng_decompress_settings_init(LodePNGDecompressSettings* settings) {$/;"	f	typeref:typename:void
+lodepng_default_compress_settings	src/external/lodepng.cpp	/^const LodePNGCompressSettings lodepng_default_compress_settings = {2, 1, DEFAULT_WINDOWSIZE, 3, /;"	v	typeref:typename:const LodePNGCompressSettings
+lodepng_default_decompress_settings	src/external/lodepng.cpp	/^const LodePNGDecompressSettings lodepng_default_decompress_settings = {0, 0, 0, 0, 0};$/;"	v	typeref:typename:const LodePNGDecompressSettings
+lodepng_deflate	src/external/lodepng.cpp	/^unsigned lodepng_deflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_deflatev	src/external/lodepng.cpp	/^static unsigned lodepng_deflatev(ucvector* out, const unsigned char* in, size_t insize,$/;"	f	typeref:typename:unsigned	file:
+lodepng_encode	src/external/lodepng.cpp	/^unsigned lodepng_encode(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_encode24	src/external/lodepng.cpp	/^unsigned lodepng_encode24(unsigned char** out, size_t* outsize, const unsigned char* image, unsi/;"	f	typeref:typename:unsigned
+lodepng_encode24_file	src/external/lodepng.cpp	/^unsigned lodepng_encode24_file(const char* filename, const unsigned char* image, unsigned w, uns/;"	f	typeref:typename:unsigned
+lodepng_encode32	src/external/lodepng.cpp	/^unsigned lodepng_encode32(unsigned char** out, size_t* outsize, const unsigned char* image, unsi/;"	f	typeref:typename:unsigned
+lodepng_encode32_file	src/external/lodepng.cpp	/^unsigned lodepng_encode32_file(const char* filename, const unsigned char* image, unsigned w, uns/;"	f	typeref:typename:unsigned
+lodepng_encode_file	src/external/lodepng.cpp	/^unsigned lodepng_encode_file(const char* filename, const unsigned char* image, unsigned w, unsig/;"	f	typeref:typename:unsigned
+lodepng_encode_memory	src/external/lodepng.cpp	/^unsigned lodepng_encode_memory(unsigned char** out, size_t* outsize, const unsigned char* image,$/;"	f	typeref:typename:unsigned
+lodepng_encoder_settings_init	src/external/lodepng.cpp	/^void lodepng_encoder_settings_init(LodePNGEncoderSettings* settings) {$/;"	f	typeref:typename:void
+lodepng_error_text	src/external/lodepng.cpp	/^const char* lodepng_error_text(unsigned code) {$/;"	f	typeref:typename:const char *
+lodepng_filesize	src/external/lodepng.cpp	/^static long lodepng_filesize(const char* filename) {$/;"	f	typeref:typename:long	file:
+lodepng_free	src/external/lodepng.cpp	/^static void lodepng_free(void* ptr) {$/;"	f	typeref:typename:void	file:
+lodepng_get_bpp	src/external/lodepng.cpp	/^unsigned lodepng_get_bpp(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_get_bpp_lct	src/external/lodepng.cpp	/^static unsigned lodepng_get_bpp_lct(LodePNGColorType colortype, unsigned bitdepth) {$/;"	f	typeref:typename:unsigned	file:
+lodepng_get_channels	src/external/lodepng.cpp	/^unsigned lodepng_get_channels(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_get_raw_size	src/external/lodepng.cpp	/^size_t lodepng_get_raw_size(unsigned w, unsigned h, const LodePNGColorMode* color) {$/;"	f	typeref:typename:size_t
+lodepng_get_raw_size_idat	src/external/lodepng.cpp	/^static size_t lodepng_get_raw_size_idat(unsigned w, unsigned h, unsigned bpp) {$/;"	f	typeref:typename:size_t	file:
+lodepng_get_raw_size_lct	src/external/lodepng.cpp	/^static size_t lodepng_get_raw_size_lct(unsigned w, unsigned h, LodePNGColorType colortype, unsig/;"	f	typeref:typename:size_t	file:
+lodepng_gtofl	src/external/lodepng.cpp	/^static int lodepng_gtofl(size_t a, size_t b, size_t c) {$/;"	f	typeref:typename:int	file:
+lodepng_has_palette_alpha	src/external/lodepng.cpp	/^unsigned lodepng_has_palette_alpha(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_huffman_code_lengths	src/external/lodepng.cpp	/^unsigned lodepng_huffman_code_lengths(unsigned* lengths, const unsigned* frequencies,$/;"	f	typeref:typename:unsigned
+lodepng_inflate	src/external/lodepng.cpp	/^unsigned lodepng_inflate(unsigned char** out, size_t* outsize,$/;"	f	typeref:typename:unsigned
+lodepng_inflatev	src/external/lodepng.cpp	/^static unsigned lodepng_inflatev(ucvector* out,$/;"	f	typeref:typename:unsigned	file:
+lodepng_info_cleanup	src/external/lodepng.cpp	/^void lodepng_info_cleanup(LodePNGInfo* info) {$/;"	f	typeref:typename:void
+lodepng_info_copy	src/external/lodepng.cpp	/^unsigned lodepng_info_copy(LodePNGInfo* dest, const LodePNGInfo* source) {$/;"	f	typeref:typename:unsigned
+lodepng_info_init	src/external/lodepng.cpp	/^void lodepng_info_init(LodePNGInfo* info) {$/;"	f	typeref:typename:void
+lodepng_inspect	src/external/lodepng.cpp	/^unsigned lodepng_inspect(unsigned* w, unsigned* h, LodePNGState* state,$/;"	f	typeref:typename:unsigned
+lodepng_inspect_chunk	src/external/lodepng.cpp	/^unsigned lodepng_inspect_chunk(LodePNGState* state, size_t pos,$/;"	f	typeref:typename:unsigned
+lodepng_is_alpha_type	src/external/lodepng.cpp	/^unsigned lodepng_is_alpha_type(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_is_greyscale_type	src/external/lodepng.cpp	/^unsigned lodepng_is_greyscale_type(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_is_palette_type	src/external/lodepng.cpp	/^unsigned lodepng_is_palette_type(const LodePNGColorMode* info) {$/;"	f	typeref:typename:unsigned
+lodepng_load_file	src/external/lodepng.cpp	/^unsigned lodepng_load_file(unsigned char** out, size_t* outsize, const char* filename) {$/;"	f	typeref:typename:unsigned
+lodepng_malloc	src/external/lodepng.cpp	/^static void* lodepng_malloc(size_t size) {$/;"	f	typeref:typename:void *	file:
+lodepng_memcpy	src/external/lodepng.cpp	/^static void lodepng_memcpy(void* LODEPNG_RESTRICT dst,$/;"	f	typeref:typename:void	file:
+lodepng_memset	src/external/lodepng.cpp	/^static void lodepng_memset(void* LODEPNG_RESTRICT dst,$/;"	f	typeref:typename:void	file:
+lodepng_mulofl	src/external/lodepng.cpp	/^static int lodepng_mulofl(size_t a, size_t b, size_t* result) {$/;"	f	typeref:typename:int	file:
+lodepng_palette_add	src/external/lodepng.cpp	/^unsigned lodepng_palette_add(LodePNGColorMode* info,$/;"	f	typeref:typename:unsigned
+lodepng_palette_clear	src/external/lodepng.cpp	/^void lodepng_palette_clear(LodePNGColorMode* info) {$/;"	f	typeref:typename:void
+lodepng_pixel_overflow	src/external/lodepng.cpp	/^static int lodepng_pixel_overflow(unsigned w, unsigned h,$/;"	f	typeref:typename:int	file:
+lodepng_read32bitInt	src/external/lodepng.cpp	/^static unsigned lodepng_read32bitInt(const unsigned char* buffer) {$/;"	f	typeref:typename:unsigned	file:
+lodepng_realloc	src/external/lodepng.cpp	/^static void* lodepng_realloc(void* ptr, size_t new_size) {$/;"	f	typeref:typename:void *	file:
+lodepng_save_file	src/external/lodepng.cpp	/^unsigned lodepng_save_file(const unsigned char* buffer, size_t buffersize, const char* filename)/;"	f	typeref:typename:unsigned
+lodepng_set32bitInt	src/external/lodepng.cpp	/^static void lodepng_set32bitInt(unsigned char* buffer, unsigned value) {$/;"	f	typeref:typename:void	file:
+lodepng_set_icc	src/external/lodepng.cpp	/^unsigned lodepng_set_icc(LodePNGInfo* info, const char* name, const unsigned char* profile, unsi/;"	f	typeref:typename:unsigned
+lodepng_state_cleanup	src/external/lodepng.cpp	/^void lodepng_state_cleanup(LodePNGState* state) {$/;"	f	typeref:typename:void
+lodepng_state_copy	src/external/lodepng.cpp	/^void lodepng_state_copy(LodePNGState* dest, const LodePNGState* source) {$/;"	f	typeref:typename:void
+lodepng_state_init	src/external/lodepng.cpp	/^void lodepng_state_init(LodePNGState* state) {$/;"	f	typeref:typename:void
+lodepng_strlen	src/external/lodepng.cpp	/^static size_t lodepng_strlen(const char* a) {$/;"	f	typeref:typename:size_t	file:
+lodepng_zlib_compress	src/external/lodepng.cpp	/^unsigned lodepng_zlib_compress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+lodepng_zlib_decompress	src/external/lodepng.cpp	/^unsigned lodepng_zlib_decompress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned
+lodepng_zlib_decompressv	src/external/lodepng.cpp	/^static unsigned lodepng_zlib_decompressv(ucvector* out,$/;"	f	typeref:typename:unsigned	file:
+m_camera	src/core/api.hpp	/^        std::shared_ptr<Camera> m_camera = nullptr;$/;"	m	class:rt3::API	typeref:typename:std::shared_ptr<Camera>
+m_message	src/external/cxxopts.hpp	/^    std::string m_message;$/;"	m	class:cxxopts::OptionException	typeref:typename:std::string
+m_scene	src/core/api.hpp	/^        std::shared_ptr<Scene> m_scene = nullptr;$/;"	m	class:rt3::API	typeref:typename:std::shared_ptr<Scene>
+main	src/main.cpp	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+major	src/external/cxxopts.hpp	/^    uint8_t major, minor, patch;$/;"	m	struct:cxxopts::__anonbf52ef1d0408	typeref:typename:uint8_t
+make_unit_vector	src/core/vector2.hpp	/^inline void Vector3::make_unit_vector()$/;"	f	class:Vector3	typeref:typename:void
+make_unit_vector	src/core/vector3.hpp	/^inline void Vector3::make_unit_vector()$/;"	f	class:Vector3	typeref:typename:void
+mapping	src/core/background.hpp	/^    std::string mapping;$/;"	m	class:rt3::Background	typeref:typename:std::string
+maxbitlen	src/external/lodepng.cpp	/^  unsigned maxbitlen; \/*maximum number of bits a single code can get*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned	file:
+memory	src/external/lodepng.cpp	/^  BPMNode* memory;$/;"	m	struct:BPMLists	typeref:typename:BPMNode *	file:
+memsize	src/external/lodepng.cpp	/^  unsigned memsize;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+minmatch	src/external/lodepng.hpp	/^  unsigned minmatch; \/*minimum lz77 length. 3 is normally best, 6 can be better for some PNGs. /;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+minor	src/external/cxxopts.hpp	/^    uint8_t major, minor, patch;$/;"	m	struct:cxxopts::__anonbf52ef1d0408	typeref:typename:uint8_t
+minute	src/external/lodepng.hpp	/^  unsigned minute;  \/*0-59*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+missing_argument_exception	src/external/cxxopts.hpp	/^    missing_argument_exception(const std::string& option)$/;"	f	class:cxxopts::missing_argument_exception
+missing_argument_exception	src/external/cxxopts.hpp	/^  class missing_argument_exception : public OptionParseException$/;"	c	namespace:cxxopts
+month	src/external/lodepng.hpp	/^  unsigned month;   \/*1-12*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+name	.vscode/c_cpp_properties.json	/^            "name": "Linux",$/;"	s	object:configurations.0
+name	.vscode/launch.json	/^        "name": "clang++ - Build and debug active file",$/;"	s	object:configurations.0
+next	src/external/tinyxml2.hpp	/^        Item*   next;$/;"	m	union:tinyxml2::MemPoolT::Item	typeref:typename:Item *
+nextfree	src/external/lodepng.cpp	/^  unsigned nextfree;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+nicematch	src/external/lodepng.hpp	/^  unsigned nicematch; \/*stop searching if >= this length found. Set to 258 for best compression/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+numcodes	src/external/lodepng.cpp	/^  unsigned numcodes; \/*number of symbols in the alphabet = number of codes*\/$/;"	m	struct:HuffmanTree	typeref:typename:unsigned	file:
+numcolors	src/external/lodepng.hpp	/^  unsigned numcolors; \/*amount of colors, up to 257. Not valid if bits == 16 or allow_palette i/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned
+numfree	src/external/lodepng.cpp	/^  unsigned numfree;$/;"	m	struct:BPMLists	typeref:typename:unsigned	file:
+numpixels	src/external/lodepng.hpp	/^  size_t numpixels;$/;"	m	struct:LodePNGColorStats	typeref:typename:size_t
+operator !=	src/external/cxxopts.hpp	/^    operator!=(const UnicodeStringIterator& rhs) const$/;"	f	class:cxxopts::UnicodeStringIterator	typeref:typename:bool
+operator ()	src/external/cxxopts.hpp	/^        operator()(bool negative, U u, const std::string& text)$/;"	f	struct:cxxopts::values::detail::SignedCheck	typeref:typename:void
+operator ()	src/external/cxxopts.hpp	/^        operator()(bool, U, const std::string&) {}$/;"	f	struct:cxxopts::values::detail::SignedCheck	typeref:typename:void
+operator *	src/core/vector2.hpp	/^inline Vector3 operator*(const Vector3 &v, float t)$/;"	f	typeref:typename:Vector3
+operator *	src/core/vector2.hpp	/^inline Vector3 operator*(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator *	src/core/vector2.hpp	/^inline Vector3 operator*(float t, const Vector3 &v)$/;"	f	typeref:typename:Vector3
+operator *	src/core/vector3.hpp	/^inline Vector3 operator*(const Vector3 &v, float t)$/;"	f	typeref:typename:Vector3
+operator *	src/core/vector3.hpp	/^inline Vector3 operator*(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator *	src/core/vector3.hpp	/^inline Vector3 operator*(float t, const Vector3 &v)$/;"	f	typeref:typename:Vector3
+operator *	src/external/cxxopts.hpp	/^    operator*() const$/;"	f	class:cxxopts::UnicodeStringIterator	typeref:typename:value_type
+operator *=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator*=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator *=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator*=(const float t)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator *=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator*=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator *=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator*=(const float t)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator +	src/core/vector2.hpp	/^    inline const Vector3 &operator+() const { return *this; }$/;"	f	class:Vector2	typeref:typename:const Vector3 &
+operator +	src/core/vector2.hpp	/^inline Vector3 operator+(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator +	src/core/vector3.hpp	/^    inline const Vector3 &operator+() const { return *this; }$/;"	f	class:Vector3	typeref:typename:const Vector3 &
+operator +	src/core/vector3.hpp	/^inline Vector3 operator+(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator +	src/external/cxxopts.hpp	/^    operator+(int32_t v)$/;"	f	class:cxxopts::UnicodeStringIterator	typeref:typename:UnicodeStringIterator
+operator ++	src/external/cxxopts.hpp	/^    operator++()$/;"	f	class:cxxopts::UnicodeStringIterator	typeref:typename:UnicodeStringIterator &
+operator +=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator+=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator +=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator+=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator -	src/core/vector2.hpp	/^    inline Vector3 operator-() const { return Vector3(-e[0], -e[1]); }$/;"	f	class:Vector2	typeref:typename:Vector3
+operator -	src/core/vector2.hpp	/^inline Vector3 operator-(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator -	src/core/vector3.hpp	/^    inline Vector3 operator-() const { return Vector3(-e[0], -e[1], -e[2]); }$/;"	f	class:Vector3	typeref:typename:Vector3
+operator -	src/core/vector3.hpp	/^inline Vector3 operator-(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator -=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator-=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator -=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator-=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator /	src/core/vector2.hpp	/^inline Vector3 operator\/(Vector3 v, float t)$/;"	f	typeref:typename:Vector3
+operator /	src/core/vector2.hpp	/^inline Vector3 operator\/(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator /	src/core/vector3.hpp	/^inline Vector3 operator\/(Vector3 v, float t)$/;"	f	typeref:typename:Vector3
+operator /	src/core/vector3.hpp	/^inline Vector3 operator\/(const Vector3 &v1, const Vector3 &v2)$/;"	f	typeref:typename:Vector3
+operator /=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator\/=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator /=	src/core/vector2.hpp	/^inline Vector3 &Vector3::operator\/=(const float t)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator /=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator\/=(const Vector3 &v)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator /=	src/core/vector3.hpp	/^inline Vector3 &Vector3::operator\/=(const float t)$/;"	f	class:Vector3	typeref:typename:Vector3 &
+operator <<	src/core/vector2.hpp	/^inline std::ostream &operator<<(std::ostream &os, const Vector3 &t)$/;"	f	typeref:typename:std::ostream &
+operator <<	src/core/vector3.hpp	/^inline std::ostream &operator<<(std::ostream &os, const Vector3 &t)$/;"	f	typeref:typename:std::ostream &
+operator =	src/external/lodepng.cpp	/^State& State::operator=(const State& other) {$/;"	f	class:lodepng::State	typeref:typename:State &
+operator =	src/external/tinyxml2.hpp	/^    XMLConstHandle& operator=( const XMLConstHandle& ref )							{$/;"	f	class:tinyxml2::XMLConstHandle	typeref:typename:XMLConstHandle &
+operator =	src/external/tinyxml2.hpp	/^    XMLHandle& operator=( const XMLHandle& ref )							{$/;"	f	class:tinyxml2::XMLHandle	typeref:typename:XMLHandle &
+operator ==	src/external/cxxopts.hpp	/^    operator==(const UnicodeStringIterator& rhs) const$/;"	f	class:cxxopts::UnicodeStringIterator	typeref:typename:bool
+operator >>	src/core/vector2.hpp	/^inline std::istream &operator>>(std::istream &is, Vector3 &t)$/;"	f	typeref:typename:std::istream &
+operator >>	src/core/vector3.hpp	/^inline std::istream &operator>>(std::istream &is, Vector3 &t)$/;"	f	typeref:typename:std::istream &
+operator []	src/core/vector2.hpp	/^    inline float &operator[](int i) { return e[i]; }$/;"	f	class:Vector2	typeref:typename:float &
+operator []	src/core/vector2.hpp	/^    inline float operator[](int i) const { return e[i]; }$/;"	f	class:Vector2	typeref:typename:float
+operator []	src/core/vector3.hpp	/^    inline float &operator[](int i) { return e[i]; }$/;"	f	class:Vector3	typeref:typename:float &
+operator []	src/core/vector3.hpp	/^    inline float operator[](int i) const { return e[i]; }$/;"	f	class:Vector3	typeref:typename:float
+operator []	src/external/tinyxml2.hpp	/^    T& operator[](int i)				{$/;"	f	class:tinyxml2::DynArray	typeref:typename:T &
+operator []	src/external/tinyxml2.hpp	/^    const T& operator[](int i) const	{$/;"	f	class:tinyxml2::DynArray	typeref:typename:const T &
+option_exists_error	src/external/cxxopts.hpp	/^    option_exists_error(const std::string& option)$/;"	f	class:cxxopts::option_exists_error
+option_exists_error	src/external/cxxopts.hpp	/^  class option_exists_error : public OptionSpecException$/;"	c	namespace:cxxopts
+option_not_exists_exception	src/external/cxxopts.hpp	/^    option_not_exists_exception(const std::string& option)$/;"	f	class:cxxopts::option_not_exists_exception
+option_not_exists_exception	src/external/cxxopts.hpp	/^  class option_not_exists_exception : public OptionParseException$/;"	c	namespace:cxxopts
+option_not_has_argument_exception	src/external/cxxopts.hpp	/^    option_not_has_argument_exception$/;"	f	class:cxxopts::option_not_has_argument_exception
+option_not_has_argument_exception	src/external/cxxopts.hpp	/^  class option_not_has_argument_exception : public OptionParseException$/;"	c	namespace:cxxopts
+option_not_present_exception	src/external/cxxopts.hpp	/^    option_not_present_exception(const std::string& option)$/;"	f	class:cxxopts::option_not_present_exception
+option_not_present_exception	src/external/cxxopts.hpp	/^  class option_not_present_exception : public OptionParseException$/;"	c	namespace:cxxopts
+option_required_exception	src/external/cxxopts.hpp	/^    option_required_exception(const std::string& option)$/;"	f	class:cxxopts::option_required_exception
+option_required_exception	src/external/cxxopts.hpp	/^  class option_required_exception : public OptionParseException$/;"	c	namespace:cxxopts
+option_requires_argument_exception	src/external/cxxopts.hpp	/^    option_requires_argument_exception(const std::string& option)$/;"	f	class:cxxopts::option_requires_argument_exception
+option_requires_argument_exception	src/external/cxxopts.hpp	/^  class option_requires_argument_exception : public OptionParseException$/;"	c	namespace:cxxopts
+option_syntax_exception	src/external/cxxopts.hpp	/^    option_syntax_exception(const std::string& text)$/;"	f	class:cxxopts::option_syntax_exception
+option_syntax_exception	src/external/cxxopts.hpp	/^  class option_syntax_exception : public OptionParseException {$/;"	c	namespace:cxxopts
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.0
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.1
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.2
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.3
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.4
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.5
+pElement	src/core/parser.hpp	/^    XMLElement *pElement;$/;"	m	class:Parser	typeref:typename:XMLElement *
+pRoot	src/core/parser.hpp	/^    XMLNode *pRoot;$/;"	m	class:Parser	typeref:typename:XMLNode *
+paethPredictor	src/external/lodepng.cpp	/^static unsigned char paethPredictor(short a, short b, short c) {$/;"	f	typeref:typename:unsigned char	file:
+palette	src/external/lodepng.hpp	/^  unsigned char palette[1024]; \/*Remembers up to the first 256 RGBA colors, in no particular or/;"	m	struct:LodePNGColorStats	typeref:typename:unsigned char[1024]
+palette	src/external/lodepng.hpp	/^  unsigned char* palette; \/*palette in RGBARGBA... order. Must be either 0, or when allocated m/;"	m	struct:LodePNGColorMode	typeref:typename:unsigned char *
+palettesize	src/external/lodepng.hpp	/^  size_t palettesize; \/*palette size in number of colors (amount of used bytes is 4 * palettesi/;"	m	struct:LodePNGColorMode	typeref:typename:size_t
+params	src/core/paramset.hpp	/^        unordered_map<string, std::shared_ptr<void>> params;$/;"	m	class:rt3::ParamSet	typeref:typename:unordered_map<string,std::shared_ptr<void>>
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, T& value) {$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, bool& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, int16_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, int32_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, int64_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, int8_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, std::optional<T>& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, std::string& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, std::vector<T>& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, uint16_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, uint32_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, uint64_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    parse_value(const std::string& text, uint8_t& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+parse_value	src/external/cxxopts.hpp	/^    void parse_value(const std::string& text, char& c)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+patch	src/external/cxxopts.hpp	/^    uint8_t major, minor, patch;$/;"	m	struct:cxxopts::__anonbf52ef1d0408	typeref:typename:uint8_t
+pattern	src/external/tinyxml2.cpp	/^    const char* pattern;$/;"	m	struct:tinyxml2::Entity	typeref:typename:const char *	file:
+peekBits	src/external/lodepng.cpp	/^static unsigned peekBits(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:unsigned	file:
+phys_defined	src/external/lodepng.hpp	/^  unsigned phys_defined; \/*if 0, there is no pHYs chunk and the values below are undefined, if /;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_unit	src/external/lodepng.hpp	/^  unsigned phys_unit; \/*may be 0 (unknown unit) or 1 (metre)*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_x	src/external/lodepng.hpp	/^  unsigned phys_x; \/*pixels per unit in x direction*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+phys_y	src/external/lodepng.hpp	/^  unsigned phys_y; \/*pixels per unit in y direction*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+postProcessScanlines	src/external/lodepng.cpp	/^static unsigned postProcessScanlines(unsigned char* out, unsigned char* in,$/;"	f	typeref:typename:unsigned	file:
+preLaunchTask	.vscode/launch.json	/^        "preLaunchTask": "makefile build"$/;"	s	object:configurations.0
+preProcessScanlines	src/external/lodepng.cpp	/^static unsigned preProcessScanlines(unsigned char** out, size_t* outsize, const unsigned char* i/;"	f	typeref:typename:unsigned	file:
+predefined_filters	src/external/lodepng.hpp	/^  const unsigned char* predefined_filters;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:const unsigned char *
+print	src/core/api.hpp	/^        inline void print(){$/;"	f	class:rt3::API	typeref:typename:void
+print	src/core/background.hpp	/^    inline void print()$/;"	f	class:rt3::Background	typeref:typename:void
+print	src/core/camera.hpp	/^        inline void print(){$/;"	f	class:rt3::Camera	typeref:typename:void
+print	src/core/film.hpp	/^    inline void print()$/;"	f	class:rt3::Film	typeref:typename:void
+print	src/core/scene.hpp	/^    inline void print() {$/;"	f	class:rt3::Scene	typeref:typename:void
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.0
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.1
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.2
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.3
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.4
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.5
+program	.vscode/launch.json	/^        "program": "${workspaceFolder}\/bin\/main",$/;"	s	object:configurations.0
+r	src/core/vector3.hpp	/^    inline float r() const { return e[0]; }$/;"	f	class:Vector3	typeref:typename:float
+readBitFromReversedStream	src/external/lodepng.cpp	/^static unsigned char readBitFromReversedStream(size_t* bitpointer, const unsigned char* bitstrea/;"	f	typeref:typename:unsigned char	file:
+readBits	src/external/lodepng.cpp	/^static unsigned readBits(LodePNGBitReader* reader, size_t nbits) {$/;"	f	typeref:typename:unsigned	file:
+readBitsFromReversedStream	src/external/lodepng.cpp	/^static unsigned readBitsFromReversedStream(size_t* bitpointer, const unsigned char* bitstream, s/;"	f	typeref:typename:unsigned	file:
+readChunk_PLTE	src/external/lodepng.cpp	/^static unsigned readChunk_PLTE(LodePNGColorMode* color, const unsigned char* data, size_t chunkL/;"	f	typeref:typename:unsigned	file:
+readChunk_bKGD	src/external/lodepng.cpp	/^static unsigned readChunk_bKGD(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_cHRM	src/external/lodepng.cpp	/^static unsigned readChunk_cHRM(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_gAMA	src/external/lodepng.cpp	/^static unsigned readChunk_gAMA(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_iCCP	src/external/lodepng.cpp	/^static unsigned readChunk_iCCP(LodePNGInfo* info, const LodePNGDecompressSettings* zlibsettings,$/;"	f	typeref:typename:unsigned	file:
+readChunk_iTXt	src/external/lodepng.cpp	/^static unsigned readChunk_iTXt(LodePNGInfo* info, const LodePNGDecompressSettings* zlibsettings,$/;"	f	typeref:typename:unsigned	file:
+readChunk_pHYs	src/external/lodepng.cpp	/^static unsigned readChunk_pHYs(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_sRGB	src/external/lodepng.cpp	/^static unsigned readChunk_sRGB(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_tEXt	src/external/lodepng.cpp	/^static unsigned readChunk_tEXt(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_tIME	src/external/lodepng.cpp	/^static unsigned readChunk_tIME(LodePNGInfo* info, const unsigned char* data, size_t chunkLength)/;"	f	typeref:typename:unsigned	file:
+readChunk_tRNS	src/external/lodepng.cpp	/^static unsigned readChunk_tRNS(LodePNGColorMode* color, const unsigned char* data, size_t chunkL/;"	f	typeref:typename:unsigned	file:
+readChunk_zTXt	src/external/lodepng.cpp	/^static unsigned readChunk_zTXt(LodePNGInfo* info, const LodePNGDecompressSettings* zlibsettings,$/;"	f	typeref:typename:unsigned	file:
+read_text_chunks	src/external/lodepng.hpp	/^  unsigned read_text_chunks; \/*if false but remember_unknown_chunks is true, they're stored in /;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+remember_unknown_chunks	src/external/lodepng.hpp	/^  unsigned remember_unknown_chunks;$/;"	m	struct:LodePNGDecoderSettings	typeref:typename:unsigned
+removePaddingBits	src/external/lodepng.cpp	/^static void removePaddingBits(unsigned char* out, const unsigned char* in,$/;"	f	typeref:typename:void	file:
+request	.vscode/launch.json	/^        "request": "launch",$/;"	s	object:configurations.0
+reverseBits	src/external/lodepng.cpp	/^static unsigned reverseBits(unsigned bits, unsigned num) {$/;"	f	typeref:typename:unsigned	file:
+rgb	src/header.hpp	/^typedef Vector3 rgb;$/;"	t	typeref:typename:Vector3
+rgba16ToPixel	src/external/lodepng.cpp	/^static void rgba16ToPixel(unsigned char* out, size_t i,$/;"	f	typeref:typename:void	file:
+rgba8ToPixel	src/external/lodepng.cpp	/^static unsigned rgba8ToPixel(unsigned char* out, size_t i,$/;"	f	typeref:typename:unsigned	file:
+rt3	src/core/api.hpp	/^namespace rt3 {$/;"	n
+rt3	src/core/background.hpp	/^namespace rt3 {$/;"	n
+rt3	src/core/camera.hpp	/^namespace rt3 {$/;"	n
+rt3	src/core/film.hpp	/^namespace rt3 {$/;"	n
+rt3	src/core/paramset.hpp	/^namespace rt3 {$/;"	n
+rt3	src/core/scene.hpp	/^namespace rt3 {$/;"	n
+s	src/external/cxxopts.hpp	/^    const icu::UnicodeString* s;$/;"	m	class:cxxopts::UnicodeStringIterator	typeref:typename:const icu::UnicodeString *
+sample	src/core/background.hpp	/^    inline rgb sample (float x, float y)$/;"	f	class:rt3::Background	typeref:typename:rgb
+sample_corner_color	src/core/api.hpp	/^        string sample_corner_color(const char* corner_name, bool & flag, const ParamSet &ps) {$/;"	f	class:rt3::API	typeref:typename:string
+save	src/core/api.hpp	/^        void save(){$/;"	f	class:rt3::API	typeref:typename:void
+save_file	src/external/lodepng.cpp	/^unsigned save_file(const std::vector<unsigned char>& buffer, const std::string& filename) {$/;"	f	namespace:lodepng	typeref:typename:unsigned
+scene	src/core/api.hpp	/^        void scene(const ParamSet & ps) {$/;"	f	class:rt3::API	typeref:typename:void
+searchCodeIndex	src/external/lodepng.cpp	/^static size_t searchCodeIndex(const unsigned* array, size_t array_size, size_t value) {$/;"	f	typeref:typename:size_t	file:
+second	src/external/lodepng.hpp	/^  unsigned second;  \/*0-60 (to allow for leap seconds)*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+setBitOfReversedStream	src/external/lodepng.cpp	/^static void setBitOfReversedStream(size_t* bitpointer, unsigned char* bitstream, unsigned char b/;"	f	typeref:typename:void	file:
+size	src/core/paramset.hpp	/^        const size_t size;$/;"	m	class:rt3::ParamSetItem	typeref:typename:const size_t
+size	src/external/lodepng.cpp	/^  size_t size; \/*size in number of unsigned longs*\/$/;"	m	struct:uivector	typeref:typename:size_t	file:
+size	src/external/lodepng.cpp	/^  size_t size; \/*size of data in bytes*\/$/;"	m	struct:__anone812e0480208	typeref:typename:size_t	file:
+size	src/external/lodepng.cpp	/^  size_t size; \/*used size*\/$/;"	m	struct:ucvector	typeref:typename:size_t	file:
+squared_length	src/core/vector2.hpp	/^    inline float squared_length() const { return e[0] * e[0] + e[1] * e[1]; }$/;"	f	class:Vector2	typeref:typename:float
+squared_length	src/core/vector3.hpp	/^    inline float squared_length() const { return e[0] * e[0] + e[1] * e[1] + e[2] * e[2]; }$/;"	f	class:Vector3	typeref:typename:float
+srgb_defined	src/external/lodepng.hpp	/^  unsigned srgb_defined; \/* Whether an sRGB chunk is present (0 = not present, 1 = present). *\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+srgb_intent	src/external/lodepng.hpp	/^  unsigned srgb_intent;  \/* Rendering intent: 0=perceptual, 1=rel. colorimetric, 2=saturation, /;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+std	src/external/cxxopts.hpp	/^namespace std$/;"	n
+stopAtEntry	.vscode/launch.json	/^        "stopAtEntry": true,$/;"	b	object:configurations.0
+stringAppend	src/external/cxxopts.hpp	/^  stringAppend(String& s, Iterator begin, Iterator end)$/;"	f	namespace:cxxopts	typeref:typename:String &
+stringAppend	src/external/cxxopts.hpp	/^  stringAppend(String& s, int n, UChar32 c)$/;"	f	namespace:cxxopts	typeref:typename:String &
+stringAppend	src/external/cxxopts.hpp	/^  stringAppend(String& s, size_t n, char c)$/;"	f	namespace:cxxopts	typeref:typename:String &
+stringAppend	src/external/cxxopts.hpp	/^  stringAppend(String&s, String a)$/;"	f	namespace:cxxopts	typeref:typename:String &
+stringLength	src/external/cxxopts.hpp	/^  stringLength(const String& s)$/;"	f	namespace:cxxopts	typeref:typename:size_t
+string_cleanup	src/external/lodepng.cpp	/^static void string_cleanup(char** out) {$/;"	f	typeref:typename:void	file:
+stringstream_parser	src/external/cxxopts.hpp	/^    void stringstream_parser(const std::string& text, T& value)$/;"	f	namespace:cxxopts::values	typeref:typename:void
+table_len	src/external/lodepng.cpp	/^  unsigned char* table_len; \/*length of symbol from lookup table, or max length if secondary lo/;"	m	struct:HuffmanTree	typeref:typename:unsigned char *	file:
+table_value	src/external/lodepng.cpp	/^  unsigned short* table_value; \/*value of symbol from lookup table, or pointer to secondary tab/;"	m	struct:HuffmanTree	typeref:typename:unsigned short *	file:
+tail	src/external/lodepng.cpp	/^  struct BPMNode* tail; \/*the next nodes in this chain (null if last)*\/$/;"	m	struct:BPMNode	typeref:struct:BPMNode *	file:
+tasks	.vscode/tasks.json	/^    "tasks": [$/;"	a
+text_compression	src/external/lodepng.hpp	/^  unsigned text_compression;$/;"	m	struct:LodePNGEncoderSettings	typeref:typename:unsigned
+text_keys	src/external/lodepng.hpp	/^  char** text_keys; \/*the keyword of a text chunk (e.g. "Comment")*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+text_num	src/external/lodepng.hpp	/^  size_t text_num; \/*the amount of texts in these char** buffers (there may be more texts in it/;"	m	struct:LodePNGInfo	typeref:typename:size_t
+text_strings	src/external/lodepng.hpp	/^  char** text_strings; \/*the actual text*\/$/;"	m	struct:LodePNGInfo	typeref:typename:char **
+the problem	ref.md	/^# the problem$/;"	c
+throw_or_mimic	src/external/cxxopts.hpp	/^  void throw_or_mimic(const std::string& text)$/;"	f	namespace:cxxopts	typeref:typename:void
+time	src/external/lodepng.hpp	/^  LodePNGTime time;$/;"	m	struct:LodePNGInfo	typeref:typename:LodePNGTime
+time_defined	src/external/lodepng.hpp	/^  unsigned time_defined; \/*set to 1 to make the encoder generate a tIME chunk*\/$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned
+tinyxml2	src/external/tinyxml2.cpp	/^namespace tinyxml2$/;"	n	file:
+tinyxml2	src/external/tinyxml2.hpp	/^namespace tinyxml2$/;"	n
+tl	src/core/background.hpp	/^    rgb tl; \/\/ (0,1)$/;"	m	class:rt3::Background	typeref:typename:rgb
+toLocalString	src/external/cxxopts.hpp	/^  toLocalString(T&& t)$/;"	f	namespace:cxxopts	typeref:typename:T
+toLocalString	src/external/cxxopts.hpp	/^  toLocalString(std::string s)$/;"	f	namespace:cxxopts	typeref:typename:String
+toUTF8String	src/external/cxxopts.hpp	/^  toUTF8String(T&& t)$/;"	f	namespace:cxxopts	typeref:typename:std::string
+toUTF8String	src/external/cxxopts.hpp	/^  toUTF8String(const String& s)$/;"	f	namespace:cxxopts	typeref:typename:std::string
+tr	src/core/background.hpp	/^    rgb tr; \/\/ (1,1)$/;"	m	class:rt3::Background	typeref:typename:rgb
+truthy_pattern	src/external/cxxopts.hpp	/^      std::basic_regex<char> truthy_pattern$/;"	v	namespace:cxxopts::values::__anonbf52ef1d0611	typeref:typename:std::basic_regex<char>
+type	.vscode/launch.json	/^        "type": "cppdbg",$/;"	s	object:configurations.0
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.0
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.1
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.2
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.3
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.4
+type	.vscode/tasks.json	/^            "type": "shell",$/;"	s	object:tasks.5
+type	src/core/background.hpp	/^    std::string type;$/;"	m	class:rt3::Background	typeref:typename:std::string
+type	src/core/camera.hpp	/^        std::string type;$/;"	m	class:rt3::Camera	typeref:typename:std::string
+type	src/core/film.hpp	/^    std::string type;$/;"	m	class:rt3::Film	typeref:typename:std::string
+type_is_container	src/external/cxxopts.hpp	/^    struct type_is_container$/;"	s	namespace:cxxopts::values
+ucvector	src/external/lodepng.cpp	/^typedef struct ucvector {$/;"	s	file:
+ucvector	src/external/lodepng.cpp	/^} ucvector;$/;"	t	typeref:struct:ucvector	file:
+ucvector_init	src/external/lodepng.cpp	/^static ucvector ucvector_init(unsigned char* buffer, size_t size) {$/;"	f	typeref:typename:ucvector	file:
+ucvector_resize	src/external/lodepng.cpp	/^static unsigned ucvector_resize(ucvector* p, size_t size) {$/;"	f	typeref:typename:unsigned	file:
+uivector	src/external/lodepng.cpp	/^typedef struct uivector {$/;"	s	file:
+uivector	src/external/lodepng.cpp	/^} uivector;$/;"	t	typeref:struct:uivector	file:
+uivector_cleanup	src/external/lodepng.cpp	/^static void uivector_cleanup(void* p) {$/;"	f	typeref:typename:void	file:
+uivector_init	src/external/lodepng.cpp	/^static void uivector_init(uivector* p) {$/;"	f	typeref:typename:void	file:
+uivector_push_back	src/external/lodepng.cpp	/^static unsigned uivector_push_back(uivector* p, unsigned c) {$/;"	f	typeref:typename:unsigned	file:
+uivector_resize	src/external/lodepng.cpp	/^static unsigned uivector_resize(uivector* p, size_t size) {$/;"	f	typeref:typename:unsigned	file:
+unfilter	src/external/lodepng.cpp	/^static unsigned unfilter(unsigned char* out, const unsigned char* in, unsigned w, unsigned h, un/;"	f	typeref:typename:unsigned	file:
+unfilterScanline	src/external/lodepng.cpp	/^static unsigned unfilterScanline(unsigned char* recon, const unsigned char* scanline, const unsi/;"	f	typeref:typename:unsigned	file:
+unit_vector	src/core/vector2.hpp	/^inline Vector3 unit_vector(Vector3 v)$/;"	f	typeref:typename:Vector3
+unit_vector	src/core/vector3.hpp	/^inline Vector3 unit_vector(Vector3 v)$/;"	f	typeref:typename:Vector3
+unknown_chunks_data	src/external/lodepng.hpp	/^  unsigned char* unknown_chunks_data[3];$/;"	m	struct:LodePNGInfo	typeref:typename:unsigned char * [3]
+unknown_chunks_size	src/external/lodepng.hpp	/^  size_t unknown_chunks_size[3]; \/*size in bytes of the unknown chunks, given for protection*\/$/;"	m	struct:LodePNGInfo	typeref:typename:size_t[3]
+updateHashChain	src/external/lodepng.cpp	/^static void updateHashChain(Hash* hash, size_t wpos, unsigned hashval, unsigned short numzeros) /;"	f	typeref:typename:void	file:
+update_adler32	src/external/lodepng.cpp	/^static unsigned update_adler32(unsigned adler, const unsigned char* data, unsigned len) {$/;"	f	typeref:typename:unsigned	file:
+use_lz77	src/external/lodepng.hpp	/^  unsigned use_lz77; \/*whether or not to use LZ77. Should be 1 for proper compression.*\/$/;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+val	makefile	/^val:$/;"	t
+val	src/external/lodepng.cpp	/^  int* val; \/*circular pos to hash value*\/$/;"	m	struct:Hash	typeref:typename:int *	file:
+value	src/external/cxxopts.hpp	/^      static constexpr bool value = false;$/;"	m	struct:cxxopts::values::type_is_container	typeref:typename:bool
+value	src/external/tinyxml2.cpp	/^    char value;$/;"	m	struct:tinyxml2::Entity	typeref:typename:char	file:
+values	src/core/paramset.hpp	/^        const unique_ptr <T []> values;$/;"	m	class:rt3::ParamSetItem	typeref:typename:const unique_ptr<T[]>
+values	src/external/cxxopts.hpp	/^  namespace values$/;"	n	namespace:cxxopts
+version	.vscode/c_cpp_properties.json	/^    "version": 4$/;"	n
+version	.vscode/tasks.json	/^    "version": "2.0.0",$/;"	s
+version	src/external/cxxopts.hpp	/^  } version = {$/;"	v	namespace:cxxopts	typeref:struct:cxxopts::__anonbf52ef1d0408
+weight	src/external/lodepng.cpp	/^  int weight; \/*the sum of all weights in this chain*\/$/;"	m	struct:BPMNode	typeref:typename:int	file:
+what	src/external/cxxopts.hpp	/^    what() const noexcept$/;"	f	class:cxxopts::OptionException	typeref:typename:const char *
+width	src/core/film.hpp	/^    int width;$/;"	m	class:rt3::Film	typeref:typename:int
+windowsize	src/external/lodepng.hpp	/^  unsigned windowsize; \/*must be a power of two <= 32768. higher compresses more but is slower./;"	m	struct:LodePNGCompressSettings	typeref:typename:unsigned
+writeBits	src/external/lodepng.cpp	/^static void writeBits(LodePNGBitWriter* writer, unsigned value, size_t nbits) {$/;"	f	typeref:typename:void	file:
+writeBitsReversed	src/external/lodepng.cpp	/^static void writeBitsReversed(LodePNGBitWriter* writer, unsigned value, size_t nbits) {$/;"	f	typeref:typename:void	file:
+writeBoolFalse	src/external/tinyxml2.cpp	/^const char* XMLUtil::writeBoolFalse = "false";$/;"	m	class:tinyxml2::XMLUtil	typeref:typename:const char *
+writeBoolFalse	src/external/tinyxml2.hpp	/^	static const char* writeBoolFalse;$/;"	m	class:tinyxml2::XMLUtil	typeref:typename:const char *
+writeBoolTrue	src/external/tinyxml2.cpp	/^const char* XMLUtil::writeBoolTrue  = "true";$/;"	m	class:tinyxml2::XMLUtil	typeref:typename:const char *
+writeBoolTrue	src/external/tinyxml2.hpp	/^	static const char* writeBoolTrue;$/;"	m	class:tinyxml2::XMLUtil	typeref:typename:const char *
+writeLZ77data	src/external/lodepng.cpp	/^static void writeLZ77data(LodePNGBitWriter* writer, const uivector* lz77_encoded,$/;"	f	typeref:typename:void	file:
+writeSignature	src/external/lodepng.cpp	/^static unsigned writeSignature(ucvector* out) {$/;"	f	typeref:typename:unsigned	file:
+write_image	src/core/film.hpp	/^    inline void write_image()$/;"	f	class:rt3::Film	typeref:typename:void
+x	src/core/vector2.hpp	/^    inline float x() const { return e[0]; }$/;"	f	class:Vector2	typeref:typename:float
+x	src/core/vector3.hpp	/^    inline float x() const { return e[0]; }$/;"	f	class:Vector3	typeref:typename:float
+xmlDoc	src/core/parser.hpp	/^    XMLDocument xmlDoc;$/;"	m	class:Parser	typeref:typename:XMLDocument
+y	src/core/vector2.hpp	/^    inline float y() const { return e[1]; }$/;"	f	class:Vector2	typeref:typename:float
+y	src/core/vector3.hpp	/^    inline float y() const { return e[1]; }$/;"	f	class:Vector3	typeref:typename:float
+year	src/external/lodepng.hpp	/^  unsigned year;    \/*2 bytes used (0-65535)*\/$/;"	m	struct:LodePNGTime	typeref:typename:unsigned
+z	src/core/vector3.hpp	/^    inline float z() const { return e[2]; }$/;"	f	class:Vector3	typeref:typename:float
+zeros	src/external/lodepng.cpp	/^  unsigned short* zeros; \/*length of zeros streak, used as a second hash chain*\/$/;"	m	struct:Hash	typeref:typename:unsigned short *	file:
+zlib_compress	src/external/lodepng.cpp	/^static unsigned zlib_compress(unsigned char** out, size_t* outsize, const unsigned char* in,$/;"	f	typeref:typename:unsigned	file:
+zlib_decompress	src/external/lodepng.cpp	/^static unsigned zlib_decompress(unsigned char** out, size_t* outsize, size_t expected_size,$/;"	f	typeref:typename:unsigned	file:
+zlibsettings	src/external/lodepng.hpp	/^  LodePNGCompressSettings zlibsettings; \/*settings for the zlib encoder, such as window size, ./;"	m	struct:LodePNGEncoderSettings	typeref:typename:LodePNGCompressSettings
+zlibsettings	src/external/lodepng.hpp	/^  LodePNGDecompressSettings zlibsettings; \/*in here is the setting to ignore Adler32 checksums*/;"	m	struct:LodePNGDecoderSettings	typeref:typename:LodePNGDecompressSettings
+~API	src/core/api.hpp	/^        ~API(){}$/;"	f	class:rt3::API
+~Background	src/core/background.hpp	/^    ~Background(){}$/;"	f	class:rt3::Background
+~Camera	src/core/camera.hpp	/^        ~Camera() {}$/;"	f	class:rt3::Camera
+~DepthTracker	src/external/tinyxml2.hpp	/^		~DepthTracker() {$/;"	f	class:tinyxml2::XMLDocument::DepthTracker
+~DynArray	src/external/tinyxml2.hpp	/^    ~DynArray() {$/;"	f	class:tinyxml2::DynArray
+~Film	src/core/film.hpp	/^    ~Film() {}$/;"	f	class:rt3::Film
+~MemPool	src/external/tinyxml2.hpp	/^    virtual ~MemPool() {}$/;"	f	class:tinyxml2::MemPool
+~MemPoolT	src/external/tinyxml2.hpp	/^    ~MemPoolT() {$/;"	f	class:tinyxml2::MemPoolT
+~ParamSet	src/core/paramset.hpp	/^        ~ParamSet() {}$/;"	f	class:rt3::ParamSet
+~ParamSetItem	src/core/paramset.hpp	/^        ~ParamSetItem(){}$/;"	f	class:rt3::ParamSetItem
+~Parser	src/core/parser.hpp	/^    ~Parser() {}$/;"	f	class:Parser
+~Scene	src/core/scene.hpp	/^    ~Scene() {}$/;"	f	class:rt3::Scene
+~State	src/external/lodepng.cpp	/^State::~State() {$/;"	f	class:lodepng::State
+~StrPair	src/external/tinyxml2.cpp	/^StrPair::~StrPair()$/;"	f	class:tinyxml2::StrPair
+~XMLAttribute	src/external/tinyxml2.hpp	/^    virtual ~XMLAttribute()	{}$/;"	f	class:tinyxml2::XMLAttribute
+~XMLComment	src/external/tinyxml2.cpp	/^XMLComment::~XMLComment()$/;"	f	class:tinyxml2::XMLComment
+~XMLDeclaration	src/external/tinyxml2.cpp	/^XMLDeclaration::~XMLDeclaration()$/;"	f	class:tinyxml2::XMLDeclaration
+~XMLDocument	src/external/tinyxml2.cpp	/^XMLDocument::~XMLDocument()$/;"	f	class:tinyxml2::XMLDocument
+~XMLElement	src/external/tinyxml2.cpp	/^XMLElement::~XMLElement()$/;"	f	class:tinyxml2::XMLElement
+~XMLNode	src/external/tinyxml2.cpp	/^XMLNode::~XMLNode()$/;"	f	class:tinyxml2::XMLNode
+~XMLPrinter	src/external/tinyxml2.hpp	/^    virtual ~XMLPrinter()	{}$/;"	f	class:tinyxml2::XMLPrinter
+~XMLText	src/external/tinyxml2.hpp	/^    virtual ~XMLText()												{}$/;"	f	class:tinyxml2::XMLText
+~XMLUnknown	src/external/tinyxml2.cpp	/^XMLUnknown::~XMLUnknown()$/;"	f	class:tinyxml2::XMLUnknown
+~XMLVisitor	src/external/tinyxml2.hpp	/^    virtual ~XMLVisitor() {}$/;"	f	class:tinyxml2::XMLVisitor
