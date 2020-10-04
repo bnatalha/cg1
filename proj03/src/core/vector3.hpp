@@ -16,6 +16,9 @@
 #include <stdlib.h>
 #include <sstream>
 
+
+
+
 class Vector3
 {
 public:
@@ -144,8 +147,10 @@ inline float dot(const Vector3& v1, const Vector3& v2)
 inline Vector3 cross(const Vector3& v1, const Vector3& v2)
 {
     return Vector3(v1.e[1] * v2.e[2] - v1.e[2] * v2.e[1],
-        v1.e[2] * v2.e[0] - v1.e[0] * v2.e[2],
-        v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]);
+        // v1.e[2] * v2.e[0] - v1.e[0] * v2.e[2],
+        v1.e[0] * v2.e[2] - v1.e[2] * v2.e[0],
+        // v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]);
+        v1.e[1] * v2.e[0] - v1.e[0] * v2.e[1]);
 }
 
 inline Vector3& Vector3::operator+=(const Vector3& v)
@@ -202,5 +207,11 @@ inline Vector3 unit_vector(Vector3 v)
 {
     return v / v.length();
 }
+
+typedef Vector3 rgb;
+typedef Vector3 Point3;
+typedef Vector3 Pixel;
+typedef std::pair<int,int> Point2;
+typedef std::pair<float,float> Point2f;
 
 #endif

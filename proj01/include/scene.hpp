@@ -1,7 +1,7 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
-#include "tinyxml2.h"
+#include "tinyxml2.hpp"
 #include "background.hpp"
 
 namespace rt3 {

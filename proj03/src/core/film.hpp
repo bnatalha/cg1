@@ -1,13 +1,13 @@
 #ifndef FILM_HPP
 #define FILM_HPP
 
-#include "header.hpp"
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <memory>
 #include "tinyxml2.hpp"
 #include "lodepng.hpp"
+#include "vector3.hpp"
 
 namespace rt3 {
 

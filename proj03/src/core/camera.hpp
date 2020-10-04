@@ -3,7 +3,6 @@
 
 #include <string>
 
-#include "header.hpp"
 #include "film.hpp"
 #include "ray.hpp"
 #include "paramset.hpp"
@@ -67,10 +66,10 @@ namespace rt3 {
 
         // pixel (i,j) -> point (u,v)
         // TODO(bnatalha): verify if using int/float will make a difference
-        Point2 to_screen_space(Point2 pixel) {
-            float u = l + (r - l) * (pixel.first + 0.5) / film.width;
-            float v = b + (t - b) * (pixel.second + 0.5) / film.height;
-            return Point2(u, v);
+        Point2f to_screen_space(Point2 pixel) {
+            float u = l + ((r - l) * (pixel.first + 0.5)) / film.width;
+            float v = b + ((t - b) * (pixel.second + 0.5)) / film.height;
+            return Point2f(u, v);
         }
 
         virtual Ray generate_ray(int x, int y) = 0;
@@ -111,14 +110,10 @@ namespace rt3 {
         }
 
         inline Ray generate_ray(float x, float y) {
-            Point2 p = to_screen_space(Point2(x, y));
-            float u = p.first, v = p.second;
-            Vector3 d = _w;
-            Point3 o = e + (u * _u) + (v * _v);
-            return Ray(o, d);
+            return generate_ray(int(floor(x)), int(floor(y)));
         }
         inline Ray generate_ray(int x, int y) {
-            Point2 p = to_screen_space(Point2(x, y));
+            Point2f p = to_screen_space(Point2(x, y));
             float u = p.first, v = p.second;
             Vector3 d = _w;
             Point3 o = e + (u * _u) + (v * _v);
@@ -137,16 +132,17 @@ namespace rt3 {
 
         inline void set_lrbt() {
             if (!has_screen_window) {
-                float H = film.height / 2;
+                // float hh = film.height / 2.f;
                 // TODO(bnatalha): use tangent calculation
-                // float tg = float (tan(fovy / 2.0))s;
+                float tg = tan(fovy / 2);
                 // float tg = float (2.0);
-                float tg = H / fd;
+                // float tg = hh / fd;
+                // float tg = hh;
                 float a = film.aspect_ratio();
                 l = -a * tg;
                 r = a * tg;
-                b = -(1 / film.aspect_ratio());
-                t = 1 / film.aspect_ratio();
+                b = -tg;
+                t = tg;
             }
         }
 
@@ -157,14 +153,10 @@ namespace rt3 {
         }
 
         inline Ray generate_ray(float x, float y) {
-            Point2 p = to_screen_space(Point2(x, y));
-            float u = p.first, v = p.second;
-            Vector3 d = (fd * _w) + (u * _u) + (v * _v);
-            Point3 o = e;
-            return Ray(o, d);
+            return generate_ray(int(floor(x)), int(floor(y)));
         }
         inline Ray generate_ray(int x, int y) {
-            Point2 p = to_screen_space(Point2(x, y));
+            Point2f p = to_screen_space(Point2(x, y));
             float u = p.first, v = p.second;
             Vector3 d = (fd * _w) + (u * _u) + (v * _v);
             Point3 o = e;

@@ -8,6 +8,7 @@ class ParserTags
 public:
     inline static const char* PARSER_DEFAULT_STR = "N0T_F0UND";
     inline static const int PARSER_DEFAULT_INT = INT_MIN;
+    inline static const float PARSER_DEFAULT_FLOAT= 0.0002f;
 
     // LOOK_AT
     inline static const char* LOOKAT = "lookat";
@@ -33,6 +34,7 @@ public:
     inline static const char* FILM_CROP_WINDOW = "crop_window";    // new
     inline static const char* FILM_GAMMA_CORRECTED = "gamma_corrected";    // new
 
+    // SCENE ----------------------------------------------------------------
     // BACKGROUND
     inline static const char* BACKGROUND = "background";
     inline static const char* BACKGROUND_TYPE = "type";
@@ -42,6 +44,14 @@ public:
     inline static const char* BACKGROUND_TL = "tl";
     inline static const char* BACKGROUND_TR = "tr";
     inline static const char* BACKGROUND_BR = "br";
+
+    // OBJECT
+    inline static const char* OBJECT = "object";
+    inline static const char* OBJECT_TYPE = "type";
+    inline static const char* OBJECT_SPHERE = "sphere";
+    inline static const char* OBJECT_RADIUS = "radius";
+    inline static const char* OBJECT_CENTER = "center";
+
 
 };
 

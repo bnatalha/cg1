@@ -3,7 +3,7 @@
 
 #include "header.hpp"
 #include "vector3.hpp"
-#include "tinyxml2.h"
+#include "tinyxml2.hpp"
 
 using std::string;
 

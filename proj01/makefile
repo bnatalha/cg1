@@ -2,7 +2,8 @@
 # Originally from https://hiltmon.com/blog/2013/07/03/a-simple-c-plus-plus-project-structure/
 #
 
-CC := g++
+# CC := g++
+CC := clang++
 SRCDIR := src
 BUILDDIR := build
 TARGETDIR := bin

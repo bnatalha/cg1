@@ -9,19 +9,11 @@
 #include <string>
 #include <sstream>
 #include <memory>
-#include <climits>
 #include "tinyxml2.hpp"
 
 #include "api.hpp"
+#include "parser_tags.hpp"
 #include "paramset.hpp"
-
-#define PARSER_DEFAULT_STR = "N0T_F0UND";
-#define PARSER_DEFAULT_INT = INT_MIN;
-
-enum cameraType {
-    ortographic = 0,
-    perspective
-};
 
 using namespace tinyxml2;
 
@@ -33,6 +25,9 @@ using namespace tinyxml2;
         return a_eResult;                            \
     }
 #endif
+
+
+
 
 class Parser
 {
@@ -50,24 +45,40 @@ public:
     int extractData(rt3::API& api);
 
     inline void addStrAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
-        const char* str = PARSER_DEFAULT_STR;
-        auto xmlResult = pElement->QueryStringAttribute(tag, &str);
+        // const char * str= ParserTags::PARSER_DEFAULT_STR;
+        auto xmlResult = pElement->QueryStringAttribute(tag, &ParserTags::PARSER_DEFAULT_STR);
         if (xmlResult != XML_SUCCESS) { return; } // value not found
         std::unique_ptr<std::string[]> u_ptr(new std::string[1]);
-        u_ptr[0] = str;
+        u_ptr[0] = ParserTags::PARSER_DEFAULT_STR;
         ps.add<std::string>(tag, std::move(u_ptr), 1);
     }
 
+    inline void addTag(const char* tag, rt3::ParamSet& ps) {
+        std::unique_ptr<bool[]> u_ptr(new bool[1]);
+        u_ptr[0] = true;
+        ps.add<bool>(tag, std::move(u_ptr), 1);
+    }
+
     inline void addIntAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
-        int val = PARSER_DEFAULT_INT;  // default not_found value;
+        int val = ParserTags::PARSER_DEFAULT_INT;
         auto xmlResult = pElement->QueryIntAttribute(tag, &val);
-        if (xmlResult != XML_SUCCESS) { return; } // value not found
+        if (xmlResult != XML_SUCCESS) { return; }
         std::unique_ptr<int[]> u_ptr(new int[1]);
         u_ptr[0] = val;
         ps.add<int>(tag, std::move(u_ptr), 1);
     }
+
+    // inline void addPoint3FloatAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
+    //     float[4] val = {-1.0, -1.0, -1.0, -1.0};
+    //     auto xmlResult = pElement->QueryIntAttribute(tag, &val);
+    //     if (xmlResult != XML_SUCCESS) { return; }
+    //     std::unique_ptr<int[]> u_ptr(new int[1]);
+    //     u_ptr[0] = val;
+    //     ps.add<int>(tag, std::move(u_ptr), 1);
+    // }
 };
 
+// TODO(bnatalha): refact (a function for each class)
 int Parser::extractData(rt3::API& api)
 {
     rt3::ParamSet ps;
@@ -79,43 +90,45 @@ int Parser::extractData(rt3::API& api)
     if (pRoot == nullptr) return XML_ERROR_FILE_READ_ERROR;
 
     // setting camera
-    cameraType camera;
-    pElement = pRoot->FirstChildElement("camera");
-    addStrAttr(pElement, "type", ps);
-    if (ps.find_one("ortographic")) {
-        addStrAttr(pElement, "screen_window", ps);
-    }
-    else { // found perspective
-        addIntAttr(pElement, "fovy", ps);
+    pElement = pRoot->FirstChildElement(ParserTags::CAMERA);
+    addStrAttr(pElement, ParserTags::CAMERA_TYPE, ps);
+    addStrAttr(pElement, ParserTags::CAMERA_SCREEN_WINDOW, ps);
+    addIntAttr(pElement, ParserTags::CAMERA_FOVY, ps);
+    pElement = pRoot->FirstChildElement(ParserTags::LOOKAT);
+    if (pElement != nullptr) {
+        addTag(ParserTags::LOOKAT, ps);
+        addStrAttr(pElement, ParserTags::LOOKAT_LOOK_AT, ps);
+        addStrAttr(pElement, ParserTags::LOOKAT_LOOK_FROM, ps);
+        addStrAttr(pElement, ParserTags::LOOKAT_UP, ps);
     }
 
     api.camera(ps);
     ps.clear();
 
     // setting film
-    pElement = pRoot->FirstChildElement("film");
+    pElement = pRoot->FirstChildElement(ParserTags::FILM);
 
-    addStrAttr(pElement, "type", ps);
-    addIntAttr(pElement, "x_res", ps);
-    addIntAttr(pElement, "y_res", ps);
-    addStrAttr(pElement, "filename", ps);
-    addStrAttr(pElement, "img_type", ps);
-    addStrAttr(pElement, "crop_window", ps);
-    addStrAttr(pElement, "gamma_corrected", ps);
+    addStrAttr(pElement, ParserTags::FILM_TYPE, ps);
+    addIntAttr(pElement, ParserTags::FILM_X_RES, ps);
+    addIntAttr(pElement, ParserTags::FILM_Y_RES, ps);
+    addStrAttr(pElement, ParserTags::FILM_FILENAME, ps);
+    addStrAttr(pElement, ParserTags::FILM_IMG_TYPE, ps);
+    addStrAttr(pElement, ParserTags::FILM_CROP_WINDOW, ps); // new
+    addStrAttr(pElement, ParserTags::FILM_GAMMA_CORRECTED, ps); // new
 
     api.camera_film(ps);
     ps.clear();
 
     // setting background
-    pElement = pRoot->FirstChildElement("background");
+    pElement = pRoot->FirstChildElement(ParserTags::BACKGROUND);
 
-    addStrAttr(pElement, "type", ps);
-    addStrAttr(pElement, "mapping", ps);
-    addStrAttr(pElement, "color", ps);
-    addStrAttr(pElement, "bl", ps);
-    addStrAttr(pElement, "tl", ps);
-    addStrAttr(pElement, "tr", ps);
-    addStrAttr(pElement, "br", ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TYPE, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_MAPPING, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_COLOR, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_BL, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TL, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TR, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_BR, ps);
 
     api.scene(ps);
     ps.clear();

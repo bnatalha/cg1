@@ -4,12 +4,14 @@
 #include <memory>
 #include <sstream>
 #include <string>
+#include <forward_list>
 
 #include "header.hpp"
 #include "camera.hpp"
 #include "scene.hpp"
 #include "paramset.hpp"
 #include "parser_tags.hpp"
+#include "primitive.hpp"
 
 namespace rt3 {
 
@@ -63,7 +65,7 @@ namespace rt3 {
                     float l, r, b, t;
                     sstr << screen_window;
                     sstr >> l >> r >> b >> t;
-                    m_camera->set_lrbt(l,r,b,t);
+                    m_camera->set_lrbt(l, r, b, t);
                 }
                 m_camera->film = camera_film(ps_film);
             }
@@ -83,6 +85,7 @@ namespace rt3 {
                 Vector3 gaze = look_at - look_from;
                 Vector3 w = normalize(gaze);
                 Vector3 u = normalize(cross(vup, w));
+                // Vector3 v = normalize(cross(u, w));
                 Vector3 v = normalize(cross(w, u));
 
                 m_camera->gaze = gaze;
@@ -120,27 +123,39 @@ namespace rt3 {
         }
 
         // TODO(bnatalha): function for background parsing only
-        void scene(const ParamSet& ps) {
+        void scene(const ParamSet& ps_bg, const std::forward_list<ParamSet>& ps_obj_list) {
 
             // BACKGROUND
-            string t = ps.find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
-            string mp = ps.find_one<string>(ParserTags::BACKGROUND_MAPPING, DEFAULT_MAPPING);
-            string color = ps.find_one<string>(ParserTags::BACKGROUND_COLOR, DEFAULT_COLOR);
+            string t = ps_bg.find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
+            string mp = ps_bg.find_one<string>(ParserTags::BACKGROUND_MAPPING, DEFAULT_MAPPING);
+            string color = ps_bg.find_one<string>(ParserTags::BACKGROUND_COLOR, DEFAULT_COLOR);
 
             bool providedCorners = false;
 
-            string bl = sample_corner_color(ParserTags::BACKGROUND_BL, providedCorners, ps);
-            string tl = sample_corner_color(ParserTags::BACKGROUND_TL, providedCorners, ps);
-            string tr = sample_corner_color(ParserTags::BACKGROUND_TR, providedCorners, ps);
-            string br = sample_corner_color(ParserTags::BACKGROUND_BR, providedCorners, ps);
+            string bl = sample_corner_color(ParserTags::BACKGROUND_BL, providedCorners, ps_bg);
+            string tl = sample_corner_color(ParserTags::BACKGROUND_TL, providedCorners, ps_bg);
+            string tr = sample_corner_color(ParserTags::BACKGROUND_TR, providedCorners, ps_bg);
+            string br = sample_corner_color(ParserTags::BACKGROUND_BR, providedCorners, ps_bg);
 
             Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
 
-            m_scene = create_scene(bg);
-        }
+            // Objects
+            if (ps_obj_list.empty()) {
+                m_scene = std::make_shared<Scene>(bg);
+            }
+            else {
+                ObjectList primitives = ObjectList();
+                for (ParamSet ps_obj : ps_obj_list) {
+                    if (ps_obj.find_one<bool>(ParserTags::OBJECT_SPHERE, false)) {
+                        float radius = ps_obj.find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
+                        Point3 center = Point3(ps_obj.find_one<std::string>(ParserTags::OBJECT_CENTER, "").c_str());
+                        primitives.push_front(std::make_shared<Sphere>(ParserTags::OBJECT_SPHERE, radius, center));
+                        // std::cout << "read " << ParserTags::OBJECT_SPHERE << " with radius " << radius << "and center (" << center << ")\n";
+                    }
+                }
+                m_scene = std::make_shared<Scene>(bg, primitives);
+            }
 
-        std::shared_ptr<Scene> create_scene(Background& bg) {
-            return std::make_shared<Scene>(bg);
         }
 
         // ================================== Aux ==================================
@@ -158,28 +173,33 @@ namespace rt3 {
 
         // ============================ Main functions ================================
 
-        inline void RT() {
+        inline void render() {
             auto w = m_camera->film.width;
             auto h = m_camera->film.height;
             // for ( int j = h-1 ; j >= 0 ; j-- ) {
             for (int j = 0; j < h; j++) {
                 for (int i = 0; i < w; i++) {
 
-                    // Ray r1 = m_camera->generate_ray(float(i) / float(w), float(j) / float(h));
+                    // Ray ray = m_camera->generate_ray(i, j);
 
-                    Ray r2 = m_camera->generate_ray(i, j);
+                    // std::cout << "Pixel: [" << i << ", " << j <<"] "
+                    //         << "Ray [" << ray << "]" << std::endl;
 
-                    // Print out the two rays, that must be the same (regardless of the method).
 
-                    if (i % 100 == 0) {
-                        // std::cout << "Ray1: " << r1 << "\n";
-                        std::cout << "Ray2: " << r2 << "\n";
+                    // auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
+                    // m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j), accordingly.
+
+                    // ------------ prj03 ---------------------------------------------
+                    Ray ray = m_camera->generate_ray(i, j);
+
+                    auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
+                    for (auto p : m_scene->objs) {
+                        // Each time the ray hits something, max_t parameter of the ray must be updated.
+                        if (p->intersect_p(ray)) // Does the ray hit any sphere in the scene?
+                            color = rgb(255, 0, 0);  // Just paint it red.
                     }
-                    // std::cout << "Point at t=2, ray(2) = " << r1(2.f) << std::endl;
-
 
                     // sample background
-                    auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
                     m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j), accordingly.
                 }
             }

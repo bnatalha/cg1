@@ -1,7 +1,6 @@
 #ifndef RAY_HPP
 #define RAY_HPP
 
-#include "header.hpp"
 #include "vector3.hpp"
 #include "tinyxml2.hpp"
 

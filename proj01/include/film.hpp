@@ -6,8 +6,8 @@
 #include <fstream>
 #include <vector>
 #include <memory>
-#include "tinyxml2.h"
-#include "lodepng.h"
+#include "tinyxml2.hpp"
+#include "lodepng.hpp"
 
 namespace rt3 {
 

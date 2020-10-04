@@ -12,17 +12,18 @@ TARGET := $(TARGETDIR)/main
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -std=c++11
+CFLAGS := -g -Wall -std=c++17
 INC := -Isrc -Isrc/external -Isrc/core
 
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
 	@mkdir -p $(TARGETDIR)
 	@mkdir -p $(BUILDDIR)/external $(BUILDDIR)/core
-	@mkdir -p (CC) $^ -o $(TARGET) $(CFLAGS)
+	$(CC) $^ -o $(TARGET) $(CFLAGS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
-	@mkdir -p (CC) $^ -o $(TARGET) $(CFLAGS)
+	@mkdir -p $(TARGETDIR)
+	@mkdir -p $(BUILDDIR)/external $(BUILDDIR)/core
 	$(CC) $(INC) -c -o $@ $< $(CFLAGS)
 
 clean:

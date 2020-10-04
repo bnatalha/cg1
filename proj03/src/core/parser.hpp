@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <memory>
+#include <forward_list>
 #include "tinyxml2.hpp"
 
 #include "api.hpp"
@@ -44,28 +45,40 @@ public:
 
     int extractData(rt3::API& api);
 
-    inline void addStrAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
-        // const char * str= ParserTags::PARSER_DEFAULT_STR;
-        auto xmlResult = pElement->QueryStringAttribute(tag, &ParserTags::PARSER_DEFAULT_STR);
-        if (xmlResult != XML_SUCCESS) { return; } // value not found
-        std::unique_ptr<std::string[]> u_ptr(new std::string[1]);
-        u_ptr[0] = ParserTags::PARSER_DEFAULT_STR;
-        ps.add<std::string>(tag, std::move(u_ptr), 1);
-    }
-
     inline void addTag(const char* tag, rt3::ParamSet& ps) {
         std::unique_ptr<bool[]> u_ptr(new bool[1]);
         u_ptr[0] = true;
         ps.add<bool>(tag, std::move(u_ptr), 1);
     }
 
-    inline void addIntAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
+    inline std::string addStrAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
+        const char* str = ParserTags::PARSER_DEFAULT_STR;
+        auto xmlResult = pElement->QueryStringAttribute(tag, &str);
+        if (xmlResult != XML_SUCCESS) { return ""; } // value not found
+        std::unique_ptr<std::string[]> u_ptr(new std::string[1]);
+        u_ptr[0] = str;
+        ps.add<std::string>(tag, std::move(u_ptr), 1);
+        return str;
+    }
+
+    inline int addIntAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
         int val = ParserTags::PARSER_DEFAULT_INT;
         auto xmlResult = pElement->QueryIntAttribute(tag, &val);
-        if (xmlResult != XML_SUCCESS) { return; }
+        if (xmlResult != XML_SUCCESS) { return val; }
         std::unique_ptr<int[]> u_ptr(new int[1]);
         u_ptr[0] = val;
         ps.add<int>(tag, std::move(u_ptr), 1);
+        return val;
+    }
+
+    inline float addFloatAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
+        float val = ParserTags::PARSER_DEFAULT_FLOAT;
+        auto xmlResult = pElement->QueryFloatAttribute(tag, &val);
+        if (xmlResult != XML_SUCCESS) { return val; }
+        std::unique_ptr<float[]> u_ptr(new float[1]);
+        u_ptr[0] = val;
+        ps.add<float>(tag, std::move(u_ptr), 1);
+        return val;
     }
 
     // inline void addPoint3FloatAttr(XMLElement* pE, const char* tag, rt3::ParamSet& ps) {
@@ -120,18 +133,44 @@ int Parser::extractData(rt3::API& api)
     ps.clear();
 
     // setting scene
+    rt3::ParamSet ps_bg;
     pElement = pRoot->FirstChildElement(ParserTags::BACKGROUND);
 
-    addStrAttr(pElement, ParserTags::BACKGROUND_TYPE, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_MAPPING, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_COLOR, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_BL, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_TL, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_TR, ps);
-    addStrAttr(pElement, ParserTags::BACKGROUND_BR, ps);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TYPE, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_MAPPING, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_COLOR, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_BL, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TL, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_TR, ps_bg);
+    addStrAttr(pElement, ParserTags::BACKGROUND_BR, ps_bg);
 
-    api.scene(ps);
-    ps.clear();
+    // getting objects
+    std::forward_list<rt3::ParamSet> ps_obj_list = std::forward_list<rt3::ParamSet>();
+    pElement = pRoot->FirstChildElement(ParserTags::OBJECT);
+    while (pElement != nullptr) {
+        rt3::ParamSet ps_obj;
+        std::string type = addStrAttr(pElement, ParserTags::OBJECT_TYPE, ps_obj);
+        if (type.compare(ParserTags::OBJECT_SPHERE) == 0) {
+            addTag(ParserTags::OBJECT_SPHERE, ps_obj);
+            // float radius = addFloatAttr(pElement, ParserTags::OBJECT_RADIUS, ps_obj);
+            // std::string center = addStrAttr(pElement, ParserTags::OBJECT_CENTER, ps_obj);
+            addFloatAttr(pElement, ParserTags::OBJECT_RADIUS, ps_obj);
+            addStrAttr(pElement, ParserTags::OBJECT_CENTER, ps_obj);
+            // std::cout << "read " << type << " with radius " << radius << "and center (" << center << ")\n";
+        }
+        ps_obj_list.push_front(ps_obj);
+
+        pElement = pElement->NextSiblingElement(ParserTags::OBJECT);
+    }
+
+
+
+    api.scene(ps_bg, ps_obj_list);
+
+    for (auto _ps : ps_obj_list) {
+        _ps.clear();
+    }
+    ps_bg.clear();
 
     return XML_SUCCESS;
 }

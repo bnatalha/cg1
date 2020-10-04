@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include <string>
 
-// TODO: implement find_array
+// TODO(bnatalha): implement find_array
 
 namespace rt3 {
 

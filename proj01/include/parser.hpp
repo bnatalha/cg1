@@ -9,7 +9,7 @@
 #include <string>
 #include <sstream>
 #include <memory>
-#include "tinyxml2.h"
+#include "tinyxml2.hpp"
 
 #include "api.hpp"
 #include "paramset.hpp"

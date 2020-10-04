@@ -2,7 +2,7 @@
 #define CAMERA_HPP
 
 #include <string>
-#include "tinyxml2.h"
+#include "tinyxml2.hpp"
 #include "film.hpp"
 #include "paramset.hpp"
 

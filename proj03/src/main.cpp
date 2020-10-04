@@ -42,7 +42,7 @@ void start_api(bool verbose, std::string& filename) {
     api.print();
   }
 
-  api.RT();
+  api.render();
   api.save();
 }
 
@@ -65,12 +65,16 @@ void run_default(const bool verbose, const char* xmlpath) {
 
 int main(int argc, char** argv) {
 
-  // run_parsing_args(argc, argv);
+  run_parsing_args(argc, argv);
 
   // run_default(true, "../data/in/ex1-2-interpolated.xml");
   // run_default(true, "../data/in/ex2-1-ortographic.xml");
-  run_default(true, "../data/in/ex2-2-perspective.xml");
-  // run_default(true, "../data/in/ex2-1-ot.xml");
+  // run_default(true, "../data/in/ex2-2-perspective.xml");
+  // run_default(true, "../data/in/basic_prj02.xml");
+  // run_default(true, "../data/in/basic_prj02_ortho.xml");
+  // run_default(true, "../data/in/ex3-1-orto.xml");
+  // run_default(true, "../data/in/ex3-2-pers.xml");
+  
 
 
   return 0;
