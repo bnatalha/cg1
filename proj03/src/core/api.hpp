@@ -25,8 +25,6 @@ namespace rt3 {
         std::shared_ptr<Scene> m_scene = nullptr;
         bool m_verbose;
 
-        // Constructors & Destructors
-
         API() : m_verbose(false) {}
         API(bool verbose) : m_verbose(verbose) {}
         ~API() {}
@@ -50,9 +48,9 @@ namespace rt3 {
         void camera(const ParamSet& ps_camera, const ParamSet& ps_film) {
             std::stringstream sstr;
 
-            // set camera film
-
             string type = ps_camera.find_one<std::string>(ParserTags::CAMERA_TYPE, ParserTags::CAMERA_TYPE_ORTOGRAPHIC);
+
+            // PERSPECTIVE
             if (type.compare(ParserTags::CAMERA_TYPE_PERSPECTIVE) == 0) {
                 int fovy = ps_camera.find_one<int>(ParserTags::CAMERA_FOVY, 30);
                 m_camera = std::make_shared<PerspectiveCamera>(type, fovy);
@@ -69,10 +67,9 @@ namespace rt3 {
                 }
                 m_camera->film = camera_film(ps_film);
             }
-
             m_camera->set_lrbt();
 
-            // lookat
+            // lookat extraction
             string look_at;
             string look_from;
             string up;
@@ -85,7 +82,6 @@ namespace rt3 {
                 Vector3 gaze = look_at - look_from;
                 Vector3 w = normalize(gaze);
                 Vector3 u = normalize(cross(vup, w));
-                // Vector3 v = normalize(cross(u, w));
                 Vector3 v = normalize(cross(w, u));
 
                 m_camera->gaze = gaze;
@@ -96,19 +92,6 @@ namespace rt3 {
 
             }
         }
-
-        // // TODO(bnatalha): implement 'crop_window' extraction
-        // void camera_film(const ParamSet& ps) {
-        //     std::stringstream sstr;
-
-        //     string type = ps.find_one<std::string>(ParserTags::FILM_TYPE, "default");
-        //     string filename = ps.find_one<std::string>(ParserTags::FILM_FILENAME, "test_img.png");
-        //     string img_type = ps.find_one<std::string>(ParserTags::FILM_IMG_TYPE, "PNG");
-        //     int y_res = ps.find_one<int>(ParserTags::FILM_Y_RES, 100);
-        //     int x_res = ps.find_one<int>(ParserTags::FILM_X_RES, 200);
-
-        //     m_camera->film = Film(type, y_res, x_res, filename, img_type);
-        // }
 
         // ========================== Scene =================================
 
@@ -164,13 +147,6 @@ namespace rt3 {
             m_scene->print();
         }
 
-        // prints only if m_verbose == true
-        inline void vprint(const char* msg) {
-            if (m_verbose) {
-                std::cout << msg;
-            }
-        }
-
         // ============================ Main functions ================================
 
         inline void render() {
@@ -180,6 +156,7 @@ namespace rt3 {
             for (int j = 0; j < h; j++) {
                 for (int i = 0; i < w; i++) {
 
+                    // ------------ prj02 ---------------------------------------------
                     // Ray ray = m_camera->generate_ray(i, j);
 
                     // std::cout << "Pixel: [" << i << ", " << j <<"] "
@@ -194,13 +171,12 @@ namespace rt3 {
 
                     auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
                     for (auto p : m_scene->objs) {
-                        // Each time the ray hits something, max_t parameter of the ray must be updated.
-                        if (p->intersect_p(ray)) // Does the ray hit any sphere in the scene?
-                            color = rgb(255, 0, 0);  // Just paint it red.
+                        if (p->intersect_p(ray)) {
+                            color = rgb(255, 0, 0); // hit objects with red
+                        }
                     }
 
-                    // sample background
-                    m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j), accordingly.
+                    m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j).
                 }
             }
         }

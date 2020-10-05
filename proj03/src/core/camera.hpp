@@ -133,7 +133,6 @@ namespace rt3 {
         inline void set_lrbt() {
             if (!has_screen_window) {
                 // float hh = film.height / 2.f;
-                // TODO(bnatalha): use tangent calculation
                 float tg = tan(fovy / 2);
                 // float tg = float (2.0);
                 // float tg = hh / fd;

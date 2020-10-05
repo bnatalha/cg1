@@ -33,4 +33,4 @@ clean:
 val:
 	valgrind ./$(TARGET)
 
-.PHONY: clean, val, libs
+.PHONY: clean, val
