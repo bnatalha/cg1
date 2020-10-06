@@ -1,6 +1,14 @@
 vgcore.*
 **.vscode/*
 **.code-workspace
-**tags
+**/tags
 **.clang-format
 **compile_flags.txt
+
+**/**.png
+**/**.ppm
+**/**.out 
+**/profile
+**/*.zip
+
+**/bin/*

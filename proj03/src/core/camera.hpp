@@ -8,6 +8,7 @@
 #include "paramset.hpp"
 #include "tinyxml2.hpp"
 #include <cmath>
+#include "header.hpp"
 
 using namespace tinyxml2;
 
@@ -133,7 +134,8 @@ namespace rt3 {
         inline void set_lrbt() {
             if (!has_screen_window) {
                 // float hh = film.height / 2.f;
-                float tg = tan(fovy / 2);
+                float r_angle = TO_RADIANS(float(fovy)/2.f);
+                float tg = tan(r_angle);
                 // float tg = float (2.0);
                 // float tg = hh / fd;
                 // float tg = hh;

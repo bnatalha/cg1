@@ -12,7 +12,7 @@ TARGET := $(TARGETDIR)/main
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -std=c++17
+CFLAGS := -g -Wall -std=c++17 -Ofast -pg
 INC := -Isrc -Isrc/external -Isrc/core
 
 $(TARGET): $(OBJECTS)
