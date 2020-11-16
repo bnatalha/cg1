@@ -2,6 +2,9 @@
 #define PARSER_TAGS_H
 
 #include <climits>
+#include <utility>
+
+
 
 class ParserTags
 {
@@ -17,9 +20,9 @@ public:
     inline static const char* LOOKAT_UP = "up";
 
     // INTEGRATOR
-    inline static const char* INTEGRGATOR = "integrator";
-    inline static const char* INTEGRGATOR_TYPE = "type";
-    inline static const char* INTEGRGATOR_TYPE_FLAT = "flat";
+    inline static const char* INTEGRATOR = "integrator";
+    inline static const char* INTEGRATOR_TYPE = "type";
+    inline static const char* INTEGRATOR_TYPE_FLAT = "flat";
 
     // CAMERA
     inline static const char* CAMERA = "camera";
@@ -46,6 +49,7 @@ public:
     // SCENE ----------------------------------------------------------------
     inline static const char* SCENE_WORLD_BEGIN = "world_begin";
     inline static const char* SCENE_WORLD_END = "world_end";
+    inline static const char* RENDER_AGAIN = "render_again";
 
     // BACKGROUND
     inline static const char* BACKGROUND = "background";

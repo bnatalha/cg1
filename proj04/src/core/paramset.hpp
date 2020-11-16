@@ -5,11 +5,11 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <utility>
 
 // TODO(bnatalha): implement find_array
 
 namespace rt3 {
-
     using std::unique_ptr;
     using std::shared_ptr;
     using std::vector;
@@ -20,11 +20,11 @@ namespace rt3 {
     class ParamSetItem
     {
     public:
-        const unique_ptr <T []> values;
+        const unique_ptr <T[]> values;
         const size_t size;
 
-        ParamSetItem(unique_ptr<T[]> v, size_t sz = 1) : values(std::move(v)), size(sz) {}        
-        ~ParamSetItem(){}
+        ParamSetItem(unique_ptr<T[]> v, size_t sz = 1) : values(std::move(v)), size(sz) {}
+        ~ParamSetItem() {}
     };
 
     class ParamSet
@@ -36,47 +36,49 @@ namespace rt3 {
         ~ParamSet() {}
 
         template <typename T>
-        inline void add(const string &new_key, unique_ptr<T []> values, size_t size) {
+        inline void add(const string& new_key, unique_ptr<T[]> values, size_t size) {
             shared_ptr<ParamSetItem<T>> sptr = std::make_shared<ParamSetItem<T>>(std::move(values), 1);
             shared_ptr<void> vptr = std::move(sptr);
 
-            params.insert({new_key, vptr});
+            params.insert({ new_key, vptr });
         }
-        
-        inline bool erase(const string $target_key) { 
+
+        inline bool erase(const string $target_key) {
             auto it = params.find($target_key);
 
-            if(it == params.end()) return false;
+            if (it == params.end()) return false;
 
             params.erase(it);
             return true;
         }
 
         template<typename T>
-        inline const T * find_array(const string &target_key, size_t &size) const {
+        inline const T* find_array(const string& target_key, size_t& size) const {
             auto pit = params.find(target_key);
 
-            if( pit == params.end()) return nullptr;  // não encontrou a chave
-            
+            if (pit == params.end()) return nullptr;  // não encontrou a chave
+
             std::shared_ptr<ParamSetItem<T>> sptr = std::static_pointer_cast<ParamSetItem<T>>(pit->second);
             return sptr;
-        } 
+        }
 
         template <typename T>
-        inline const T & find_one(const string &target_key, const T &d) const { 
+        inline const T& find_one(const string& target_key, const T& d) const {
             auto pit = params.find(target_key);
 
-            if( pit == params.end()) return d;  // não encontrou a chave
-            
+            if (pit == params.end()) return d;  // não encontrou a chave
+
             std::shared_ptr<ParamSetItem<T>> sptr = std::static_pointer_cast<ParamSetItem<T>>(pit->second);
             return sptr->values[0];
         }
 
-        inline void clear() {params.clear();}
+        inline void clear() { params.clear(); }
 
         // inline std::vector <std::string> report_unsued() const
     };
-
 }
+
+typedef std::shared_ptr<rt3::ParamSet> ParamSet_ptr;
+typedef std::pair<const char*, ParamSet_ptr> PS_map_pair;
 
 #endif

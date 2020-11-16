@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "api.hpp"
-#include "cxxopts.hpp"
-#include "parser.hpp"
+#include "core/api.hpp"
+#include "external/cxxopts.hpp"
+#include "core/parser.hpp"
 
 bool arguments_parsing(int argc, char** argv, bool& verbose, std::string& filename) {
   cxxopts::Options options("RT3", "Ray Tracing Program under development");
@@ -38,12 +38,12 @@ void start_api(bool verbose, std::string& filename) {
   parser.extractData(api);
 
   // API commands
-  if (verbose) {
-    api.print();
-  }
+  // if (verbose) {
+  //   api.print();
+  // }
 
-  api.render();
-  api.save();
+  // api.render();
+  // api.save();
 }
 
 void run_parsing_args(int argc, char** argv) {
@@ -65,7 +65,7 @@ void run_default(const bool verbose, const char* xmlpath) {
 
 int main(int argc, char** argv) {
 
-  run_parsing_args(argc, argv);
+  // run_parsing_args(argc, argv);
 
   // run_default(true, "../data/in/ex1-2-interpolated.xml");
   // run_default(true, "../data/in/ex2-1-ortographic.xml");
@@ -74,6 +74,7 @@ int main(int argc, char** argv) {
   // run_default(true, "../data/in/basic_prj02_ortho.xml");
   // run_default(true, "../data/in/ex3-1-orto.xml");
   // run_default(true, "../data/in/ex3-2-pers.xml");
+  run_default(true, "../data/in/ex4-1-pers.xml");
   
 
 

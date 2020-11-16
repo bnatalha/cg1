@@ -924,17 +924,17 @@ XMLNode* XMLNode::InsertFirstChild( XMLNode* addThis )
 XMLNode* XMLNode::InsertAfterChild( XMLNode* afterThis, XMLNode* addThis )
 {
     TIXMLASSERT( addThis );
-    if ( addThis->_document != _document ) {
-        TIXMLASSERT( false );
-        return 0;
-    }
+    // if ( addThis->_document != _document ) {
+    //     TIXMLASSERT( false );
+    //     return 0;
+    // }
 
     TIXMLASSERT( afterThis );
 
-    if ( afterThis->_parent != this ) {
-        TIXMLASSERT( false );
-        return 0;
-    }
+    // if ( afterThis->_parent != this ) {
+    //     TIXMLASSERT( false );
+    //     return 0;
+    // }
     if ( afterThis == addThis ) {
         // Current state: BeforeThis -> AddThis -> OneAfterAddThis
         // Now AddThis must disappear from it's location and then

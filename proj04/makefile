@@ -12,9 +12,10 @@ TARGET := $(TARGETDIR)/main
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -Wall -std=c++17 -Ofast
-#CFLAGS := -g -Wall -std=c++17 -Ofast -pg
-INC := -Isrc -Isrc/external -Isrc/core
+CFLAGS := -g -Wall -std=c++17
+#CFLAGS := -g -Wall -std=c++17 -Ofast
+# INC := -Isrc -Isrc/external -Isrc/core
+INC := -Isrc
 
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
