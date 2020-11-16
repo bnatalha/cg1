@@ -34,7 +34,7 @@ namespace rt3 {
         void add(Point2 p, rgb color);
 
         void write_image();
-        inline void print();
+        void print();
     };
 
 }

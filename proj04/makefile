@@ -20,12 +20,18 @@ INC := -Isrc
 $(TARGET): $(OBJECTS)
 	@echo " Linking..."
 	@mkdir -p $(TARGETDIR)
-	@mkdir -p $(BUILDDIR)/external $(BUILDDIR)/core
+	@mkdir -p $(BUILDDIR)/external 
+	@mkdir -p $(BUILDDIR)/core
+	@mkdir -p $(BUILDDIR)/camera
+	@mkdir -p $(BUILDDIR)/primitive
 	$(CC) $^ -o $(TARGET) $(CFLAGS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(TARGETDIR)
-	@mkdir -p $(BUILDDIR)/external $(BUILDDIR)/core
+	@mkdir -p $(BUILDDIR)/external 
+	@mkdir -p $(BUILDDIR)/core
+	@mkdir -p $(BUILDDIR)/camera
+	@mkdir -p $(BUILDDIR)/primitive
 	$(CC) $(INC) -c -o $@ $< $(CFLAGS)
 
 clean:

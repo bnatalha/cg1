@@ -42,7 +42,7 @@ namespace rt3 {
         }
 
         // film
-        string type = ps_film->find_one<string>(ParserTags::FILM_TYPE, "default");
+        type = ps_film->find_one<string>(ParserTags::FILM_TYPE, "default");
         string filename = ps_film->find_one<string>(ParserTags::FILM_FILENAME, "test_img.png");
         string img_type = ps_film->find_one<string>(ParserTags::FILM_IMG_TYPE, "PNG");
         int y_res = ps_film->find_one<int>(ParserTags::FILM_Y_RES, 100);

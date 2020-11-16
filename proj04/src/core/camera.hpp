@@ -49,4 +49,7 @@ namespace rt3 {
     };
 }  // namespace rt3
 
+#include "camera/ortographic.hpp"
+#include "camera/perspective.hpp"
+
 #endif

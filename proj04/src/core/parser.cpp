@@ -220,7 +220,7 @@ int Parser::extractData(rt3::API& api)
         }
         if ((strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END)
             || strcmp(pElement->Name(), ParserTags::RENDER_AGAIN))) {
-            api.run();
+            api.run(ps_map);
         }
         pElement = pElement->NextSiblingElement();
 

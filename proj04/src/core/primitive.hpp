@@ -32,5 +32,6 @@ namespace rt3 {
 
 }
 
+#include "primitive/sphere.hpp"
 
 #endif
