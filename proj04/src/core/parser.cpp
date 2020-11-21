@@ -128,6 +128,8 @@ int Parser::extractData(rt3::API& api)
 
     pElement = pRoot->FirstChildElement();
 
+    std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>> ps_gprim_list = std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>();
+
     while (pElement != nullptr) {
         std::cout << "Element: " << pElement->Name() << "\n";
 
@@ -186,7 +188,7 @@ int Parser::extractData(rt3::API& api)
                 std::cerr << "> [E]! Parser: Missing Backgroud\n";
             }
 
-            std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>> ps_gprim_list = std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>();
+            
 
             // Como sei que esse material é pra esse object?
             while (pElement != nullptr && strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) != 0) {
@@ -218,9 +220,9 @@ int Parser::extractData(rt3::API& api)
                 }
             }
         }
-        if ((strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END)
-            || strcmp(pElement->Name(), ParserTags::RENDER_AGAIN))) {
-            api.run(ps_map);
+        if (strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) == 0
+            || strcmp(pElement->Name(), ParserTags::RENDER_AGAIN) == 0) {
+            api.run(ps_map, ps_gprim_list);
         }
         pElement = pElement->NextSiblingElement();
 

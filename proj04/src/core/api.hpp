@@ -51,10 +51,10 @@ namespace rt3 {
 
         // ========================== Scene =================================
 
-        string sample_corner_color(const char* corner_name, bool& flag, const ParamSet& ps);
+        string sample_corner_color(const char* corner_name, bool& flag, ParamSet_ptr& ps);
 
         // TODO(bnatalha): function for background parsing only
-        void scene(const ParamSet& ps_bg, const std::forward_list<ParamSet>& ps_obj_list);
+        void scene(ParamSet_ptr& ps_bg, std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives);
 
         // ================================== Aux ==================================
         void print();
@@ -63,9 +63,10 @@ namespace rt3 {
 
         void render();
 
-        void save() ;
+        void save();
 
-        void run(std::unordered_map<const char*, ParamSet_ptr>& paramsets);
+        void run(std::unordered_map<const char*, ParamSet_ptr>& paramsets,
+            std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives);
     };
 }
 

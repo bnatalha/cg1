@@ -6,20 +6,6 @@ namespace rt3 {
 
     //  ============================= Camera ============================
 
-
-    // // TODO(bnatalha): implement 'crop_window' extraction
-    // Film camera_film(const ParamSet& ps) {
-    //     std::stringstream sstr;
-
-    //     string type = ps->find_one<std::string>(ParserTags::FILM_TYPE, "default");
-    //     string filename = ps->find_one<std::string>(ParserTags::FILM_FILENAME, "test_img.png");
-    //     string img_type = ps->find_one<std::string>(ParserTags::FILM_IMG_TYPE, "PNG");
-    //     int y_res = ps->find_one<int>(ParserTags::FILM_Y_RES, 100);
-    //     int x_res = ps->find_one<int>(ParserTags::FILM_X_RES, 200);
-
-    //     return Film(type, y_res, x_res, filename, img_type);
-    // }
-
     void API::camera(ParamSet_ptr& ps_camera, ParamSet_ptr& ps_film, ParamSet_ptr& ps_lookat) {
         std::stringstream sstr;
 
@@ -76,8 +62,8 @@ namespace rt3 {
 
     // ========================== Scene =================================
 
-    string API::sample_corner_color(const char* corner_name, bool& flag, const ParamSet& ps) {
-        string foundCorner = ps.find_one<string>(corner_name, "not_provided");
+    string API::sample_corner_color(const char* corner_name, bool& flag, ParamSet_ptr& ps) {
+        string foundCorner = ps->find_one<string>(corner_name, "not_provided");
         string corner = DEFAULT_COLOR;
         if (foundCorner.compare("not_provided") != 0) {
             corner = foundCorner;
@@ -87,37 +73,39 @@ namespace rt3 {
     }
 
     // TODO(bnatalha): function for background parsing only
-    void API::scene(const ParamSet& ps_bg, const std::forward_list<ParamSet>& ps_obj_list) {
+    void API::scene(ParamSet_ptr& ps_bg, std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives) {
 
         // BACKGROUND
-        string t = ps_bg.find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
-        string mp = ps_bg.find_one<string>(ParserTags::BACKGROUND_MAPPING, DEFAULT_MAPPING);
-        string color = ps_bg.find_one<string>(ParserTags::BACKGROUND_COLOR, DEFAULT_COLOR);
+        string t = ps_bg->find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
+        string mp = ps_bg->find_one<string>(ParserTags::BACKGROUND_MAPPING, DEFAULT_MAPPING);
+        string color = ps_bg->find_one<string>(ParserTags::BACKGROUND_COLOR, DEFAULT_COLOR);
 
         bool providedCorners = false;
 
-        string bl = sample_corner_color(ParserTags::BACKGROUND_BL, providedCorners, ps_bg);
         string tl = sample_corner_color(ParserTags::BACKGROUND_TL, providedCorners, ps_bg);
+        string bl = sample_corner_color(ParserTags::BACKGROUND_BL, providedCorners, ps_bg);
         string tr = sample_corner_color(ParserTags::BACKGROUND_TR, providedCorners, ps_bg);
         string br = sample_corner_color(ParserTags::BACKGROUND_BR, providedCorners, ps_bg);
 
         Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
 
         // Objects
-        if (ps_obj_list.empty()) {
+        if (primitives.empty()) {
             m_scene = std::make_shared<Scene>(bg);
         }
         else {
-            ObjectList primitives = ObjectList();
-            for (ParamSet ps_obj : ps_obj_list) {
-                if (ps_obj.find_one<bool>(ParserTags::OBJECT_SPHERE, false)) {
-                    float radius = ps_obj.find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
-                    Point3 center = Point3(ps_obj.find_one<string>(ParserTags::OBJECT_CENTER, "").c_str());
-                    primitives.push_front(std::make_shared<Sphere>(ParserTags::OBJECT_SPHERE, radius, center));
+            ObjectList objects = ObjectList();
+            for (std::pair<ParamSet_ptr, ParamSet_ptr> ps_obj_pair : primitives) {
+                if (ps_obj_pair.first->find_one<bool>(ParserTags::OBJECT_SPHERE, false)) {
+                    float radius = ps_obj_pair.first->find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
+                    Point3 center = Point3(ps_obj_pair.first->find_one<string>(ParserTags::OBJECT_CENTER, "").c_str());
+                    // treat material
+
+                    objects.push_front(std::make_shared<Sphere>(ParserTags::OBJECT_SPHERE, radius, center));
                     // std::cout << "read " << ParserTags::OBJECT_SPHERE << " with radius " << radius << "and center (" << center << ")\n";
                 }
             }
-            m_scene = std::make_shared<Scene>(bg, primitives);
+            m_scene = std::make_shared<Scene>(bg, objects);
         }
 
     }
@@ -168,7 +156,12 @@ namespace rt3 {
         m_camera->film.write_image();
     }
 
-    void API::run(std::unordered_map<const char*, ParamSet_ptr>& paramsets) {
+    void API::run(std::unordered_map<const char*, ParamSet_ptr>& paramsets,
+     std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives) {
+         
+        // instatiate
+        camera(paramsets[ParserTags::CAMERA], paramsets[ParserTags::FILM], paramsets[ParserTags::LOOKAT]);
+        scene(paramsets[ParserTags::BACKGROUND], primitives);
 
         print();
         render();
