@@ -2,7 +2,9 @@
 
 namespace rt3 {
 
-    bool Sphere::intersect(const Ray& ray, Surfel* sf) const { return false; }
+    Point3 Sphere::world_bounds() const { throw std::logic_error("not implemented"); }
+
+    bool Sphere::intersect(const Ray& ray, float* t_hit, Surfel* sf) const { return false; }
 
     bool Sphere::intersect_p(const Ray& ray) const {
         float A = dot(ray.d, ray.d);
@@ -13,7 +15,7 @@ namespace rt3 {
     }
 
     void Sphere::print() {
-        Primitive::print();
+        // Shape::print();
         std::cout << "radius: " << r << " center: [" << c << "]\n";
     }
 

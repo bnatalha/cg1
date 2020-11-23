@@ -87,25 +87,37 @@ namespace rt3 {
         string tr = sample_corner_color(ParserTags::BACKGROUND_TR, providedCorners, ps_bg);
         string br = sample_corner_color(ParserTags::BACKGROUND_BR, providedCorners, ps_bg);
 
-        Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
+        // Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
+        std::shared_ptr<Background> bg = std::make_shared<Background>(providedCorners, t, mp, color, bl, tl, tr, br);
 
         // Objects
         if (primitives.empty()) {
-            m_scene = std::make_shared<Scene>(bg);
+            m_scene = std::make_shared<Scene>(std::move(bg));
         }
         else {
-            ObjectList objects = ObjectList();
+            // ObjectList objects = ObjectList();
+            // std::shared_ptr<Primitive> primitive;
+            std::vector<shared_ptr<Primitive>> prim_vec = std::vector<shared_ptr<Primitive>>();
             for (std::pair<ParamSet_ptr, ParamSet_ptr> ps_obj_pair : primitives) {
                 if (ps_obj_pair.first->find_one<bool>(ParserTags::OBJECT_SPHERE, false)) {
                     float radius = ps_obj_pair.first->find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
                     Point3 center = Point3(ps_obj_pair.first->find_one<string>(ParserTags::OBJECT_CENTER, "").c_str());
-                    // treat material
 
-                    objects.push_front(std::make_shared<Sphere>(ParserTags::OBJECT_SPHERE, radius, center));
-                    // std::cout << "read " << ParserTags::OBJECT_SPHERE << " with radius " << radius << "and center (" << center << ")\n";
+                    string material_type = ps_obj_pair.second->find_one<string>(ParserTags::MATERIAL_TYPE, ParserTags::MATERIAL_TYPE_FLAT).c_str();
+                    // if FlatMaterial
+                    Point3 material_color = Point3(ps_obj_pair.second->find_one<string>(ParserTags::MATERIAL_COLOR, "200 100 200").c_str());
+                    std::shared_ptr<Material> material = std::make_shared<FlatMaterial>(material_color);
+                    std::shared_ptr<Shape> shape = std::make_shared<Sphere>(radius, center, false);
+
+                    std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(std::move(material), std::move(shape));
+
+                    prim_vec.push_back(std::move(geo_prim));
+
+                    // objects.push_front(geo_prim);
                 }
             }
-            m_scene = std::make_shared<Scene>(bg, objects);
+            std::shared_ptr<Primitive> primitive = std::make_shared<PrimList>(prim_vec);
+            m_scene = std::make_shared<Scene>(std::move(bg), std::move(primitive));
         }
 
     }
@@ -140,12 +152,21 @@ namespace rt3 {
                 // ------------ prj03 ---------------------------------------------
                 Ray ray = m_camera->generate_ray(i, j);
 
-                auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
-                for (auto p : m_scene->objs) {
-                    if (p->intersect_p(ray)) {
-                        color = rgb(255, 0, 0); // hit objects with red
+                auto color = m_scene->background->sample(float(i) / float(w), float(j) / float(h)); // get background color.
+                // for (auto p : m_scene->primitive) {
+                //     if (p->intersect_p(ray)) {
+                //         color = rgb(255, 0, 0); // hit objects with red
+                //     }
+                // }
+                if (m_scene->primitive->intersect_p(ray)) {
+                    PrimList* pl = dynamic_cast<PrimList*>(m_scene->primitive.get());
+                    for (auto prim : pl->primitives) {
+                        if (prim->intersect_p(ray)) {
+                            const FlatMaterial* fm = dynamic_cast<const FlatMaterial*>(prim->get_material());
+                            color = fm->kd;
+                        }
                     }
-                }
+                };
 
                 m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j).
             }
@@ -157,8 +178,8 @@ namespace rt3 {
     }
 
     void API::run(std::unordered_map<const char*, ParamSet_ptr>& paramsets,
-     std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives) {
-         
+        std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives) {
+
         // instatiate
         camera(paramsets[ParserTags::CAMERA], paramsets[ParserTags::FILM], paramsets[ParserTags::LOOKAT]);
         scene(paramsets[ParserTags::BACKGROUND], primitives);

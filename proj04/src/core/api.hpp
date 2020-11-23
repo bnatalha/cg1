@@ -13,6 +13,9 @@
 #include "paramset.hpp"
 #include "parser_tags.hpp"
 #include "primitive.hpp"
+#include "primitive/geometric_primitive.hpp"
+#include "primitive/prim_list.hpp"
+#include "primitive/flat_material.hpp"
 // #include "parser.hpp"
 
 namespace rt3 {

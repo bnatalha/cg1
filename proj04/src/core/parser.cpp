@@ -47,7 +47,10 @@ void Parser::parse_film(XMLElement* pE) {
     addStrAttr(pElement, ParserTags::FILM_CROP_WINDOW, ps);
     addStrAttr(pElement, ParserTags::FILM_GAMMA_CORRECTED, ps);
 
-    ps_map.insert(PS_map_pair(ParserTags::FILM, ps));
+    // ps_map.insert(PS_map_pair(ParserTags::FILM, std::move(ps)));
+    ps_map[ParserTags::FILM] = std::move(ps);
+    // fname=ps_map[ParserTags::FILM]->find_one<string>(ParserTags::FILM_FILENAME, "");
+    // return;
 }
 
 void Parser::parse_camera(XMLElement* pE) {
@@ -57,7 +60,8 @@ void Parser::parse_camera(XMLElement* pE) {
     addStrAttr(pElement, ParserTags::CAMERA_SCREEN_WINDOW, ps);
     addIntAttr(pElement, ParserTags::CAMERA_FOVY, ps);
 
-    ps_map.insert(PS_map_pair(ParserTags::CAMERA, ps));
+    // ps_map.insert(PS_map_pair(ParserTags::CAMERA, ps));
+    ps_map[ParserTags::CAMERA] = std::move(ps);
 }
 
 void Parser::parse_background(XMLElement* pE) {
@@ -71,7 +75,9 @@ void Parser::parse_background(XMLElement* pE) {
     addStrAttr(pElement, ParserTags::BACKGROUND_TR, ps);
     addStrAttr(pElement, ParserTags::BACKGROUND_BR, ps);
 
-    ps_map.insert(PS_map_pair(ParserTags::BACKGROUND, ps));
+    // ps_map.insert(PS_map_pair(ParserTags::BACKGROUND, ps));
+    ps_map[ParserTags::BACKGROUND] = std::move(ps);
+
 }
 
 // NEW lookat ps
@@ -82,7 +88,9 @@ void Parser::parse_lookat(XMLElement* pE) {
     addStrAttr(pElement, ParserTags::LOOKAT_LOOK_FROM, ps);
     addStrAttr(pElement, ParserTags::LOOKAT_UP, ps);
 
-    ps_map.insert(PS_map_pair(ParserTags::LOOKAT, ps));
+    // ps_map.insert(PS_map_pair(ParserTags::LOOKAT, ps));
+    ps_map[ParserTags::LOOKAT] = std::move(ps);
+
 }
 
 void Parser::parse_integrator(XMLElement* pE) {
@@ -90,8 +98,8 @@ void Parser::parse_integrator(XMLElement* pE) {
 
     addStrAttr(pElement, ParserTags::INTEGRATOR_TYPE, ps);
 
-    ps_map.insert(PS_map_pair(ParserTags::INTEGRATOR, ps));
-
+    // ps_map.insert(PS_map_pair(ParserTags::INTEGRATOR, ps));
+    ps_map[ParserTags::INTEGRATOR] = std::move(ps);
 }
 
 void Parser::parse_material(XMLElement* pE, ParamSet_ptr& ps) {

@@ -10,12 +10,13 @@ namespace rt3 {
     class Scene
     {
     public:
-        Background background;
-        ObjectList objs;
+        std::shared_ptr<Background> background;
+        // ObjectList objs;
+        std::shared_ptr<Primitive> primitive;
 
         Scene() {}
-        Scene(Background& bg) : background(bg) {}
-        Scene(Background& bg, ObjectList& objs) : background(bg), objs(objs) {}
+        Scene(std::shared_ptr<Background> bg) : background(bg) {}
+        Scene(std::shared_ptr<Background> bg, std::shared_ptr<Primitive> prim) : background(bg), primitive(prim) {}
         ~Scene() {}
 
         void print();

@@ -16,10 +16,10 @@ namespace rt3 {
 
         void set_lrbt();
 
-        inline void print();
+        void print();
 
-        inline Ray generate_ray(float x, float y);
-        inline Ray generate_ray(int x, int y);
+        Ray generate_ray(float x, float y);
+        Ray generate_ray(int x, int y);
     };
 
 }
