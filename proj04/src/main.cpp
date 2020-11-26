@@ -1,7 +1,9 @@
 #include <iostream>
+#include <iomanip> 
 
 #include "core/api.hpp"
 #include "external/cxxopts.hpp"
+#include "external/progress_bar.hpp"
 #include "core/parser.hpp"
 
 bool arguments_parsing(int argc, char** argv, bool& verbose, std::string& filename) {
@@ -75,7 +77,10 @@ int main(int argc, char** argv) {
   // run_default(true, "../data/in/ex3-1-orto.xml");
   // run_default(true, "../data/in/ex3-2-pers.xml");
   run_default(true, "../data/in/ex4-1-pers.xml");
-  
+
+  // progressbar(1, std::string("ave"));
+  // progressbar(2, "maria");
+  // progressbar_finish();
 
 
   return 0;

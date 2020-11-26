@@ -14,6 +14,7 @@ namespace rt3 {
 
     class Surfel {
     public:
+        Surfel();
         Surfel(const Point3& p, const Vector3& n, const Vector3& wo, float time,
             const Point2& uv, const Primitive* pri)
             : p{ p }, n{ n }, wo{ wo }, time{ time }, uv{ uv }, primitive{ pri }

@@ -13,10 +13,11 @@
 #include "paramset.hpp"
 #include "parser_tags.hpp"
 #include "primitive.hpp"
+#include "integrator.hpp"
+#include "integrator/flat_integrator.hpp"
 #include "primitive/geometric_primitive.hpp"
 #include "primitive/prim_list.hpp"
 #include "primitive/flat_material.hpp"
-// #include "parser.hpp"
 
 namespace rt3 {
 
@@ -26,31 +27,15 @@ namespace rt3 {
     {
 
     public:
-        std::shared_ptr<Camera> m_camera = nullptr;
         std::shared_ptr<Scene> m_scene = nullptr;
+        std::shared_ptr<Integrator> m_integrator = nullptr;
         bool m_verbose;
 
         API() : m_verbose(false) {}
         API(bool verbose) : m_verbose(verbose) {}
         ~API() {}
 
-        //  ============================= Camera ============================
-
-
-        // // TODO(bnatalha): implement 'crop_window' extraction
-        // Film camera_film(const ParamSet& ps) {
-        //     std::stringstream sstr;
-
-        //     string type = ps.find_one<std::string>(ParserTags::FILM_TYPE, "default");
-        //     string filename = ps.find_one<std::string>(ParserTags::FILM_FILENAME, "test_img.png");
-        //     string img_type = ps.find_one<std::string>(ParserTags::FILM_IMG_TYPE, "PNG");
-        //     int y_res = ps.find_one<int>(ParserTags::FILM_Y_RES, 100);
-        //     int x_res = ps.find_one<int>(ParserTags::FILM_X_RES, 200);
-
-        //     return Film(type, y_res, x_res, filename, img_type);
-        // }
-
-        void camera(ParamSet_ptr& ps_camera, ParamSet_ptr& ps_film, ParamSet_ptr& ps_lookat);
+        std::shared_ptr<Camera> camera(ParamSet_ptr& ps_camera, ParamSet_ptr& ps_film, ParamSet_ptr& ps_lookat);
 
         // ========================== Scene =================================
 
@@ -58,6 +43,8 @@ namespace rt3 {
 
         // TODO(bnatalha): function for background parsing only
         void scene(ParamSet_ptr& ps_bg, std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives);
+
+        void integrator(ParamSet_ptr& ps_it, std::shared_ptr<Camera> camera);
 
         // ================================== Aux ==================================
         void print();

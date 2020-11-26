@@ -6,24 +6,25 @@ namespace rt3 {
 
     //  ============================= Camera ============================
 
-    void API::camera(ParamSet_ptr& ps_camera, ParamSet_ptr& ps_film, ParamSet_ptr& ps_lookat) {
+    std::shared_ptr<Camera> API::camera(ParamSet_ptr& ps_camera, ParamSet_ptr& ps_film, ParamSet_ptr& ps_lookat) {
         std::stringstream sstr;
 
         string type = ps_camera->find_one<string>(ParserTags::CAMERA_TYPE, ParserTags::CAMERA_TYPE_ORTOGRAPHIC);
+        std::shared_ptr<Camera> camera_ptr;
 
         // PERSPECTIVE
         if (type.compare(ParserTags::CAMERA_TYPE_PERSPECTIVE) == 0) {
             int fovy = ps_camera->find_one<int>(ParserTags::CAMERA_FOVY, 30);
-            m_camera = std::make_shared<PerspectiveCamera>(type, fovy);
+            camera_ptr = std::make_shared<PerspectiveCamera>(type, fovy);
         }
         else {  // ORTAGRAPHIC
-            m_camera = std::make_shared<OrtographicCamera>(type);
+            camera_ptr = std::make_shared<OrtographicCamera>(type);
             string screen_window = ps_camera->find_one<string>(ParserTags::CAMERA_SCREEN_WINDOW, ParserTags::PARSER_DEFAULT_STR);
             if (screen_window.compare(ParserTags::PARSER_DEFAULT_STR) != 0) {
                 float l, r, b, t;
                 sstr << screen_window;
                 sstr >> l >> r >> b >> t;
-                m_camera->set_lrbt(l, r, b, t);
+                camera_ptr->set_lrbt(l, r, b, t);
             }
         }
 
@@ -33,8 +34,8 @@ namespace rt3 {
         string img_type = ps_film->find_one<string>(ParserTags::FILM_IMG_TYPE, "PNG");
         int y_res = ps_film->find_one<int>(ParserTags::FILM_Y_RES, 100);
         int x_res = ps_film->find_one<int>(ParserTags::FILM_X_RES, 200);
-        m_camera->film = Film(type, y_res, x_res, filename, img_type);
-        m_camera->set_lrbt();
+        camera_ptr->film = Film(type, y_res, x_res, filename, img_type);
+        camera_ptr->set_lrbt();
 
         // lookat
         // string look_at;
@@ -52,12 +53,13 @@ namespace rt3 {
         Vector3 u = normalize(cross(vup, w));
         Vector3 v = normalize(cross(w, u));
 
-        m_camera->gaze = gaze;
-        m_camera->_w = w;
-        m_camera->_u = u;
-        m_camera->_v = v;
-        m_camera->e = look_from;
+        camera_ptr->gaze = gaze;
+        camera_ptr->_w = w;
+        camera_ptr->_u = u;
+        camera_ptr->_v = v;
+        camera_ptr->e = look_from;
 
+        return camera_ptr;
     }
 
     // ========================== Scene =================================
@@ -95,8 +97,6 @@ namespace rt3 {
             m_scene = std::make_shared<Scene>(std::move(bg));
         }
         else {
-            // ObjectList objects = ObjectList();
-            // std::shared_ptr<Primitive> primitive;
             std::vector<shared_ptr<Primitive>> prim_vec = std::vector<shared_ptr<Primitive>>();
             for (std::pair<ParamSet_ptr, ParamSet_ptr> ps_obj_pair : primitives) {
                 if (ps_obj_pair.first->find_one<bool>(ParserTags::OBJECT_SPHERE, false)) {
@@ -112,8 +112,6 @@ namespace rt3 {
                     std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(std::move(material), std::move(shape));
 
                     prim_vec.push_back(std::move(geo_prim));
-
-                    // objects.push_front(geo_prim);
                 }
             }
             std::shared_ptr<Primitive> primitive = std::make_shared<PrimList>(prim_vec);
@@ -122,10 +120,17 @@ namespace rt3 {
 
     }
 
+    void API::integrator(ParamSet_ptr& ps_it, std::shared_ptr<Camera> camera) {
+        string type = ps_it->find_one<string>(ParserTags::INTEGRATOR_TYPE, ParserTags::INTEGRATOR_TYPE_FLAT);
+        if (type.compare(ParserTags::INTEGRATOR_TYPE_FLAT) == 0) {
+            m_integrator = std::make_shared<FlatIntegrator>(std::move(camera));
+        }
+    }
+
     // ================================== Aux ==================================
     void API::print() {
         if (m_verbose) {
-            m_camera->print();
+            // m_camera->print();
             m_scene->print();
         }
     }
@@ -133,56 +138,20 @@ namespace rt3 {
     // ============================ Main functions ================================
 
     void API::render() {
-        auto w = m_camera->film.width;
-        auto h = m_camera->film.height;
-        // for ( int j = h-1 ; j >= 0 ; j-- ) {
-        for (int j = 0; j < h; j++) {
-            for (int i = 0; i < w; i++) {
-
-                // ------------ prj02 ---------------------------------------------
-                // Ray ray = m_camera->generate_ray(i, j);
-
-                // std::cout << "Pixel: [" << i << ", " << j <<"] "
-                //         << "Ray [" << ray << "]" << std::endl;
-
-
-                // auto color = m_scene->background.sample(float(i) / float(w), float(j) / float(h)); // get background color.
-                // m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j), accordingly.
-
-                // ------------ prj03 ---------------------------------------------
-                Ray ray = m_camera->generate_ray(i, j);
-
-                auto color = m_scene->background->sample(float(i) / float(w), float(j) / float(h)); // get background color.
-                // for (auto p : m_scene->primitive) {
-                //     if (p->intersect_p(ray)) {
-                //         color = rgb(255, 0, 0); // hit objects with red
-                //     }
-                // }
-                if (m_scene->primitive->intersect_p(ray)) {
-                    PrimList* pl = dynamic_cast<PrimList*>(m_scene->primitive.get());
-                    for (auto prim : pl->primitives) {
-                        if (prim->intersect_p(ray)) {
-                            const FlatMaterial* fm = dynamic_cast<const FlatMaterial*>(prim->get_material());
-                            color = fm->kd;
-                        }
-                    }
-                };
-
-                m_camera->film.add(Point2(i, j), color); // set image buffer at position (i,j).
-            }
-        }
+        m_integrator->render(*(m_scene.get()));
     }
 
     void API::save() {
-        m_camera->film.write_image();
+        m_integrator->camera->film.write_image();
     }
 
     void API::run(std::unordered_map<const char*, ParamSet_ptr>& paramsets,
         std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives) {
 
-        // instatiate
-        camera(paramsets[ParserTags::CAMERA], paramsets[ParserTags::FILM], paramsets[ParserTags::LOOKAT]);
+        // instantiate
+        std::shared_ptr<Camera> camera_ptr = camera(paramsets[ParserTags::CAMERA], paramsets[ParserTags::FILM], paramsets[ParserTags::LOOKAT]);
         scene(paramsets[ParserTags::BACKGROUND], primitives);
+        integrator(paramsets[ParserTags::INTEGRATOR], std::move(camera_ptr));
 
         print();
         render();

@@ -195,7 +195,6 @@ int Parser::extractData(rt3::API& api)
             else {
                 std::cerr << "> [E]! Parser: Missing Backgroud\n";
             }
-
             
 
             // Como sei que esse material é pra esse object?
