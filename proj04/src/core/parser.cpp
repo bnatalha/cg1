@@ -139,7 +139,9 @@ int Parser::extractData(rt3::API& api)
     std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>> ps_gprim_list = std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>();
 
     while (pElement != nullptr) {
-        std::cout << "Element: " << pElement->Name() << "\n";
+        std::cout << "Element: " << pElement->Name() << "\r";
+        std::cout.flush();
+
 
         if (strcmp(pElement->Name(), ParserTags::FILM) == 0) {
             parse_film(pElement);
@@ -175,7 +177,7 @@ int Parser::extractData(rt3::API& api)
             while (pRootInc != nullptr) {
                 copyNode = pRootInc->ShallowClone(xmlDoc);
                 newElement = copyNode->ToElement();
-                std::cout << newElement->Name() << " copying...\n";
+                // std::cout << newElement->Name() << " copying...\n";
                 nodeInsertAt = xmlDoc->InsertAfterChild(nodeInsertAt, newElement)->ToElement();
                 pRootInc = pRootInc->NextSiblingElement();
             }
@@ -183,23 +185,23 @@ int Parser::extractData(rt3::API& api)
         else if (strcmp(pElement->Name(), ParserTags::SCENE_WORLD_BEGIN) == 0) {
             pElement = pElement->NextSiblingElement();
 
-            std::cout << "inside world Element: " << pElement->Name() << "\n";
+            // std::cout << "inside world Element: " << pElement->Name() << "\n";
 
             // BACKGROUND
             rt3::ParamSet ps_bg;
             if (strcmp(pElement->Name(), ParserTags::BACKGROUND) == 0) {
                 parse_background(pElement);
                 pElement = pElement->NextSiblingElement();
-                std::cout << "inside world Element: " << pElement->Name() << "\n";
+                // std::cout << "inside world Element: " << pElement->Name() << "\n";
             }
             else {
                 std::cerr << "> [E]! Parser: Missing Backgroud\n";
             }
-            
+
 
             // Como sei que esse material é pra esse object?
             while (pElement != nullptr && strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) != 0) {
-                std::cout << "\tElement: " << pElement->Name() << "\n";
+                // std::cout << "\tElement: " << pElement->Name() << "\n";
 
                 ParamSet_ptr ps_material = std::make_shared<rt3::ParamSet>();
                 if (strcmp(pElement->Name(), ParserTags::MATERIAL) == 0) {
@@ -214,7 +216,7 @@ int Parser::extractData(rt3::API& api)
                 // if(pElement != nullptr && strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) == 0)
                 while (pElement != nullptr && strcmp(pElement->Name(), ParserTags::OBJECT) == 0)
                 {
-                    std::cout << "\tobject Element: " << pElement->Name() << "\n";
+                    // std::cout << "\tobject Element: " << pElement->Name() << "\n";
 
                     ParamSet_ptr ps_obj = std::make_shared<rt3::ParamSet>();
                     std::string type = addStrAttr(pElement, ParserTags::OBJECT_TYPE, ps_obj);
@@ -229,6 +231,7 @@ int Parser::extractData(rt3::API& api)
         }
         if (strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) == 0
             || strcmp(pElement->Name(), ParserTags::RENDER_AGAIN) == 0) {
+            std::cout << std::endl;
             api.run(ps_map, ps_gprim_list);
         }
         pElement = pElement->NextSiblingElement();

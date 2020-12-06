@@ -121,9 +121,16 @@ namespace rt3 {
     }
 
     void API::integrator(ParamSet_ptr& ps_it, std::shared_ptr<Camera> camera) {
-        string type = ps_it->find_one<string>(ParserTags::INTEGRATOR_TYPE, ParserTags::INTEGRATOR_TYPE_FLAT);
+        string type = ParserTags::INTEGRATOR_TYPE_FLAT;
+        if (ps_it != nullptr) {
+            type = ps_it->find_one<string>(ParserTags::INTEGRATOR_TYPE, ParserTags::INTEGRATOR_TYPE_FLAT);
+        }
+        
         if (type.compare(ParserTags::INTEGRATOR_TYPE_FLAT) == 0) {
             m_integrator = std::make_shared<FlatIntegrator>(std::move(camera));
+        }
+        else if (type.compare(ParserTags::INTEGRATOR_TYPE_NORMAL_MAP) == 0) {
+            m_integrator = std::make_shared<NormalMapIntegrator>(std::move(camera));
         }
     }
 

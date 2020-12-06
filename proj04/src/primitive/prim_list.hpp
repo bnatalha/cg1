@@ -3,6 +3,7 @@
 
 #include "aggregate_primitive.hpp"
 #include <vector>
+#include <iostream>
 
 namespace rt3 {
     class PrimList : public AggregatePrimitive {

@@ -23,6 +23,7 @@ public:
     inline static const char* INTEGRATOR = "integrator";
     inline static const char* INTEGRATOR_TYPE = "type";
     inline static const char* INTEGRATOR_TYPE_FLAT = "flat";
+    inline static const char* INTEGRATOR_TYPE_NORMAL_MAP = "normal_map";
 
     // CAMERA
     inline static const char* CAMERA = "camera";

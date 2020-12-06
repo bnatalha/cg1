@@ -98,7 +98,7 @@ inline std::ostream& operator<<(std::ostream& os, const Vector3& t)
 
 inline void Vector3::make_unit_vector()
 {
-    float k = 1.0 / sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]);
+    float k = 1.f / sqrt(std::pow(e[0], 2.0) + std::pow(e[1], 2.0) + std::pow(e[2], 2.0) );
     e[0] *= k;
     e[1] *= k;
     e[2] *= k;
@@ -141,7 +141,9 @@ inline Vector3 operator*(const Vector3& v, float t)
 
 inline float dot(const Vector3& v1, const Vector3& v2)
 {
-    return v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2];
+    return v1.e[0] * v2.e[0] + 
+           v1.e[1] * v2.e[1] + 
+           v1.e[2] * v2.e[2];
 }
 
 inline Vector3 cross(const Vector3& v1, const Vector3& v2)

@@ -2,11 +2,17 @@
 
 namespace rt3 {
 
-    Point3 GeometricPrimitive::world_bounds() const {throw std::logic_error("not implemented");}
+    Point3 GeometricPrimitive::world_bounds() const { throw std::logic_error("not implemented"); }
 
     bool GeometricPrimitive::intersect(const Ray& ray, Surfel* sf) const {
-        float* hit_point;
-        return shape->intersect(ray, hit_point, sf);
+        std::shared_ptr<float> hit_point = std::make_shared<float>(0);
+
+        // return shape->intersect(ray, sf);
+        if(shape->intersect(ray, hit_point.get(), sf)) {
+            sf->primitive = this;
+            return true;
+        }
+        return false;
     }
 
     bool GeometricPrimitive::intersect_p(const Ray& ray) const {
