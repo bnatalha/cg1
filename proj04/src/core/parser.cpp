@@ -96,7 +96,13 @@ void Parser::parse_lookat(XMLElement* pE) {
 void Parser::parse_integrator(XMLElement* pE) {
     ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
 
-    addStrAttr(pElement, ParserTags::INTEGRATOR_TYPE, ps);
+    std::string type = addStrAttr(pElement, ParserTags::INTEGRATOR_TYPE, ps);
+    if (type.compare(ParserTags::INTEGRATOR_TYPE_DEPTH_MAP) == 0) {
+        float f = addFloatAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_ZMIN, ps);
+        f = addFloatAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_ZMAX, ps);
+        string s = addStrAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_NEAR_COLOR, ps);
+        s = addStrAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_FAR_COLOR, ps);
+    }
 
     // ps_map.insert(PS_map_pair(ParserTags::INTEGRATOR, ps));
     ps_map[ParserTags::INTEGRATOR] = std::move(ps);

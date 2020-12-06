@@ -125,12 +125,19 @@ namespace rt3 {
         if (ps_it != nullptr) {
             type = ps_it->find_one<string>(ParserTags::INTEGRATOR_TYPE, ParserTags::INTEGRATOR_TYPE_FLAT);
         }
-        
+
         if (type.compare(ParserTags::INTEGRATOR_TYPE_FLAT) == 0) {
             m_integrator = std::make_shared<FlatIntegrator>(std::move(camera));
         }
         else if (type.compare(ParserTags::INTEGRATOR_TYPE_NORMAL_MAP) == 0) {
             m_integrator = std::make_shared<NormalMapIntegrator>(std::move(camera));
+        }
+        else if (type.compare(ParserTags::INTEGRATOR_TYPE_DEPTH_MAP) == 0) {
+            rgb nc = rgb(ps_it->find_one<string>(ParserTags::INTEGRATOR_DEPTH_MAP_NEAR_COLOR, "0 0 0").c_str());
+            rgb fc = rgb(ps_it->find_one<string>(ParserTags::INTEGRATOR_DEPTH_MAP_FAR_COLOR, "0 0 0").c_str());
+            float zmin = ps_it->find_one<float>(ParserTags::INTEGRATOR_DEPTH_MAP_ZMIN, ParserTags::PARSER_DEFAULT_FLOAT);
+            float zmax = ps_it->find_one<float>(ParserTags::INTEGRATOR_DEPTH_MAP_ZMAX, ParserTags::PARSER_DEFAULT_FLOAT);
+            m_integrator = std::make_shared<DepthMapIntegrator>(std::move(camera),zmin,zmax,nc,fc);
         }
     }
 
