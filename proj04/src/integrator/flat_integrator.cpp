@@ -6,18 +6,15 @@ namespace rt3 {
 
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
         if (scene.intersect(ray, isect.get())) {
-            // Point3 light_pos{ 1, 3, 3 };       // Point light location    (hardcoded here, for now)
-            // Vector3 light_I{ 0.9, 0.9, 0.9 }; // Point light Intensity   (hardcoded here, for now)
-            // Vector3 kd{ 0.9, 0.1, 0.1 };      // Redish diffuse material (hardcoded here, for now)
-            // Vector3 l;                        // This is the light vector.
-            // l = light_pos - isect->p;           // Determine the vector from the light to the hit point `p`.
-            // l = normalize(l);
-            // Vector3 n{ isect->n };             // Normal vector at the point where the ray hit the surface.
-
-            // L = kd * light_I * std::max(0.f, dot(n, l));
+            Point3 light_pos(1.f, 3.f, 3.f);       // Point light location    (hardcoded here, for now)
+            Vector3 light_I(0.9f, 0.9f, 0.9f); // Point light Intensity   (hardcoded here, for now)
+            // rgb kd = rgb(255.f,0.f,0.f);    // default red material
+            Vector3 l;                        // This is the light vector.
+            l = light_pos - isect->p;           // Determine the vector from the light to the hit point `p`.
+            l = normalize(l);
 
             const FlatMaterial* fm = dynamic_cast<const FlatMaterial*>(isect.get()->primitive->get_material());
-            L = fm->kd;
+            L = fm->kd * light_I * std::max(0.f, dot(isect->n, l));
         }
         return L;
 
@@ -36,11 +33,11 @@ namespace rt3 {
 
                 camera->film.add(Point2(i, j), L_color); // set image buffer at position (i,j).
             }
-            if(j == h-1) {
+            if (j == h - 1) {
                 progressbar_finish();
             }
-            if(j % (h/10) == 0) {
-                progressbar(j/(h/10), "loading");
+            if (j % (h / 10) == 0) {
+                progressbar(j / (h / 10), "loading");
             }
         }
     }
