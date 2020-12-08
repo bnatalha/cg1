@@ -81,12 +81,22 @@ public:
     inline static const char* MATERIAL_BLINN_GLOSSINESS = "glossiness";
     inline static const char* MATERIAL_COLOR = "color";
 
+    
     // OBJECT
-    inline static const char* OBJECT = "object";
-    inline static const char* OBJECT_TYPE = "type";
-    inline static const char* OBJECT_SPHERE = "sphere";
-    inline static const char* OBJECT_RADIUS = "radius";
-    inline static const char* OBJECT_CENTER = "center";
+    inline static const char* OBJECT = "object";    // element
+    inline static const char* OBJECT_TYPE = "type"; // attr
+    inline static const char* OBJECT_SPHERE = "sphere"; // attr
+    inline static const char* OBJECT_RADIUS = "radius"; // attr
+    inline static const char* OBJECT_CENTER = "center"; // attr
+
+    // OBJECT WITH NAMED MATERIAL
+    inline static const char* OBJECT_NAMED_MATERIAL = "named_material"; // element
+    inline static const char* OBJECT_NAMED_MATERIAL_NAME = "name";  // attr
+    inline static const char* OBJECT_TRANSLATE = "translate";   // element
+    inline static const char* OBJECT_TRANSLATE_VALUE = "value"; // attr
+    inline static const char* OBJECT_IDENTITY = "identity"; // element that stays between named material's objects
+
+
 
     // LIGHT
     inline static const char* LIGHT = "light_source";

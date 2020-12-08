@@ -9,12 +9,14 @@ namespace rt3 {
 
     class Material {
     public: 
-        Material() {};
-        virtual ~Material() {};
+        Material() {}
+        virtual ~Material() {}
 
         // (Surfel *isec (out), Ray *r (out))
         virtual void scatter(Surfel* isec, Ray* r) = 0;
     };
 }
+
+#include "primitive/blinn_phong_material.hpp"
 
 #endif

@@ -2,11 +2,10 @@
 #define LIGHT_HPP
 
 #include "core/surfel.hpp"
+#include "core/scene.hpp"
 #include "core/visibility_tester.hpp"
 
 namespace rt3 {
-
-    class Scene;
 
     enum class light_flag_e : int {
         point = 1,
@@ -16,21 +15,23 @@ namespace rt3 {
         spot = 16
     };
 
-    bool is_ambient(int flag) ;
+    bool is_ambient(int flag);
 
     class Light {
     public:
         light_flag_e flags;
-    public:
+        Vector3 L;
+    
+        Light() {};
+        Light(light_flag_e flag) : flags(flag) {};
         virtual ~Light() {};
-        Light(int flags);
         /// Retorna a intensidade da luz, direção e o teste oclusão.
-        virtual rgb sample_Li(const Surfel& hit /*in*/,
-            Vector3* wi/*out*/,
-            VisibilityTester* vis/*out*/) = 0;
-        virtual void preprocess(const Scene&) {};
+        virtual rgb sample_Li(const Surfel& hit , Vector3* wi, VisibilityTester* vis) = 0;
+        virtual void preprocess(const Scene&);
     };
 
 }
+
+#include "light/point_light.hpp"
 
 #endif

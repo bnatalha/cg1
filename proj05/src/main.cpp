@@ -76,7 +76,8 @@ int main(int argc, char** argv) {
   // run_default(true, "../data/in/basic_prj02_ortho.xml");
   // run_default(true, "../data/in/ex3-1-orto.xml");
   // run_default(true, "../data/in/ex3-2-pers.xml");
-  run_default(true, "../data/in/ex4-1-pers.xml");
+  // run_default(true, "../data/in/ex4-1-pers.xml");
+  run_default(true, "../scenes/lights_scene/bphong_scene_main.xml");
 
   // progressbar(1, std::string("ave"));
   // progressbar(2, "maria");

@@ -150,7 +150,6 @@ void Parser::parse_light(XMLElement* pE, ParamSet_ptr& ps) {
     // ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
     ps = std::make_shared<rt3::ParamSet>();
 
-
     addStrAttr(pElement, ParserTags::LIGHT_TYPE, ps);
     addStrAttr(pElement, ParserTags::LIGHT_L, ps);
     addStrAttr(pElement, ParserTags::LIGHT_I, ps);
@@ -162,6 +161,28 @@ void Parser::parse_light(XMLElement* pE, ParamSet_ptr& ps) {
 
     // ps_map.insert(PS_map_pair(ParserTags::MATERIAL, ps));
 }
+
+void Parser::parse_object_identity(XMLElement* pE, ParamSet_ptr& ps) {
+    // ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
+    ps = std::make_shared<rt3::ParamSet>();
+
+    // named material
+    addStrAttr(pElement, ParserTags::OBJECT_NAMED_MATERIAL_NAME, ps);
+
+    // translate
+    pE->NextSiblingElement(ParserTags::OBJECT_TRANSLATE);
+    addStrAttr(pElement, ParserTags::OBJECT_TRANSLATE_VALUE, ps);
+    addTag(ParserTags::OBJECT_SPHERE, ps);
+
+    // object (sphere only)
+    pE->NextSiblingElement(ParserTags::OBJECT);
+    addFloatAttr(pElement, ParserTags::OBJECT_RADIUS, ps);
+    addStrAttr(pElement, ParserTags::OBJECT_CENTER, ps);
+    
+
+    // ps_map.insert(PS_map_pair(ParserTags::MATERIAL, ps));
+}
+
 
 // TODO(bnatalha): check if firstChildElement is RT3
 int Parser::extractData(rt3::API& api)
@@ -227,31 +248,27 @@ int Parser::extractData(rt3::API& api)
         else if (strcmp(pElement->Name(), ParserTags::SCENE_WORLD_BEGIN) == 0) {
             pElement = pElement->NextSiblingElement();
 
-            // std::cout << "inside world Element: " << pElement->Name() << "\n";
-
-            // BACKGROUND
-            rt3::ParamSet ps_bg;
-            if (strcmp(pElement->Name(), ParserTags::BACKGROUND) == 0) {
-                parse_background(pElement);
-                pElement = pElement->NextSiblingElement();
-                // std::cout << "inside world Element: " << pElement->Name() << "\n";
-            }
-            else {
-                std::cerr << "> [E]! Parser: Missing Backgroud\n";
-            }
-
-
-            // Como sei que esse material é pra esse object?
             while (pElement != nullptr && strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) != 0) {
-                // std::cout << "\tElement: " << pElement->Name() << "\n";
-
+                // BACKGROUND
                 ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
-                if (strcmp(pElement->Name(), ParserTags::MAKE_NAMED_MATERIAL) == 0) {
+                if (strcmp(pElement->Name(), ParserTags::BACKGROUND) == 0) {
+                    parse_background(pElement);
+                    pElement = pElement->NextSiblingElement();
+                }
+                else if (strcmp(pElement->Name(), ParserTags::MAKE_NAMED_MATERIAL) == 0) {
                     parse_named_material(pElement, ps);
+                    ps_materials.push_front(ps);
                 }
                 else if (strcmp(pElement->Name(), ParserTags::LIGHT) == 0) {
                     parse_light(pElement, ps);
                     ps_lights.push_front(ps);
+                }
+                else if (strcmp(pElement->Name(), ParserTags::OBJECT_NAMED_MATERIAL) == 0) {
+                    parse_object_identity(pElement, ps);
+                    ps_objects.push_front(ps);
+                }
+                else if (strcmp(pElement->Name(), ParserTags::OBJECT_IDENTITY) == 0) {
+                    // TODO ?
                 }
 
                 pElement = pElement->NextSiblingElement();

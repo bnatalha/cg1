@@ -125,7 +125,7 @@ namespace rt3 {
         std::forward_list<ParamSet_ptr>& ps_objects,
         std::forward_list<ParamSet_ptr>& ps_lights,
         std::forward_list<ParamSet_ptr>& ps_materials) {
-        
+
         // BACKGROUND
         string t = ps_bg->find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
         string mp = ps_bg->find_one<string>(ParserTags::BACKGROUND_MAPPING, DEFAULT_MAPPING);
@@ -141,11 +141,66 @@ namespace rt3 {
         // Background bg(providedCorners, t, mp, color, bl, tl, tr, br);
         std::shared_ptr<Background> bg = std::make_shared<Background>(providedCorners, t, mp, color, bl, tl, tr, br);
 
-        // materials
-
         // lights
+        std::vector<std::shared_ptr<Light>> lights = std::vector<std::shared_ptr<Light>>();
+        for (auto ps : ps_lights) {
+            t = ps->find_one<string>(ParserTags::LIGHT_TYPE, "default");
+            std::shared_ptr<Light> li;
+
+            // point
+            if (t.compare(ParserTags::LIGHT_TYPE_POINT) == 0) {
+
+                Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
+                // string i = ps->find_one<string>(ParserTags::LIGHT_I, "default");
+                li = std::make_shared<PointLight>(from, scale);
+                lights.push_back(std::move(li));
+            }
+            // spot
+            // directional
+            // ambient (flux ?)
+        }
+
+        // materials
+        std::unordered_map<const char*, std::shared_ptr<Material>> materials = std::unordered_map<const char*, std::shared_ptr<Material>>();
+        for (auto ps : ps_materials) {
+            t = ps->find_one<string>(ParserTags::MATERIAL_TYPE, "blinn");
+            std::shared_ptr<Material> mat;
+
+            // blinn
+            if (t.compare(ParserTags::MATERIAL_TYPE_BLINN) == 0) {
+                const char* name = ps->find_one<string>(ParserTags::MATERIAL_BLINN_NAME, "default").c_str();
+                Vector3 ambient = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_AMBIENT, "default").c_str());
+                Vector3 diffuse = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_DIFFUSE, "default").c_str());
+                Vector3 specular = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_SPECULAR, "default").c_str());
+                Vector3 mirror = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_MIRROR, "default").c_str());
+                float glossiness = ps->find_one<float>(ParserTags::MATERIAL_BLINN_GLOSSINESS, ParserTags::PARSER_DEFAULT_FLOAT);
+                mat = std::make_shared<BlinnPhongMaterial>(ambient, diffuse, specular, mirror, glossiness);
+                materials[name] = std::move(mat);
+            }
+            // TODO flat material
+        }
 
         // objects
+        std::vector<shared_ptr<Primitive>> prim_vec = std::vector<shared_ptr<Primitive>>();
+        for (auto ps : ps_objects) {
+            t = ps->find_one<string>(ParserTags::OBJECT_TYPE, ParserTags::OBJECT_SPHERE);
+            const char* name = ps->find_one<string>(ParserTags::OBJECT_NAMED_MATERIAL_NAME, "default").c_str();
+
+            // spheres
+            if (t.compare(ParserTags::OBJECT_SPHERE) == 0) {
+                float radius = ps->find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
+                Point3 center = Point3(ps->find_one<string>(ParserTags::OBJECT_TRANSLATE_VALUE, "").c_str());   // TODO what is this translate
+                std::shared_ptr<Shape> shape = std::make_shared<Sphere>(radius, center, false);
+
+                std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(materials[name], std::move(shape));
+
+                prim_vec.push_back(std::move(geo_prim));
+            }
+        }
+        std::shared_ptr<Primitive> primitive = std::make_shared<PrimList>(prim_vec);
+
+        m_scene = std::make_shared<Scene>(std::move(bg), std::move(primitive), lights);
     }
 
 

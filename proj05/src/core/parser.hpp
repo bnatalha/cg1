@@ -54,6 +54,7 @@ public:
     void parse_light(XMLElement* pE, ParamSet_ptr& ps);
     void parse_material(XMLElement* pE, ParamSet_ptr& ps);
     void parse_named_material(XMLElement* pE, ParamSet_ptr& ps);
+    void parse_object_identity(XMLElement* pE, ParamSet_ptr& ps);
     void parse_sphere(XMLElement* pE, ParamSet_ptr& ps);
     int extractData(rt3::API& api);
 

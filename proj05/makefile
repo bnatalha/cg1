@@ -25,6 +25,7 @@ $(TARGET): $(OBJECTS)
 	@mkdir -p $(BUILDDIR)/camera
 	@mkdir -p $(BUILDDIR)/primitive
 	@mkdir -p $(BUILDDIR)/integrator
+	@mkdir -p $(BUILDDIR)/light
 	$(CC) $^ -o $(TARGET) $(CFLAGS)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
@@ -34,6 +35,7 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)/camera
 	@mkdir -p $(BUILDDIR)/primitive
 	@mkdir -p $(BUILDDIR)/integrator
+	@mkdir -p $(BUILDDIR)/light
 	$(CC) $(INC) -c -o $@ $< $(CFLAGS)
 
 clean:

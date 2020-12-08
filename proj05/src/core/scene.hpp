@@ -1,7 +1,7 @@
 #ifndef SCENE_HPP
 #define SCENE_HPP
 
-#include <forward_list>
+#include <vector>
 
 #include "background.hpp"
 #include "primitive.hpp"
@@ -15,12 +15,12 @@ namespace rt3 {
     public:
         std::shared_ptr<Background> background;
         std::shared_ptr<Primitive> primitive;
-        std::shared_ptr<Light> lights;
+        std::vector<std::shared_ptr<Light>> lights;
 
         Scene() {}
         Scene(std::shared_ptr<Background> bg) : background(bg) {}
         Scene(std::shared_ptr<Background> bg, std::shared_ptr<Primitive> prim) : background(bg), primitive(prim) {}
-        Scene(std::shared_ptr<Background> bg, std::shared_ptr<Primitive> prim, std::shared_ptr<Light> ls ) : background(bg), primitive(prim), lights(ls) {}
+        Scene(std::shared_ptr<Background> bg, std::shared_ptr<Primitive> prim, std::vector<std::shared_ptr<Light>>& ls ) : background(bg), primitive(prim), lights(ls) {}
         ~Scene() {}
 
         bool intersect( const Ray& r, Surfel *isect ) const;

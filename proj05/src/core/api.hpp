@@ -14,12 +14,17 @@
 #include "parser_tags.hpp"
 #include "primitive.hpp"
 #include "integrator.hpp"
+#include "light.hpp"
 #include "integrator/flat_integrator.hpp"
 #include "integrator/normal_map_integrator.hpp"
 #include "integrator/depth_map_integrator.hpp"
 #include "primitive/geometric_primitive.hpp"
 #include "primitive/prim_list.hpp"
 #include "primitive/flat_material.hpp"
+#include "primitive/material.hpp"
+
+// #include "primitive/blinn_phong_material.hpp"
+// #include "light/point_light.hpp"
 
 namespace rt3 {
 
