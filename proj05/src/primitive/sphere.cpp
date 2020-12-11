@@ -11,34 +11,24 @@ namespace rt3 {
         float delta = B * B - 4.f * A * C;
 
 
-        if (delta >= 0) {
-            // Vector3 oc = ray.o - c;
-            // float p1 = dot(oc, ray.d);
-            // float r1 = dot(oc, ray.d) * dot(oc, ray.d);
-            // float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
-
-            // float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
-            // float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
-
-            // *t_hit = t1 < t2 ? t1 : t2;
-
+        if (delta >= 0.f) {
             if (delta == 0.f) {
                 *t_hit = (-B) / (2.f * A);
             }
             else if (delta > 0.f) {
-                // float x1 = (-B + sqrt(delta)) / (2.f * A);
-                // float x2 = (-B - sqrt(delta)) / (2.f * A);
-                // *t_hit = x1 < x2 ? x1 : x2;
+                float x1 = (-B + sqrt(delta)) / (2.f * A);
+                float x2 = (-B - sqrt(delta)) / (2.f * A);
+                *t_hit = x1 < x2 ? x1 : x2;
 
-                Vector3 oc = ray.o - c;
-                float p1 = dot(oc, ray.d);
-                float r1 = dot(oc, ray.d) * dot(oc, ray.d);
-                float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
+                // Vector3 oc = ray.o - c;
+                // float p1 = dot(oc, ray.d);
+                // float r1 = dot(oc, ray.d) * dot(oc, ray.d);
+                // float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
 
-                float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
-                float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
 
-                *t_hit = t1 < t2 ? t1 : t2;
+                // *t_hit = t1 < t2 ? t1 : t2;
             }
 
             if ((*t_hit) > ray.t_min) {
@@ -54,8 +44,13 @@ namespace rt3 {
                     // sf->n = normalize(sf->p - c);
 
                     // sf->n = normalize((sf->p - ray.o));
-                    sf->n = normalize(2.f * (sf->p - c));
-                    sf->wo = sf->n / r;
+
+
+                    // sf->n = normalize(2.f * (sf->p - c));
+                    Vector3 n = normalize(2.f*(sf->p - c));
+                    sf->n = n;
+                    // sf->n = dot(sf->n, ray.d) < 0 ? (-1* n) : n;
+                    // sf->wo = dot(ray.d, sf->n) < 0 ? -1 * (sf->n) : sf->n;
 
                     return true;
 
@@ -69,10 +64,10 @@ namespace rt3 {
 
     bool Sphere::intersect_p(const Ray& ray) const {
         float A = dot(ray.d, ray.d);
-        float B = dot(2 * (ray.o - c), ray.d);
+        float B = dot(2.f * (ray.o - c), ray.d);
         float C = dot((ray.o - c), (ray.o - c)) - (r * r);
-        float delta = B * B - 4 * A * C;
-        return delta >= 0;
+        float delta = B * B - 4.f * A * C;
+        return delta >= 0.f;
     }
 
     void Sphere::print() {

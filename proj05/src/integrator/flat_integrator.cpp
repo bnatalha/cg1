@@ -14,7 +14,14 @@ namespace rt3 {
             l = normalize(l);
 
             const FlatMaterial* fm = dynamic_cast<const FlatMaterial*>(isect.get()->primitive->get_material());
-            L = fm->kd * light_I * std::max(0.f, dot(isect->n, l));
+            const BlinnPhongMaterial* bm = dynamic_cast<const BlinnPhongMaterial*>(isect.get()->primitive->get_material());
+            if (fm != nullptr) {
+                L = fm->kd * light_I * std::max(0.f, dot(isect->n, l));
+            }
+            else if (bm != nullptr) {
+                L = bm->kd * light_I * std::max(0.f, dot(isect->n, l));
+                L = L*255;
+            }
         }
         return L;
 

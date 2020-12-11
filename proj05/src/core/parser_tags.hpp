@@ -25,6 +25,8 @@ public:
     inline static const char* INTEGRATOR_TYPE_FLAT = "flat";
     inline static const char* INTEGRATOR_TYPE_NORMAL_MAP = "normal_map";
     inline static const char* INTEGRATOR_TYPE_DEPTH_MAP = "depth_map";
+    inline static const char* INTEGRATOR_TYPE_BLINN_PHONG = "blinn_phong";
+    inline static const char* INTEGRATOR_BLINN_PHONG_DEPTH = "depth";
     inline static const char* INTEGRATOR_DEPTH_MAP_ZMIN = "zmin";
     inline static const char* INTEGRATOR_DEPTH_MAP_ZMAX = "zmax";
     inline static const char* INTEGRATOR_DEPTH_MAP_NEAR_COLOR = "near_color";

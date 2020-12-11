@@ -56,6 +56,9 @@ public:
     void parse_named_material(XMLElement* pE, ParamSet_ptr& ps);
     void parse_object_identity(XMLElement* pE, ParamSet_ptr& ps);
     void parse_sphere(XMLElement* pE, ParamSet_ptr& ps);
+    
+    int parse_include();
+
     int extractData(rt3::API& api);
 
     void addTag(const char* tag, std::shared_ptr<rt3::ParamSet> ps);

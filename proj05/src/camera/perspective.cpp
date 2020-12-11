@@ -31,6 +31,7 @@ namespace rt3 {
         Point2f p = to_screen_space(Point2(x, y));
         float u = p.first, v = p.second;
         Vector3 d = (fd * _w) + (u * _u) + (v * _v);
+        // Vector3 d2 = _w + u * _u + v * _v;
         Point3 o = e;
         return Ray(o, d);
     }

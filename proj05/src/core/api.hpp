@@ -18,6 +18,7 @@
 #include "integrator/flat_integrator.hpp"
 #include "integrator/normal_map_integrator.hpp"
 #include "integrator/depth_map_integrator.hpp"
+#include "integrator/blinn_phong_integrator.hpp"
 #include "primitive/geometric_primitive.hpp"
 #include "primitive/prim_list.hpp"
 #include "primitive/flat_material.hpp"

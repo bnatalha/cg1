@@ -8,6 +8,7 @@ class Ray {
 
 public:
   Ray(const Point3& o, const Vector3& d) : o{ o }, d{ d } {}
+  Ray(const Point3& o, const Vector3& d, const float t_min, const float t_max) : o{ o }, d{ d }, t_min{ t_min }, t_max{ t_max} {}
 
   Point3 o; //!< origin
   Vector3 d;

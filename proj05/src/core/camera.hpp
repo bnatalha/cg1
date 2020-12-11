@@ -38,7 +38,7 @@ namespace rt3 {
         Vector3 _u;
         Vector3 _v;
         Point3 e;
-        float fd = 1;  // focal distance
+        float fd = 1.f;  // focal distance
 
         // pixel (i,j) -> point (u,v)
         // TODO(bnatalha): verify if using int/float will make a difference

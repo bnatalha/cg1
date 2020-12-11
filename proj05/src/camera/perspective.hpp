@@ -11,7 +11,7 @@ namespace rt3 {
         int fovy;
 
         PerspectiveCamera() {};
-        PerspectiveCamera(std::string t, int fovy) : Camera(t), fovy(fovy) {}
+        PerspectiveCamera(std::string t, float fovy) : Camera(t), fovy(fovy) {}
         virtual ~PerspectiveCamera() = default;
 
         void set_lrbt();

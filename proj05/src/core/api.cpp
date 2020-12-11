@@ -14,7 +14,7 @@ namespace rt3 {
 
         // PERSPECTIVE
         if (type.compare(ParserTags::CAMERA_TYPE_PERSPECTIVE) == 0) {
-            int fovy = ps_camera->find_one<int>(ParserTags::CAMERA_FOVY, 30);
+            float fovy = ps_camera->find_one<float>(ParserTags::CAMERA_FOVY, 30);
             camera_ptr = std::make_shared<PerspectiveCamera>(type, fovy);
         }
         else {  // ORTAGRAPHIC
@@ -50,7 +50,8 @@ namespace rt3 {
 
         Vector3 gaze = look_at - look_from;
         Vector3 w = normalize(gaze);
-        Vector3 u = normalize(cross(vup, w));
+        Vector3 u = normalize(cross(w, vup));
+        // Vector3 u = normalize(cross(vup, w));
         Vector3 v = normalize(cross(w, u));
 
         camera_ptr->gaze = gaze;
@@ -151,7 +152,7 @@ namespace rt3 {
             if (t.compare(ParserTags::LIGHT_TYPE_POINT) == 0) {
 
                 Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
-                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_I, "default").c_str());
                 // string i = ps->find_one<string>(ParserTags::LIGHT_I, "default");
                 li = std::make_shared<PointLight>(from, scale);
                 lights.push_back(std::move(li));
@@ -162,14 +163,14 @@ namespace rt3 {
         }
 
         // materials
-        std::unordered_map<const char*, std::shared_ptr<Material>> materials = std::unordered_map<const char*, std::shared_ptr<Material>>();
+        std::unordered_map<string, std::shared_ptr<Material>> materials = std::unordered_map<string, std::shared_ptr<Material>>();
         for (auto ps : ps_materials) {
-            t = ps->find_one<string>(ParserTags::MATERIAL_TYPE, "blinn");
+            t = ps->find_one<string>(ParserTags::MATERIAL_TYPE, "default");
             std::shared_ptr<Material> mat;
 
             // blinn
             if (t.compare(ParserTags::MATERIAL_TYPE_BLINN) == 0) {
-                const char* name = ps->find_one<string>(ParserTags::MATERIAL_BLINN_NAME, "default").c_str();
+                string name = ps->find_one<string>(ParserTags::MATERIAL_BLINN_NAME, "default").c_str();
                 Vector3 ambient = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_AMBIENT, "default").c_str());
                 Vector3 diffuse = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_DIFFUSE, "default").c_str());
                 Vector3 specular = Vector3(ps->find_one<string>(ParserTags::MATERIAL_BLINN_SPECULAR, "default").c_str());
@@ -177,6 +178,8 @@ namespace rt3 {
                 float glossiness = ps->find_one<float>(ParserTags::MATERIAL_BLINN_GLOSSINESS, ParserTags::PARSER_DEFAULT_FLOAT);
                 mat = std::make_shared<BlinnPhongMaterial>(ambient, diffuse, specular, mirror, glossiness);
                 materials[name] = std::move(mat);
+
+                // BlinnPhongMaterial* bm = dynamic_cast<BlinnPhongMaterial*>(materials[name].get());
             }
             // TODO flat material
         }
@@ -185,20 +188,24 @@ namespace rt3 {
         std::vector<shared_ptr<Primitive>> prim_vec = std::vector<shared_ptr<Primitive>>();
         for (auto ps : ps_objects) {
             t = ps->find_one<string>(ParserTags::OBJECT_TYPE, ParserTags::OBJECT_SPHERE);
-            const char* name = ps->find_one<string>(ParserTags::OBJECT_NAMED_MATERIAL_NAME, "default").c_str();
+            string name = ps->find_one<string>(ParserTags::OBJECT_NAMED_MATERIAL_NAME, "default").c_str();
 
             // spheres
             if (t.compare(ParserTags::OBJECT_SPHERE) == 0) {
                 float radius = ps->find_one<float>(ParserTags::OBJECT_RADIUS, -23423.f);
                 Point3 center = Point3(ps->find_one<string>(ParserTags::OBJECT_TRANSLATE_VALUE, "").c_str());   // TODO what is this translate
                 std::shared_ptr<Shape> shape = std::make_shared<Sphere>(radius, center, false);
+                std::shared_ptr<Material> m = materials[name];
+                GeometricPrimitive geo(m, std::move(shape));
 
-                std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(materials[name], std::move(shape));
+                std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(geo);
+                // std::shared_ptr<Primitive> geo_prim = std::make_shared<GeometricPrimitive>(materials[name], std::move(shape));
 
                 prim_vec.push_back(std::move(geo_prim));
             }
         }
         std::shared_ptr<Primitive> primitive = std::make_shared<PrimList>(prim_vec);
+        std::cout << lights.size() << "\n";
 
         m_scene = std::make_shared<Scene>(std::move(bg), std::move(primitive), lights);
     }
@@ -222,6 +229,10 @@ namespace rt3 {
             float zmin = ps_it->find_one<float>(ParserTags::INTEGRATOR_DEPTH_MAP_ZMIN, ParserTags::PARSER_DEFAULT_FLOAT);
             float zmax = ps_it->find_one<float>(ParserTags::INTEGRATOR_DEPTH_MAP_ZMAX, ParserTags::PARSER_DEFAULT_FLOAT);
             m_integrator = std::make_shared<DepthMapIntegrator>(std::move(camera), zmin, zmax, nc, fc);
+        }
+        else if (type.compare(ParserTags::INTEGRATOR_TYPE_BLINN_PHONG) == 0) {
+            int depth = ps_it->find_one<int>(ParserTags::INTEGRATOR_BLINN_PHONG_DEPTH, ParserTags::PARSER_DEFAULT_FLOAT);
+            m_integrator = std::make_shared<BlinnPhongIntegrator>(std::move(camera), depth);
         }
         // TODO implementar blinphong integrator
         // else if (type.compare(ParserTags::Bli) == 0) {

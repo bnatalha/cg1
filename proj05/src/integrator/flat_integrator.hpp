@@ -15,6 +15,7 @@ namespace rt3 {
         virtual ~FlatIntegrator() = default;
 
         Point3 Li(const Ray& ray, const Scene& scene, Point3 bkg_color) const;
+        Point3 Li(const Ray& ray, const Scene& scene, Point3 bkg_color, int depth) const {return Vector3(0,0,0);}
         void render(const Scene& scene);
         void preprocess(const Scene& scene);
 

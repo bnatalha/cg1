@@ -58,7 +58,7 @@ void Parser::parse_camera(XMLElement* pE) {
 
     addStrAttr(pElement, ParserTags::CAMERA_TYPE, ps);
     addStrAttr(pElement, ParserTags::CAMERA_SCREEN_WINDOW, ps);
-    addIntAttr(pElement, ParserTags::CAMERA_FOVY, ps);
+    addFloatAttr(pElement, ParserTags::CAMERA_FOVY, ps);
 
     // ps_map.insert(PS_map_pair(ParserTags::CAMERA, ps));
     ps_map[ParserTags::CAMERA] = std::move(ps);
@@ -102,6 +102,9 @@ void Parser::parse_integrator(XMLElement* pE) {
         f = addFloatAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_ZMAX, ps);
         string s = addStrAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_NEAR_COLOR, ps);
         s = addStrAttr(pElement, ParserTags::INTEGRATOR_DEPTH_MAP_FAR_COLOR, ps);
+    }
+    else if (type.compare(ParserTags::INTEGRATOR_TYPE_BLINN_PHONG) == 0) {
+        addIntAttr(pElement, ParserTags::INTEGRATOR_BLINN_PHONG_DEPTH, ps);
     }
 
     // ps_map.insert(PS_map_pair(ParserTags::INTEGRATOR, ps));
@@ -167,20 +170,47 @@ void Parser::parse_object_identity(XMLElement* pE, ParamSet_ptr& ps) {
     ps = std::make_shared<rt3::ParamSet>();
 
     // named material
-    addStrAttr(pElement, ParserTags::OBJECT_NAMED_MATERIAL_NAME, ps);
+    string m = addStrAttr(pElement, ParserTags::OBJECT_NAMED_MATERIAL_NAME, ps);
 
     // translate
-    pE->NextSiblingElement(ParserTags::OBJECT_TRANSLATE);
-    addStrAttr(pElement, ParserTags::OBJECT_TRANSLATE_VALUE, ps);
-    addTag(ParserTags::OBJECT_SPHERE, ps);
+    pElement = pElement->NextSiblingElement(ParserTags::OBJECT_TRANSLATE);
+    // pE->NextSibling();
+    string translate = addStrAttr(pElement, ParserTags::OBJECT_TRANSLATE_VALUE, ps);
 
     // object (sphere only)
-    pE->NextSiblingElement(ParserTags::OBJECT);
+    pElement = pElement->NextSiblingElement(ParserTags::OBJECT);
+    // pE->NextSibling();
     addFloatAttr(pElement, ParserTags::OBJECT_RADIUS, ps);
-    addStrAttr(pElement, ParserTags::OBJECT_CENTER, ps);
-    
+}
 
-    // ps_map.insert(PS_map_pair(ParserTags::MATERIAL, ps));
+int Parser::parse_include() {
+    const char* filenameInc = ParserTags::PARSER_DEFAULT_STR;
+    auto xmlResult = pElement->QueryStringAttribute(ParserTags::INCLUDE_FILENAME, &filenameInc);
+    if (xmlResult != XML_SUCCESS) { return XML_ERROR_PARSING_ATTRIBUTE; } // value not found
+
+    XMLDocument subdoc;
+    XMLNode* pRootInc;
+    XMLElement* newElement;
+    XMLError eResultInc = subdoc.LoadFile(filenameInc);
+    XMLCheckResult(eResultInc);
+
+    pRootInc = subdoc.FirstChild();
+    if (pRootInc == nullptr) return XML_ERROR_FILE_READ_ERROR;
+
+    XMLNode* copyNode;
+    XMLElement* nodeInsertAt;
+    pRootInc = pRootInc->FirstChildElement();
+    nodeInsertAt = pElement;
+
+    while (pRootInc != nullptr) {
+        copyNode = pRootInc->ShallowClone(xmlDoc);
+        newElement = copyNode->ToElement();
+        // std::cout << newElement->Name() << " copying...\n";
+        nodeInsertAt = xmlDoc->InsertAfterChild(nodeInsertAt, newElement)->ToElement();
+        pRootInc = pRootInc->NextSiblingElement();
+    }
+
+    return 0;
 }
 
 
@@ -219,41 +249,18 @@ int Parser::extractData(rt3::API& api)
             parse_integrator(pElement);
         }
         else if (strcmp(pElement->Name(), ParserTags::INCLUDE) == 0) {
-            const char* filenameInc = ParserTags::PARSER_DEFAULT_STR;
-            auto xmlResult = pElement->QueryStringAttribute(ParserTags::INCLUDE_FILENAME, &filenameInc);
-            if (xmlResult != XML_SUCCESS) { return XML_ERROR_PARSING_ATTRIBUTE; } // value not found
-
-            XMLDocument subdoc;
-            XMLNode* pRootInc;
-            XMLElement* newElement;
-            XMLError eResultInc = subdoc.LoadFile(filenameInc);
-            XMLCheckResult(eResultInc);
-
-            pRootInc = subdoc.FirstChild();
-            if (pRootInc == nullptr) return XML_ERROR_FILE_READ_ERROR;
-
-            XMLNode* copyNode;
-            XMLElement* nodeInsertAt;
-            pRootInc = pRootInc->FirstChildElement();
-            nodeInsertAt = pElement;
-
-            while (pRootInc != nullptr) {
-                copyNode = pRootInc->ShallowClone(xmlDoc);
-                newElement = copyNode->ToElement();
-                // std::cout << newElement->Name() << " copying...\n";
-                nodeInsertAt = xmlDoc->InsertAfterChild(nodeInsertAt, newElement)->ToElement();
-                pRootInc = pRootInc->NextSiblingElement();
-            }
+            parse_include();
         }
         else if (strcmp(pElement->Name(), ParserTags::SCENE_WORLD_BEGIN) == 0) {
             pElement = pElement->NextSiblingElement();
 
             while (pElement != nullptr && strcmp(pElement->Name(), ParserTags::SCENE_WORLD_END) != 0) {
                 // BACKGROUND
-                ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
+                ParamSet_ptr ps;
+                // ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
                 if (strcmp(pElement->Name(), ParserTags::BACKGROUND) == 0) {
                     parse_background(pElement);
-                    pElement = pElement->NextSiblingElement();
+                    // pElement = pElement->NextSiblingElement();
                 }
                 else if (strcmp(pElement->Name(), ParserTags::MAKE_NAMED_MATERIAL) == 0) {
                     parse_named_material(pElement, ps);
@@ -269,6 +276,9 @@ int Parser::extractData(rt3::API& api)
                 }
                 else if (strcmp(pElement->Name(), ParserTags::OBJECT_IDENTITY) == 0) {
                     // TODO ?
+                }
+                else if (strcmp(pElement->Name(), ParserTags::INCLUDE) == 0) {
+                    parse_include();
                 }
 
                 pElement = pElement->NextSiblingElement();
