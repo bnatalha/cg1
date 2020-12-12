@@ -292,6 +292,10 @@ int Parser::extractData(rt3::API& api)
                 ps_objects,
                 ps_lights,
                 ps_materials);
+
+            ps_objects.clear();
+            ps_lights.clear();
+            ps_materials.clear();
         }
         pElement = pElement->NextSiblingElement();
 

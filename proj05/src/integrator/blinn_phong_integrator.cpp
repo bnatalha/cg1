@@ -50,9 +50,21 @@ namespace rt3 {
                     L += specular;
 
                     // // WIP: hard shadow
-                    // float epsilon = 0.09;
-                    // Vector3 wi = pointLight->from - P;
-                    // Ray shadowRay = Ray(wi, P, 1.f, epsilon);
+                    // // float epsilon = 0.0f;
+                    // float epsilon = 0.08f;
+                    // auto nP = Vector3(P[0] + epsilon, P[1] + epsilon, P[2] + epsilon);
+                    // Vector3 wi = normalize(pointLight->from - nP);
+                    // Ray shadowRay = Ray(wi, nP, epsilon, 1.f);
+
+                    // // // WIP: hard shadow
+                    // // float epsilon = 0.08f;
+                    // // // auto nP = Vector3(P[0] + epsilon, P[1] + epsilon, P[2] + epsilon);
+                    // // auto nP = P;
+                    // // Vector3 wi = normalize(pointLight->from - nP);
+                    // // // Vector3 wi = pointLight->from - nP;
+                    // // Ray shadowRay = Ray(wi, nP, .9f, 1.f);
+                    // // // Ray shadowRay = Ray(wi, nP, epsilon, 1.f);
+
                     // if (scene.intersect_p(shadowRay))
                     // {
                     //     L = Vector3(0.f, 0.f, 0.f);
@@ -74,10 +86,20 @@ namespace rt3 {
                     Vector3 specular = bm->ks * I * pow(dot(n, h), bm->g);
                     L += specular;
 
-                    // // WIP: hard shadow
-                    // float epsilon = 0.05;
-                    // Vector3 wi = directLight->from - P;
-                    // Ray shadowRay = Ray(wi, P, 1.f, 0.f);
+                    // float epsilon = 0.08f;
+                    // auto nP = Vector3(P[0] + epsilon, P[1] + epsilon, P[2] + epsilon);
+                    // Vector3 wi = normalize(directLight->from - nP);
+                    // Ray shadowRay = Ray(wi, nP, epsilon, 1.f);
+
+                    // // // WIP: hard shadow
+                    // // float epsilon = 0.08f;
+                    // // // auto nP = Vector3(P[0] + epsilon, P[1] + epsilon, P[2] + epsilon);
+                    // // auto nP = P;
+                    // // Vector3 wi = normalize(pointLight->from - nP);
+                    // // // Vector3 wi = pointLight->from - nP;
+                    // // Ray shadowRay = Ray(wi, nP, .9f, 1.f);
+                    // // // Ray shadowRay = Ray(wi, nP, epsilon, 1.f);
+
                     // if (scene.intersect_p(shadowRay))
                     // {
                     //     L = Vector3(0.f, 0.f, 0.f);
@@ -92,12 +114,13 @@ namespace rt3 {
                     Vector3 spotDir = normalize(spotLight->from - spotLight->to);
                     Vector3 pFromSpot = normalize(spotLight->from - P);
                     
+                    // float pCos = dot(pFromSpot, spotDir);
                     float pCos = std::abs(dot(pFromSpot, spotDir));
                     float cutoff = TO_RADIANS(spotLight->cutoff);
                     float cutoffCos = cos(cutoff);
 
                     // if (!(0.8f <= cosAngle && cosAngle <= 1.f))
-                    if (pCos > cutoffCos) {
+                    if (pCos > 10.f) {
                         Vector3 l = pFromSpot;
 
                         Vector3 difuse = bm->kd * I * std::max(0.f, dot(n, l));
@@ -112,18 +135,18 @@ namespace rt3 {
 
 
 
-            // // Mirror
+            // Mirror
 
-            // // [1] Determine color L based on the Blinn-Phong model
-            // // [2] Find new ray, based on perfect reflection about surface normal.
-            // Ray reflected_ray = Ray(P, ray.d - 2 * (dot(ray.d, n)) * n);
-            // // [3] Offset reflect_ray by an epsilon, to avoid self-intersection caused by rounding error.
-            // // Vector3 epsilon = Vector3(1.f, 1.f, 1.f) + n;
-            // // reflected_ray.o = epsilon + reflected_ray.o;
+            // [1] Determine color L based on the Blinn-Phong model
+            // [2] Find new ray, based on perfect reflection about surface normal.
+            Ray reflected_ray = Ray(P, ray.d - 2 * (dot(ray.d, n)) * n);
+            // [3] Offset reflect_ray by an epsilon, to avoid self-intersection caused by rounding error.
+            // Vector3 epsilon = Vector3(1.f, 1.f, 1.f) + n;
+            // reflected_ray.o = epsilon + reflected_ray.o;
 
-            // // [4] Recursive call of Li() with new reflected ray.
-            // if (depth < max_depth)
-            //     L = L + bm->mirror * Li(reflected_ray, scene, bkg_color, depth + 1);
+            // [4] Recursive call of Li() with new reflected ray.
+            if (depth < max_depth)
+                L = L + bm->mirror * Li(reflected_ray, scene, bkg_color, depth + 1);
 
 
             L[0] = std::clamp(L[0], 0.f, 1.f);
@@ -134,6 +157,7 @@ namespace rt3 {
     }
 
     void BlinnPhongIntegrator::render(const Scene& scene) {
+        std::cout << camera->film.filename << "\n";
         auto w = camera->film.width;
         auto h = camera->film.height;
         // for ( int j = h-1 ; j >= 0 ; j-- ) {
@@ -152,7 +176,7 @@ namespace rt3 {
                 progressbar_finish();
             }
             if (j % (h / 10) == 0) {
-                progressbar(j / (h / 10), "loading");
+                progressbar(j / (h / 10), "rendering...");
             }
         }
     }
