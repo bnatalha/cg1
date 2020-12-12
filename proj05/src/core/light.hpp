@@ -21,17 +21,18 @@ namespace rt3 {
     public:
         light_flag_e flags;
         Vector3 L;
-    
+
         Light() {};
         Light(light_flag_e flag) : flags(flag) {};
         virtual ~Light() {};
         /// Retorna a intensidade da luz, direção e o teste oclusão.
-        virtual rgb sample_Li(const Surfel& hit , Vector3* wi, VisibilityTester* vis) = 0;
+        virtual rgb sample_Li(Surfel* hit, const Vector3& wi, VisibilityTester* vis) = 0;
         virtual void preprocess(const Scene&);
     };
 
 }
 
 #include "light/point_light.hpp"
+#include "light/directional_light.hpp"
 
 #endif

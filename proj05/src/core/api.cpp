@@ -150,15 +150,24 @@ namespace rt3 {
 
             // point
             if (t.compare(ParserTags::LIGHT_TYPE_POINT) == 0) {
-
+                Vector3 I = Vector3(ps->find_one<string>(ParserTags::LIGHT_I, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
                 Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
-                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_I, "default").c_str());
-                // string i = ps->find_one<string>(ParserTags::LIGHT_I, "default");
-                li = std::make_shared<PointLight>(from, scale);
+
+                li = std::make_shared<PointLight>(I, scale, from);
                 lights.push_back(std::move(li));
             }
             // spot
             // directional
+            if (t.compare(ParserTags::LIGHT_TYPE_DIRECTIONAL) == 0) {
+                Vector3 L = Vector3(ps->find_one<string>(ParserTags::LIGHT_L, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
+                Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
+                Vector3 to = Vector3(ps->find_one<string>(ParserTags::LIGHT_TO, "default").c_str());
+                
+                li = std::make_shared<DirectionalLight>(L, scale, from, to);
+                lights.push_back(std::move(li));
+            }
             // ambient (flux ?)
         }
 
