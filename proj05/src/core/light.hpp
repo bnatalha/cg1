@@ -34,5 +34,7 @@ namespace rt3 {
 
 #include "light/point_light.hpp"
 #include "light/directional_light.hpp"
+#include "light/ambient.hpp"
+#include "light/spot.hpp"
 
 #endif

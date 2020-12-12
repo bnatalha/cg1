@@ -2,6 +2,8 @@
 #define BLINN_PHONG_INTEGRATOR_HPP
 
 #include <algorithm>
+#include <cmath>
+
 
 #include "core/integrator.hpp"
 #include "external/progress_bar.hpp"

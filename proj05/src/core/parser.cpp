@@ -159,8 +159,8 @@ void Parser::parse_light(XMLElement* pE, ParamSet_ptr& ps) {
     addStrAttr(pElement, ParserTags::LIGHT_SCALE, ps);
     addStrAttr(pElement, ParserTags::LIGHT_FROM, ps);
     addStrAttr(pElement, ParserTags::LIGHT_TO, ps);
-    addFloatAttr(pElement, ParserTags::LIGHT_SPOT_CUTOFF, ps);
-    addFloatAttr(pElement, ParserTags::LIGHT_SPOT_FALLOFF, ps);
+    addIntAttr(pElement, ParserTags::LIGHT_SPOT_CUTOFF, ps);
+    addIntAttr(pElement, ParserTags::LIGHT_SPOT_FALLOFF, ps);
 
     // ps_map.insert(PS_map_pair(ParserTags::MATERIAL, ps));
 }

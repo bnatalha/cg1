@@ -27,8 +27,16 @@ namespace rt3 {
             const BlinnPhongMaterial* bm = dynamic_cast<const BlinnPhongMaterial*>(isect.get()->primitive->get_material());
             for (auto light : scene.lights) {
 
-                PointLight* pointLight = dynamic_cast<PointLight*>(light.get());
-                if (pointLight != nullptr) {
+                if (light->flags == light_flag_e::ambient) {
+                    AmbientLight* ambLight = dynamic_cast<AmbientLight*>(light.get());
+
+                    Vector3 I = ambLight->L * ambLight->scale;
+                    L += bm->ka * I;
+                }
+
+                if (light->flags == light_flag_e::point) {
+
+                    PointLight* pointLight = dynamic_cast<PointLight*>(light.get());
 
                     Vector3 l = normalize(pointLight->from - P);
                     Vector3 I = pointLight->scale * pointLight->I;
@@ -36,14 +44,24 @@ namespace rt3 {
                     Vector3 difuse = bm->kd * I * std::max(0.f, dot(n, l));
                     L += difuse;
 
-                    Vector3 v = (ray.o - P);
-                    Vector3 h = normalize(l + v);
-                    Vector3 specular = bm->ks * I * pow(std::max(0.f, dot(n, h)), bm->g);
+                    Vector3 v = normalize(ray.o - P);
+                    Vector3 h = (v + l) / (v + l).length();
+                    Vector3 specular = bm->ks * I * pow(dot(n, h), bm->g);
                     L += specular;
+
+                    // // WIP: hard shadow
+                    // float epsilon = 0.09;
+                    // Vector3 wi = pointLight->from - P;
+                    // Ray shadowRay = Ray(wi, P, 1.f, epsilon);
+                    // if (scene.intersect_p(shadowRay))
+                    // {
+                    //     L = Vector3(0.f, 0.f, 0.f);
+                    // }
                 }
 
-                DirectionalLight* directLight = dynamic_cast<DirectionalLight*>(light.get());
-                if (directLight != nullptr) {
+                if (light->flags == light_flag_e::directional) {
+
+                    DirectionalLight* directLight = dynamic_cast<DirectionalLight*>(light.get());
 
                     Vector3 I = directLight->scale * directLight->L;
                     Vector3 l = normalize(directLight->from - directLight->to);
@@ -51,9 +69,9 @@ namespace rt3 {
                     Vector3 difuse = bm->kd * I * std::max(0.f, dot(n, l));
                     L += difuse;
 
-                    Vector3 v = (P - ray.o);
-                    Vector3 h = normalize(l + v);
-                    Vector3 specular = bm->ks * I * pow(std::max(0.f, dot(n, h)), bm->g);
+                    Vector3 v = normalize(ray.o - P);
+                    Vector3 h = (v + l) / (v + l).length();
+                    Vector3 specular = bm->ks * I * pow(dot(n, h), bm->g);
                     L += specular;
 
                     // // WIP: hard shadow
@@ -65,23 +83,47 @@ namespace rt3 {
                     //     L = Vector3(0.f, 0.f, 0.f);
                     // }
                 }
+
+                if (light->flags == light_flag_e::spot) {
+
+                    SpotLight* spotLight = dynamic_cast<SpotLight*>(light.get());
+
+                    Vector3 I = spotLight->L * spotLight->scale;
+                    Vector3 spotDir = normalize(spotLight->from - spotLight->to);
+                    Vector3 pFromSpot = normalize(spotLight->from - P);
+                    
+                    float pCos = std::abs(dot(pFromSpot, spotDir));
+                    float cutoff = TO_RADIANS(spotLight->cutoff);
+                    float cutoffCos = cos(cutoff);
+
+                    // if (!(0.8f <= cosAngle && cosAngle <= 1.f))
+                    if (pCos > cutoffCos) {
+                        Vector3 l = pFromSpot;
+
+                        Vector3 difuse = bm->kd * I * std::max(0.f, dot(n, l));
+                        L += difuse;
+                    }
+                    else {
+                        continue;
+                    }
+                }
             }
 
 
 
 
-            // Mirror
+            // // Mirror
 
-            // [1] Determine color L based on the Blinn-Phong model
-            // [2] Find new ray, based on perfect reflection about surface normal.
-            Ray reflected_ray = Ray(P, ray.d - 2 * (dot(ray.d, n)) * n);
-            // [3] Offset reflect_ray by an epsilon, to avoid self-intersection caused by rounding error.
-            // Vector3 epsilon = Vector3(1.f, 1.f, 1.f) + n;
-            // reflected_ray.o = epsilon + reflected_ray.o;
+            // // [1] Determine color L based on the Blinn-Phong model
+            // // [2] Find new ray, based on perfect reflection about surface normal.
+            // Ray reflected_ray = Ray(P, ray.d - 2 * (dot(ray.d, n)) * n);
+            // // [3] Offset reflect_ray by an epsilon, to avoid self-intersection caused by rounding error.
+            // // Vector3 epsilon = Vector3(1.f, 1.f, 1.f) + n;
+            // // reflected_ray.o = epsilon + reflected_ray.o;
 
-            // [4] Recursive call of Li() with new reflected ray.
-            if (depth < max_depth)
-                L = L + bm->mirror * Li(reflected_ray, scene, bkg_color, depth + 1);
+            // // [4] Recursive call of Li() with new reflected ray.
+            // if (depth < max_depth)
+            //     L = L + bm->mirror * Li(reflected_ray, scene, bkg_color, depth + 1);
 
 
             L[0] = std::clamp(L[0], 0.f, 1.f);

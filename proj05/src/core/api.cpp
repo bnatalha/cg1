@@ -158,17 +158,36 @@ namespace rt3 {
                 lights.push_back(std::move(li));
             }
             // spot
+            if (t.compare(ParserTags::LIGHT_TYPE_SPOT) == 0) {
+                Vector3 I = Vector3(ps->find_one<string>(ParserTags::LIGHT_I, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
+                Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
+                Vector3 to = Vector3(ps->find_one<string>(ParserTags::LIGHT_TO, "default").c_str());
+                int cutoff = ps->find_one<int>(ParserTags::LIGHT_SPOT_CUTOFF, 1);
+                int falloff =ps->find_one<int>(ParserTags::LIGHT_SPOT_FALLOFF, 1);
+
+                li = std::make_shared<SpotLight>(I, scale, from, to, cutoff, falloff);
+                lights.push_back(std::move(li));
+            }
             // directional
             if (t.compare(ParserTags::LIGHT_TYPE_DIRECTIONAL) == 0) {
+
                 Vector3 L = Vector3(ps->find_one<string>(ParserTags::LIGHT_L, "default").c_str());
                 Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
                 Vector3 from = Vector3(ps->find_one<string>(ParserTags::LIGHT_FROM, "default").c_str());
                 Vector3 to = Vector3(ps->find_one<string>(ParserTags::LIGHT_TO, "default").c_str());
-                
+
                 li = std::make_shared<DirectionalLight>(L, scale, from, to);
                 lights.push_back(std::move(li));
             }
-            // ambient (flux ?)
+            // ambient
+            if (t.compare(ParserTags::LIGHT_TYPE_AMBIENT) == 0) {
+                Vector3 L = Vector3(ps->find_one<string>(ParserTags::LIGHT_L, "default").c_str());
+                Vector3 scale = Vector3(ps->find_one<string>(ParserTags::LIGHT_SCALE, "default").c_str());
+
+                li = std::make_shared<AmbientLight>(L, scale);
+                lights.push_back(std::move(li));
+            }
         }
 
         // materials
