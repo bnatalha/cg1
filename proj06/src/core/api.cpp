@@ -293,7 +293,9 @@ namespace rt3 {
     }
 
     void API::save() {
+        std::cout << "saving...";
         m_integrator->camera->film.write_image();
+        std::cout << "done\n";
     }
 
     void API::run(std::unordered_map<const char*, ParamSet_ptr>& paramsets,

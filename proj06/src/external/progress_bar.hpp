@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 
+#include <chrono> 
+#include <ctime> 
+
 /** adapted from https://www.quora.com/How-do-I-create-a-progress-bar-in-C++?share=1
 * creates a progress bar; use [pos_msg] to put a msg after the percentage
 * ex.:

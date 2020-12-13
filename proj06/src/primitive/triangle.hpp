@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <memory>
+#include <ctime>
+#include <chrono>
+#include <iterator>
 
 using std::vector;
 using std::shared_ptr;
@@ -10,6 +13,10 @@ using std::shared_ptr;
 #include "shape.hpp"
 #include "core/paramset.hpp"
 #include "core/parser_tags.hpp"
+
+
+
+#include "external/tiny_obj_loader.hpp"
 // #include "core/surfel.hpp"
 // #include "core/ray.hpp"
 
@@ -105,10 +112,10 @@ std::vector<std::shared_ptr<rt3::Shape>> create_triangle_mesh(std::shared_ptr<rt
 /// Internal function that calls the tinyobjloader api to read the OBJ data into memory.
 bool load_mesh_data(const std::string& filename, bool rvo, bool cn, bool fn, std::shared_ptr<rt3::TriangleMesh> md);
 
-// /// This function essentially convertes the mesh data from the tinyobjloader internal data structure to our mesh data structure.
-// void extract_obj_data( const tinyobj::attrib_t& attrib,
-//                        const std::vector<tinyobj::shape_t>& shapes,
-//                        bool rvo, bool cn, bool fn, shared_ptr<TriangleMesh> md );
+/// This function essentially convertes the mesh data from the tinyobjloader internal data structure to our mesh data structure.
+void extract_obj_data( const tinyobj::attrib_t& attrib,
+                       const std::vector<tinyobj::shape_t>& shapes,
+                       bool rvo, bool cn, bool fn, std::shared_ptr<rt3::TriangleMesh> md );
 
 
 

@@ -199,6 +199,7 @@ void Parser::parse_object_identity(XMLElement* pE, ParamSet_ptr& ps) {
             addStrAttr(pElement, ParserTags::OBJECT_TMESH_NORMALS, ps);
             addBoolAttr(pElement, ParserTags::OBJECT_TMESH_RVO, ps);
             addBoolAttr(pElement, ParserTags::OBJECT_TMESH_BCULL, ps);
+            addStrAttr(pElement, ParserTags::INCLUDE_FILENAME, ps);
         }
     }
 
@@ -227,6 +228,10 @@ int Parser::parse_include() {
         copyNode = pRootInc->ShallowClone(xmlDoc);
         newElement = copyNode->ToElement();
         // std::cout << newElement->Name() << " copying...\n";
+        // if (nodeInsertAt == pRoot->LastChildElement()) {
+        //     XMLNode * dummyElement = xmlDoc->NewElement("Account");
+        //     nodeInsertAt = xmlDoc->InsertEndChild(dummyElement)->ToElement();
+        // }
         nodeInsertAt = xmlDoc->InsertAfterChild(nodeInsertAt, newElement)->ToElement();
         pRootInc = pRootInc->NextSiblingElement();
     }
@@ -253,8 +258,8 @@ int Parser::extractData(rt3::API& api)
     std::forward_list<ParamSet_ptr> ps_objects = std::forward_list<ParamSet_ptr>();
 
     while (pElement != nullptr) {
-        std::cout << "Element: " << pElement->Name() << "\r";
-        std::cout.flush();
+        // std::cout << "Element: " << pElement->Name() << "\r";
+        // std::cout.flush();
 
 
         if (strcmp(pElement->Name(), ParserTags::FILM) == 0) {

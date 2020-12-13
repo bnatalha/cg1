@@ -52,11 +52,8 @@ namespace rt3 {
 
                 camera->film.add(Point2(i, j), L_color); // set image buffer at position (i,j).
             }
-            if (j == h - 1) {
-                progressbar_finish();
-            }
             if (j % (h / 10) == 0) {
-                progressbar(j / (h / 10), "loading");
+                progressbar(j / (h / 10), "rendering");
             }
         }
     }

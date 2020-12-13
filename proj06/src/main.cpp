@@ -1,3 +1,7 @@
+#ifndef TINYOBJLOADER_IMPLEMENTATION
+#define TINYOBJLOADER_IMPLEMENTATION
+
+
 #include <iostream>
 #include <iomanip> 
 
@@ -5,6 +9,8 @@
 #include "external/cxxopts.hpp"
 #include "external/progress_bar.hpp"
 #include "core/parser.hpp"
+
+
 
 bool arguments_parsing(int argc, char** argv, bool& verbose, std::string& filename) {
   cxxopts::Options options("RT3", "Ray Tracing Program under development");
@@ -77,8 +83,9 @@ int main(int argc, char** argv) {
   // run_default(true, "../data/in/ex3-1-orto.xml");
   // run_default(true, "../data/in/ex3-2-pers.xml");
   // run_default(true, "../data/in/ex4-1-pers.xml");
-  // run_default(true, "../scenes/projects_references/proj_05_blinn_phong/lights_scene/bphong_scene_main.xml");
-  run_default(true, "../scenes/projects_references/proj_06_triangle/three_spheres/three_sphere.xml");
+  run_default(true, "../scenes/projects_references/proj_05_blinn_phong/lights_scene/bphong_scene_main.xml");
+  // run_default(true, "../scenes/projects_references/proj_06_triangle/three_spheres/three_sphere.xml");
+  // run_default(true, "../scenes/projects_references/proj_06_triangle/teapot_scene/teapot_scene.xml");
 
   // progressbar(1, std::string("ave"));
   // progressbar(2, "maria");
@@ -87,3 +94,5 @@ int main(int argc, char** argv) {
 
   return 0;
 }
+
+#endif
