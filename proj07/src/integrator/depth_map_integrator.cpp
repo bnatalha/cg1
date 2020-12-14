@@ -19,19 +19,20 @@ namespace rt3 {
     Point3 DepthMapIntegrator::Li(const Ray& ray, const Scene& scene, Point3 bkg_color) const {
         Point3 L(far_color);
 
+        float hit1 = 0, hit2 = 0;
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-        if (scene.intersect(ray, isect.get())) {
+        if (!scene.intersect(ray, hit1, hit2, isect.get())) {
 
             // rgb kd = rgb(255.f, 0.f, 0.f);    // default red material
             float z = isect.get()->p[0];
             float d = std::abs(zmax - zmin);
-            float perc = (zmax - z)/d;
+            float perc = (zmax - z) / d;
 
             L[0] = std::abs(far_color[0] - near_color[0]) * perc;
             L[1] = std::abs(far_color[1] - near_color[1]) * perc;
             L[2] = std::abs(far_color[2] - near_color[2]) * perc;
 
-            
+
         }
         return L;
 
@@ -65,13 +66,14 @@ namespace rt3 {
 
         auto w = camera->film.width;
         auto h = camera->film.height;
-        z_buffer = std::make_shared<std::vector<float>>(w*h);
+        z_buffer = std::make_shared<std::vector<float>>(w * h);
         for (int j = 0; j < h; j++) {
             for (int i = 0; i < w; i++) {
                 Ray ray = camera->generate_ray(i, j);
 
+                float dummy0 = 0, dummy1 = 0;
                 std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-                if (scene.intersect(ray, isect.get())) {
+                if (scene.intersect(ray, dummy0, dummy1, isect.get())) {
                     float z = isect.get()->p[0];
                     add_z_point(Point2(i, j), z);
                     zmin = z < zmin ? z : zmin;

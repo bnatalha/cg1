@@ -121,6 +121,17 @@ void Parser::parse_integrator(XMLElement* pE) {
     ps_map[ParserTags::INTEGRATOR] = std::move(ps);
 }
 
+void Parser::parse_accelerator(XMLElement* pE) {
+    ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
+
+    addStrAttr(pElement, ParserTags::ACC_TYPE, ps);
+    addStrAttr(pElement, ParserTags::ACC_SPLITM, ps);
+    addIntAttr(pElement, ParserTags::ACC_MAX_NODE_SIZE, ps);
+
+    // ps_map.insert(PS_map_pair(ParserTags::INTEGRATOR, ps));
+    ps_map[ParserTags::ACCELERATOR] = std::move(ps);
+}
+
 void Parser::parse_material(XMLElement* pE, ParamSet_ptr& ps) {
     // ParamSet_ptr ps = std::make_shared<rt3::ParamSet>();
     ps = std::make_shared<rt3::ParamSet>();
@@ -273,6 +284,9 @@ int Parser::extractData(rt3::API& api)
         }
         else if (strcmp(pElement->Name(), ParserTags::INTEGRATOR) == 0) {
             parse_integrator(pElement);
+        }
+        else if (strcmp(pElement->Name(), ParserTags::ACCELERATOR) == 0) {
+            parse_accelerator(pElement);
         }
         else if (strcmp(pElement->Name(), ParserTags::INCLUDE) == 0) {
             parse_include();

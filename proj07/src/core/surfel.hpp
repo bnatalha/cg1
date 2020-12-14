@@ -20,6 +20,7 @@ namespace rt3 {
             : p{ p }, n{ n }, wo{ wo }, time{ time }, uv{ uv }, primitive{ pri }
         {/* empty */};
 
+        float t;           //!< ele mesmo.
         Point3 p;        //!< Contact point.
         Vector3 n;       //!< The surface normal.
         Vector3 wo;      //!< Outgoing direction of light, which is -ray.

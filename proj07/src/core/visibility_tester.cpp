@@ -6,6 +6,6 @@ namespace rt3 {
         p1 = p0;
     };
 
-    bool VisibilityTester::unoccluded(const Scene& scene) {}
+    bool VisibilityTester::unoccluded(const Scene& scene) { return true; }
 }
 

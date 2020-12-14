@@ -5,11 +5,29 @@ using rt3::TriangleMesh;
 using rt3::Shape;
 using rt3::ParamSet;
 
+bool maxHigherPoint(const Vector3& v1, const Vector3& v2) {
+    constexpr short Y{ 1 };
+
+    return v1[Y] > v2[Y];
+}
+
 namespace rt3 {
 
     Point3 Triangle::world_bounds() const { throw std::logic_error("not implemented"); }
 
-    bool Triangle::intersect(const Ray& ray, float* t_hit, Surfel* sf) const {
+    bool Triangle::bounding_box(float t0, float t1, aabb& box) const {
+        Vector3 p0 = mesh->vertices[v[0]];
+        Vector3 p1 = mesh->vertices[v[1]];
+        Vector3 p2 = mesh->vertices[v[2]];
+
+        std::vector<Vector3> points{ p0, p1, p2 };
+        std::sort(points.begin(), points.end(), maxHigherPoint);
+        box = aabb(points[0], points[1]);
+        return true;
+    }
+
+
+    bool Triangle::intersect(const Ray& ray, float& hit1, float& hit2, Surfel* sf) const {
         constexpr short X{ 0 };
         constexpr short Y{ 1 };
         constexpr short Z{ 2 };
@@ -45,7 +63,8 @@ namespace rt3 {
         //     return false;
         // }
 
-        if (!(t > ray.t_min && (ray.t_max <= 0.f || t <= ray.t_max))) {
+        if (t < ray.t_min || t > ray.t_max) {
+            // if (!(t > ray.t_min && (ray.t_max <= 0.f || t <= ray.t_max))) {
             return false;
         }
 
@@ -64,9 +83,9 @@ namespace rt3 {
         }
 
         // update surfel/ray
-        *t_hit = t;
-        ray.t_max = *(t_hit);
-        sf->p = ray(*t_hit);
+        ray.t_max = t;
+        sf->t = t;
+        sf->p = ray(t);
 
         // TODO calcular a normal
         Vector3 normal = mesh->normals[n[0]];
@@ -75,8 +94,10 @@ namespace rt3 {
         return true;
     }
 
-    bool Triangle::intersect_p(const Ray& ray) const {
-        return true;
+    bool Triangle::intersect_p(const Ray& ray, float& hit1, float& hit2) const {
+        aabb box;
+        bounding_box(0.f, 0.f, box);
+        return (box.intersect_p(ray, hit1, hit2));
     }
 
     void Triangle::print() {

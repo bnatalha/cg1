@@ -4,8 +4,10 @@ namespace rt3 {
     Point3 FlatIntegrator::Li(const Ray& ray, const Scene& scene, Point3 bkg_color) const {
         Point3 L(bkg_color);
 
+        float hit1=0, hit2 = 0;
+
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-        if (scene.intersect(ray, isect.get())) {
+        if (scene.intersect(ray, hit1, hit2, isect.get())) {
             Point3 light_pos(1.f, 3.f, 3.f);       // Point light location    (hardcoded here, for now)
             Vector3 light_I(0.9f, 0.9f, 0.9f); // Point light Intensity   (hardcoded here, for now)
             // rgb kd = rgb(255.f,0.f,0.f);    // default red material

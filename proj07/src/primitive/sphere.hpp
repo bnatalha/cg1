@@ -18,8 +18,10 @@ namespace rt3 {
 
         Point3 world_bounds() const;
 
-        bool intersect(const Ray& ray, float* t_hit, Surfel* sf) const;
-        bool intersect_p(const Ray& ray) const;
+        bool bounding_box(float t0, float t1, aabb& box) const;
+        bool intersect(const Ray& ray, float& t_min, float& t_max, Surfel* sf) const;
+        bool intersect_p(const Ray& ray, float& hit1, float& hit2) const;
+
 
         void print();
     };

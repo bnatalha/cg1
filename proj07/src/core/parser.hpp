@@ -50,6 +50,7 @@ public:
     void parse_camera(XMLElement* pE);
     void parse_lookat(XMLElement* pE);
     void parse_integrator(XMLElement* pE);
+    void parse_accelerator(XMLElement* pE);
     void parse_background(XMLElement* pE);
     void parse_light(XMLElement* pE, ParamSet_ptr& ps);
     void parse_material(XMLElement* pE, ParamSet_ptr& ps);

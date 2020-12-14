@@ -6,6 +6,7 @@
 #include <ctime>
 #include <chrono>
 #include <iterator>
+#include <algorithm>
 
 using std::vector;
 using std::shared_ptr;
@@ -91,10 +92,11 @@ namespace rt3 {
         }
         /// Return the triangle's bounding box.
         Point3 world_bounds() const;
+        bool bounding_box(float t0, float t1, aabb& box) const;
 
         /// The regular intersection methods, as defined in the Shape parent class.
-        bool intersect(const Ray& ray, float* thit, Surfel* isect) const;
-        bool intersect_p(const Ray& ray) const;
+        bool intersect(const Ray& ray, float& hit1, float& hit2, Surfel* isect) const;
+        bool intersect_p(const Ray& ray, float& hit1, float& hit2) const;
 
         /// This friend function helps us debug the triangles, if we want to.
         friend std::ostream& operator<<( std::ostream& os, const Triangle & t );

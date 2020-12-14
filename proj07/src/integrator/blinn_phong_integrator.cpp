@@ -5,8 +5,10 @@ namespace rt3 {
     Point3 BlinnPhongIntegrator::Li(const Ray& ray, const Scene& scene, Point3 bkg_color, int depth) const {
         Point3 L;
         Ray r = ray;
+
+        float hit1 = 0, hit2 = 0;
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-        if (!scene.intersect(r, isect.get())) {
+        if (!scene.intersect(ray, hit1, hit2, isect.get())) {
             return bkg_color;
         }
         else {
@@ -44,7 +46,8 @@ namespace rt3 {
                     constexpr float epsilon = 0.005f;
                     Vector3 eps{ epsilon,epsilon,epsilon };
                     Ray shadow_ray(P, pointLight->from - P, (0.f+epsilon), 1.f);
-                    if (scene.intersect_p(shadow_ray)) {
+
+                    if (scene.intersect_p(shadow_ray, shadow_ray.t_min, shadow_ray.t_max)) {
                         L = bm->ka * I;
                     }
                 }
@@ -63,13 +66,6 @@ namespace rt3 {
                     Vector3 h = (v + l) / (v + l).length();
                     Vector3 specular = bm->ks * I * pow(dot(n, h), bm->g);
                     L += specular;
-
-                    // constexpr float epsilon = 0.005f;
-                    // Vector3 eps{ epsilon,epsilon,epsilon };
-                    // Ray shadow_ray(P, directLight->from - P, (0.f+epsilon), 1.f);
-                    // if (scene.intersect_p(shadow_ray)) {
-                    //     L = bm->ka * I;
-                    // }
                 }
 
                 if (light->flags == light_flag_e::spot) {

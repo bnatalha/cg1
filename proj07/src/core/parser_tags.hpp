@@ -13,6 +13,14 @@ public:
     inline static const int PARSER_DEFAULT_INT = INT_MIN;
     inline static const float PARSER_DEFAULT_FLOAT = 0.0002f;
 
+    // ACCELERATOR
+    inline static const char* ACCELERATOR = "accelerator";
+    inline static const char* ACC_TYPE = "type";
+    inline static const char* ACC_TYPE_BVH = "bvh";
+    inline static const char* ACC_SPLITM = "split_method";
+    inline static const char* ACC_SPLITM_MIDDLE = "middle";
+    inline static const char* ACC_MAX_NODE_SIZE = "max_prims_per_node";
+
     // LOOK_AT
     inline static const char* LOOKAT = "lookat";
     inline static const char* LOOKAT_LOOK_FROM = "look_from";

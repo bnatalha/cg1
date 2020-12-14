@@ -23,11 +23,15 @@ namespace rt3 {
         Scene(std::shared_ptr<Background> bg, std::shared_ptr<Primitive> prim, std::vector<std::shared_ptr<Light>>& ls ) : background(bg), primitive(prim), lights(ls) {}
         ~Scene() {}
 
-        bool intersect( const Ray& r, Surfel *isect ) const;
+        // bool intersect( const Ray& r, Surfel *isect ) const;
+        bool intersect(const Ray& ray, float& t_min, float& t_max, Surfel* sf) const;
+
         /*! A faster version that only determines whether there is an intersection or not;
          * it doesn't calculate the intersection info.
          */
-        bool intersect_p( const Ray& r ) const;
+        bool intersect_p(const Ray& ray, float& t_min, float& t_max) const;
+
+        // bool intersect_p( const Ray& r ) const;
 
         void print();
     };

@@ -5,29 +5,31 @@
 ## O que foi feito
 
 ### pr5
-- [x] blinn-phong:
-    - [x] difuse,
-    - [x] specular
-    - [x] ambient;
-- [ ] lights:
-    - [x] point;
-    - [x] ambient;
-    - [x] directional;
-    - [ ] spot;
-- [ ] hard shadows;
-    - [x] point;
-    - [ ] directional;
-    - [ ] spot;
-- [x] mirror;
+-[x] blinn-phong:
+    -[x] difuse,
+    -[x] specular
+    -[x] ambient;
+-[ ] lights:
+    -[x] point;
+    -[x] ambient;
+    -[x] directional;
+    -[ ] spot;
+-[ ] hard shadows;
+    -[x] point;
+    -[ ] directional;
+    -[ ] spot;
+-[x] mirror;
 
 ### pr6
-- [x] triangle mesh:
-    - [ ] calcular a normal
-    - [x] ler da cena;
-    - [x] ler de obj;
-- blin phong shading;
+-[x] triangle mesh:
+    -[ ] calcular a normal
+    -[x] ler da cena;
+    -[x] ler de obj;
+-[ ] blin phong shading;
 
 ### pr7
+-[ ] bounding boxes
+-[ ] cell_shading
 
 
 ## Compilando

@@ -6,8 +6,9 @@ namespace rt3 {
         // Point3 L(255, 255, 255);
         Point3 L(bkg_color);
 
+        float hit1 = 0, hit2 = 0;
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-        if (scene.intersect(ray, isect.get())) {
+        if (scene.intersect(ray, hit1, hit2, isect.get())) {
 
             Vector3 normal = normalize(isect.get()->n);
             normal = normal + Vector3(1.f, 1.f, 1.f) * 0.5f;
