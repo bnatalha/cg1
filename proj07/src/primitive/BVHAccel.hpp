@@ -7,6 +7,9 @@
 #include <cmath>
 #include <algorithm>
 
+#include <climits>
+#include <limits>
+
 
 namespace rt3 {
 

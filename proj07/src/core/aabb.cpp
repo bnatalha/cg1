@@ -16,20 +16,43 @@ float ffmax(float a, float b) { return a > b ? a : b; }
 
 namespace rt3 {
 
+    // bool aabb::intersect_p(const Ray& r, float& t_min, float& t_max) const {
+    //     for (int a = 0; a < 3; a++) {
+    //         auto t0 = ffmin((minimum[a] - r.o[a]) / r.d[a],
+    //             (maximum[a] - r.o[a]) / r.d[a]);
+    //         auto t1 = ffmax((minimum[a] - r.o[a]) / r.d[a],
+    //             (maximum[a] - r.o[a]) / r.d[a]);
+
+    //         // float tmin = t_min;
+    //         // float tmax = t_max;
+    //         t_min = ffmax(t0, t_min);
+    //         t_max = ffmin(t1, t_max);
+
+    //         // r.t_min = t_min;
+    //         // r.t_max = t_max;
+
+    //         if (t_min < t_max) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+
     bool aabb::intersect_p(const Ray& r, float& t_min, float& t_max) const {
         for (int a = 0; a < 3; a++) {
-            auto t0 = ffmin((minimum[a] - r.o[a]) / r.d[a],
-                (maximum[a] - r.o[a]) / r.d[a]);
-            auto t1 = ffmax((minimum[a] - r.o[a]) / r.d[a],
-                (maximum[a] - r.o[a]) / r.d[a]);
-            t_min = ffmax(t0, t_min);
-            t_max = ffmin(t1, t_max);
+            float invD = 1.0f / r.d[a];
+            auto t0 = (minimum[a] - r.o[a]) * invD;
+            auto t1 = (maximum[a] - r.o[a]) * invD;
 
-            r.t_min = t_min;
-            r.t_max = t_max;
+            if(invD < 0.0f) {
+                std::swap(t0, t1);
+            }
+            t_min = -t0 > t_min ? -t0 : t_min;
+            t_min = -t1 < t_max ? -t1 : t_max;
 
-            if (t_max < t_min)
+            if (t_min <= t_max || t_min < 0.f || t_max < 0.f) {
                 return false;
+            }
         }
         return true;
     }

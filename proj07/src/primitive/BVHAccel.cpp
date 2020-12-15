@@ -41,7 +41,7 @@ namespace rt3 {
         }
 
         aabb box_left, box_right;
-        float hit1=0.f, hit2=0.f;
+        float hit1=0.f, hit2=std::numeric_limits<float>::max();
 
         if (!left->bounding_box(hit1, hit2, box_left)
             || !right->bounding_box(hit1, hit2, box_right)

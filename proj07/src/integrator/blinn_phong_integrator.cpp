@@ -8,7 +8,7 @@ namespace rt3 {
 
         float hit1 = 0, hit2 = 0;
         std::shared_ptr<Surfel> isect = std::make_shared<Surfel>();
-        if (!scene.intersect(ray, hit1, hit2, isect.get())) {
+        if (!scene.intersect(ray, ray.t_min, ray.t_max, isect.get())) {
             return bkg_color;
         }
         else {
@@ -116,6 +116,7 @@ namespace rt3 {
 
             return L;
         }
+
     }
 
     void BlinnPhongIntegrator::render(const Scene& scene) {

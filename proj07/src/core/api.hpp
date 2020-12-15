@@ -23,6 +23,7 @@
 #include "primitive/prim_list.hpp"
 #include "primitive/flat_material.hpp"
 #include "primitive/material.hpp"
+#include "primitive/BVHAccel.hpp"
 
 // #include "primitive/blinn_phong_material.hpp"
 // #include "light/point_light.hpp"
@@ -51,7 +52,8 @@ namespace rt3 {
 
         // TODO(bnatalha): function for background parsing only
         void scene(ParamSet_ptr& ps_bg, std::forward_list<std::pair<ParamSet_ptr, ParamSet_ptr>>& primitives);
-        void scene(ParamSet_ptr& ps_bg, std::forward_list<ParamSet_ptr>& objects, std::forward_list<ParamSet_ptr>& lights, std::forward_list<ParamSet_ptr>& materials);
+        // void scene(ParamSet_ptr& ps_bg, std::forward_list<ParamSet_ptr>& objects, std::forward_list<ParamSet_ptr>& lights, std::forward_list<ParamSet_ptr>& materials);
+        void scene(ParamSet_ptr& ps_bg, ParamSet_ptr& ps_acc, std::forward_list<ParamSet_ptr>& ps_objects, std::forward_list<ParamSet_ptr>& ps_lights, std::forward_list<ParamSet_ptr>& ps_materials);
 
         void integrator(ParamSet_ptr& ps_it, std::shared_ptr<Camera> camera);
 

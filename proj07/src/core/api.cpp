@@ -121,11 +121,7 @@ namespace rt3 {
 
     }
 
-    void API::scene(
-        ParamSet_ptr& ps_bg,
-        std::forward_list<ParamSet_ptr>& ps_objects,
-        std::forward_list<ParamSet_ptr>& ps_lights,
-        std::forward_list<ParamSet_ptr>& ps_materials) {
+    void API::scene(ParamSet_ptr& ps_bg, ParamSet_ptr& ps_acc, std::forward_list<ParamSet_ptr>& ps_objects, std::forward_list<ParamSet_ptr>& ps_lights, std::forward_list<ParamSet_ptr>& ps_materials) {
 
         // BACKGROUND
         string t = ps_bg->find_one<string>(ParserTags::BACKGROUND_TYPE, "default");
@@ -243,7 +239,15 @@ namespace rt3 {
                 }
             }
         }
-        std::shared_ptr<Primitive> primitive = std::make_shared<PrimList>(prim_vec);
+
+        std::shared_ptr<Primitive> primitive;
+        if (ps_acc != nullptr) {
+            primitive = std::make_shared<BVHAccel>(prim_vec);
+        }
+        else {
+            primitive = std::make_shared<PrimList>(prim_vec);
+        }
+
 
         m_scene = std::make_shared<Scene>(std::move(bg), std::move(primitive), lights);
     }
@@ -321,7 +325,7 @@ namespace rt3 {
 
         // instantiate
         std::shared_ptr<Camera> camera_ptr = camera(paramsets[ParserTags::CAMERA], paramsets[ParserTags::FILM], paramsets[ParserTags::LOOKAT]);
-        scene(paramsets[ParserTags::BACKGROUND], objects, lights, materials);
+        scene(paramsets[ParserTags::BACKGROUND], paramsets[ParserTags::ACCELERATOR], objects, lights, materials);
         integrator(paramsets[ParserTags::INTEGRATOR], std::move(camera_ptr));
 
         print();

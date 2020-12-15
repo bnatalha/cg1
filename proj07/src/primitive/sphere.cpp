@@ -4,12 +4,16 @@ namespace rt3 {
 
     Point3 Sphere::world_bounds() const { throw std::logic_error("not implemented"); }
     bool Sphere::bounding_box(float t0, float t1, aabb& box) const {
-        box = aabb(c - Vector3(r, r, r), c + Vector3(r, r, r));
+        box = aabb(c + Vector3(r, r, r), c - Vector3(r, r, r));
         return true;
     }
 
 
     bool Sphere::intersect(const Ray& ray, float& t_min, float& t_max, Surfel* sf) const {
+
+        aabb box;
+        bounding_box(0.f, 1.f, box);
+        return (box.intersect_p(ray, ray.t_min, ray.t_max));
 
         float A = dot(ray.d, ray.d);
         float B = dot(2.f * (ray.o - c), ray.d);
@@ -63,41 +67,41 @@ namespace rt3 {
 
         aabb box;
         bounding_box(0.f, 1.f, box);
-        return (box.intersect_p(ray, ray.t_min, ray.t_max));
+        return (box.intersect_p(ray, hit1, hit2));
 
-        // float A = dot(ray.d, ray.d);
-        // float B = dot(2.f * (ray.o - c), ray.d);
-        // float C = dot((ray.o - c), (ray.o - c)) - (r * r);
-        // float delta = B * B - 4.f * A * C;
-        // // return delta >= 0.f;
+        float A = dot(ray.d, ray.d);
+        float B = dot(2.f * (ray.o - c), ray.d);
+        float C = dot((ray.o - c), (ray.o - c)) - (r * r);
+        float delta = B * B - 4.f * A * C;
+        // return delta >= 0.f;
 
-        // float t = 0.f;
+        float t = 0.f;
 
-        // if (delta >= 0.f) {
-        //     if (delta == 0.f) {
-        //         t = (-B) / (2.f * A);
-        //     }
-        //     else if (delta > 0.f) {
-        //         float x1 = (-B + sqrt(delta)) / (2.f * A);
-        //         float x2 = (-B - sqrt(delta)) / (2.f * A);
-        //         t = x1 < x2 ? x1 : x2;
+        if (delta >= 0.f) {
+            if (delta == 0.f) {
+                t = (-B) / (2.f * A);
+            }
+            else if (delta > 0.f) {
+                float x1 = (-B + sqrt(delta)) / (2.f * A);
+                float x2 = (-B - sqrt(delta)) / (2.f * A);
+                t = x1 < x2 ? x1 : x2;
 
-        //         // Vector3 oc = ray.o - c;
-        //         // float p1 = dot(oc, ray.d);
-        //         // float r1 = dot(oc, ray.d) * dot(oc, ray.d);
-        //         // float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
+                // Vector3 oc = ray.o - c;
+                // float p1 = dot(oc, ray.d);
+                // float r1 = dot(oc, ray.d) * dot(oc, ray.d);
+                // float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
 
-        //         // float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
-        //         // float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
 
-        //         // t = t1 < t2 ? t1 : t2;
-        //     }
+                // t = t1 < t2 ? t1 : t2;
+            }
 
-        //     if (t >= ray.t_min && t <= ray.t_max) {
-        //         return true;
-        //     }
-        // }
-        // return false;
+            if (t >= ray.t_min && t <= ray.t_max) {
+                return true;
+            }
+        }
+        return false;
     }
 
     void Sphere::print() {
