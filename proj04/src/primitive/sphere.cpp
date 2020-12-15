@@ -26,19 +26,19 @@ namespace rt3 {
                 *t_hit = (-B) / (2.f * A);
             }
             else if (delta > 0.f) {
-                // float x1 = (-B + sqrt(delta)) / (2.f * A);
-                // float x2 = (-B - sqrt(delta)) / (2.f * A);
-                // *t_hit = x1 < x2 ? x1 : x2;
+                float x1 = (-B + sqrt(delta)) / (2.f * A);
+                float x2 = (-B - sqrt(delta)) / (2.f * A);
+                *t_hit = x1 < x2 ? x1 : x2;
 
-                Vector3 oc = ray.o - c;
-                float p1 = dot(oc, ray.d);
-                float r1 = dot(oc, ray.d) * dot(oc, ray.d);
-                float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
+                // Vector3 oc = ray.o - c;
+                // float p1 = dot(oc, ray.d);
+                // float r1 = dot(oc, ray.d) * dot(oc, ray.d);
+                // float r2 = dot(ray.d, ray.d) * dot(oc,  oc) - (r * r);
 
-                float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
-                float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t1 = (-p1 + sqrt(r1 - r2))/dot(ray.d, ray.d);
+                // float t2 = (-p1 - sqrt(r1 - r2))/dot(ray.d, ray.d);
 
-                *t_hit = t1 < t2 ? t1 : t2;
+                // *t_hit = t1 < t2 ? t1 : t2;
             }
 
             if ((*t_hit) > ray.t_min) {
@@ -54,8 +54,8 @@ namespace rt3 {
                     // sf->n = normalize(sf->p - c);
 
                     // sf->n = normalize((sf->p - ray.o));
-                    sf->n = normalize(2.f * (sf->p - c));
-                    sf->wo = sf->n / r;
+                    sf->n = (sf->p - c);
+                    // sf->wo = sf->n / r;
 
                     return true;
 

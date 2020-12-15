@@ -45,7 +45,7 @@ namespace rt3 {
 
                     constexpr float epsilon = 0.005f;
                     Vector3 eps{ epsilon,epsilon,epsilon };
-                    Ray shadow_ray(P, pointLight->from - P, (0.f+epsilon), 1.f);
+                    Ray shadow_ray(P, pointLight->from - P, (0.f + epsilon), 1.f);
 
                     if (scene.intersect_p(shadow_ray, shadow_ray.t_min, shadow_ray.t_max)) {
                         L = bm->ka * I;

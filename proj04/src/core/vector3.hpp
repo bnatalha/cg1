@@ -148,12 +148,18 @@ inline float dot(const Vector3& v1, const Vector3& v2)
 
 inline Vector3 cross(const Vector3& v1, const Vector3& v2)
 {
-    // fixed to work for left handedness
-    return Vector3(v1.e[1] * v2.e[2] - v1.e[2] * v2.e[1],
-        // v1.e[2] * v2.e[0] - v1.e[0] * v2.e[2],
-        v1.e[0] * v2.e[2] - v1.e[2] * v2.e[0],
-        // v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]);
-        v1.e[1] * v2.e[0] - v1.e[0] * v2.e[1]);
+    // // fixed to work for left handedness
+    // return Vector3(v1.e[1] * v2.e[2] - v1.e[2] * v2.e[1],
+    //     // v1.e[2] * v2.e[0] - v1.e[0] * v2.e[2],
+    //     v1.e[0] * v2.e[2] - v1.e[2] * v2.e[0],
+    //     // v1.e[0] * v2.e[1] - v1.e[1] * v2.e[0]);
+    //     v1.e[1] * v2.e[0] - v1.e[0] * v2.e[1]);
+
+    return Vector3( 
+        (v1.e[2]*v2.e[1] - v1.e[1]*v2.e[2]),
+        -(v1.e[2]*v2.e[0] - v1.e[0]*v2.e[2]),
+        (v1.e[1]*v2.e[0] - v1.e[0]*v2.e[1]) 
+    ); 
 }
 
 inline Vector3& Vector3::operator+=(const Vector3& v)
